@@ -1,0 +1,4 @@
+extends:
+  - models/llama3_8b
+  - datasets/triviaqa
+seed: 0

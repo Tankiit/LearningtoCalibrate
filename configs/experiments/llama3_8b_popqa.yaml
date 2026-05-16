@@ -1,0 +1,4 @@
+extends:
+  - models/llama3_8b
+  - datasets/popqa
+seed: 0

@@ -1,87 +1,78 @@
-# Learning2Reject (L2R) Framework
+# OVA_ARR
 
-A unified framework for Learning to Reject (L2R) that combines:
-- Safety rejection (harmful content)
-- Domain shift rejection (out-of-distribution data)
-- Conformal prediction (theoretical coverage guarantees)
+Code for *LLMs Know What They Won't Say: Turning Internal-External Disagreement into Calibrated Deferral* (ARR May 2026).
 
-## Features
+## What this paper is about, in one sentence
 
-- **Safety L2R**: Rejects harmful or unsafe content
-- **Domain L2R**: Rejects out-of-distribution predictions
-- **Conformal Prediction**: Provides theoretical coverage guarantees
-- **ERM Baseline**: Comparison with standard empirical risk minimization
-- **Unified Uncertainty**: Combines multiple sources of uncertainty
-- **Domain Generalization**: Advanced domain adaptation with L2R
+The signed gap between two independently calibrated linear probes on frozen LLM hidden states — one trained to predict model correctness, one trained to predict expert reliability — is a calibrated deferral signal that strictly outperforms either probe alone on risk-coverage metrics.
 
-## Installation
+## Where to find what
+
+```
+├── extraction/    # Step 1: pull hidden states + generation logprobs from LLMs (Modal)
+├── probes/        # Step 2: train OVA heads (f_pred, f_defer) on frozen reps
+├── data/          # Dataset adapters: TruthfulQA, HaluEval, TriviaQA, PopQA, BioASQ
+├── gap/           # The actual Δ(x) signal + conformal calibration
+├── eval/          # AURC, risk-coverage curves, baseline comparisons
+└── utils/         # Logging, config loading, RNG, type helpers
+
+configs/           # YAML configs (one per model, dataset, experiment)
+scripts/           # Thin CLI entry points — see `scripts/README.md`
+tests/             # Sanity tests on synthetic data (run before any real experiment)
+outputs/           # Where results land (gitignored, never commit)
+```
+
+## Reviewer fast-path
+
+A reviewer asking "where is the gap signal computed?" should be able to find it in 30 seconds:
+
+- **Δ(x) definition:** `gap/signal.py` — the `gap_signal()` function.
+- **OVA heads:** `probes/ova.py` — the `OVAHeads` class.
+- **Conformal calibration:** `gap/conformal.py` — the `ConformalDeferral` class.
+- **AURC:** `eval/risk_coverage.py` — the `aurc()` function.
+
+If you can't find what you need, open an issue.
+
+## Pipeline overview
+
+```
+configs/        Modal volume         local artifacts          tables/figures
+   │                  │                     │                      │
+   ▼                  ▼                     ▼                      ▼
+   ├─►  step1_extract.py  ─►  hidden_states.pt + logprobs.pt
+   │
+   ├─►  step2_train_probes.py  ─►  ova_heads.pt + signals.pt
+   │
+   ├─►  step3_calibrate.py  ─►  conformal_thresholds.pt
+   │
+   └─►  step4_evaluate.py  ─►  results.parquet (AURC, risk-coverage curves)
+```
+
+Each step is idempotent: re-running with the same config skips already-done work.
+
+## Quick start
 
 ```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Set up environment
+pip install -e .
 
-# Install dependencies
-pip install -r requirements.txt
+# Run synthetic-data sanity check (5 minutes, no GPU)
+pytest tests/
+
+# Run on one (model, dataset) end-to-end
+python scripts/step1_extract.py    --config configs/experiments/llama3_8b_truthfulqa.yaml
+python scripts/step2_train_probes.py --config configs/experiments/llama3_8b_truthfulqa.yaml
+python scripts/step3_calibrate.py    --config configs/experiments/llama3_8b_truthfulqa.yaml
+python scripts/step4_evaluate.py     --config configs/experiments/llama3_8b_truthfulqa.yaml
+
+# Sweep all 4 models × 5 datasets
+python scripts/run_full_sweep.py
 ```
 
-## Usage
+## Status
 
-### Simple L2R Framework
-```python
-# Run the unified L2R demonstration
-python simplel2r.py
-```
-
-### Domain Generalization with L2R
-```bash
-# Activate the torch-multimodal environment
-source ../torch-multimodal/bin/activate
-
-# Basic usage with default settings
-python dg.py
-
-# Custom training parameters
-python dg.py --epochs 50 --batch_size 128 --lr 0.0001
-
-# Save model and results
-python dg.py --save_model --results_file my_results.json
-
-# Load pre-trained model
-python dg.py --load_model trained_model.pth
-
-# Show help
-python dg.py --help
-```
-
-### Command Line Arguments for dg.py
-
-- `--data_dir`: Directory to store/load data (default: `/Users/mukher74/research/data`)
-- `--num_domains`: Number of domains to generate (default: 4)
-- `--num_classes`: Number of classes (default: 5)
-- `--input_dim`: Input feature dimension (default: 20)
-- `--hidden_dim`: Hidden layer dimension (default: 128)
-- `--batch_size`: Batch size for training (default: 64)
-- `--epochs`: Number of training epochs (default: 20)
-- `--lr`: Learning rate (default: 0.001)
-- `--save_model`: Save the trained model
-- `--load_model`: Path to load a pre-trained model
-- `--results_file`: File to save results (default: results.json)
-
-## Project Structure
-
-- `simplel2r.py`: Main implementation of the unified L2R framework
-- `dg.py`: Domain generalization with L2R framework (with argparse support)
-- `l2r.py`: Extended implementation with additional features
-- `HarmBench/`: Benchmark suite for testing harmful content detection
-
-## Data Directory
-
-The framework uses `/Users/mukher74/research/data` as the default data directory for:
-- Saving trained models
-- Storing experimental results
-- Loading pre-trained models
-
-## License
-
-MIT License 
+- Extraction pipeline: ported from existing Modal code
+- Probe training: ported from existing scripts
+- Conformal calibration: implemented
+- Evaluation: AURC implemented; baselines pending
+- Experiments: ⬜ ⬜ ⬜ ⬜ ⬜ (5 datasets × 4 models — partial; see `outputs/STATUS.md`)

@@ -1,0 +1,4 @@
+model_key: gemma_2b
+hf_model_id: google/gemma-2-2b-it
+layer: -1
+pool_method: last_token

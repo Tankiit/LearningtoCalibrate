@@ -1,0 +1,58 @@
+\section{Constrained-Optimization Deferral}
+\label{app:constrained-deferral}
+
+We can view binary commit/defer selection as a constrained linear program over
+soft commit variables $\pi_i \in [0,1]$. The primary variant in the main text is
+the $\Gamma$-maximin robust LP, which substitutes lower credal bounds
+$\underline p_{\mathrm{pred}}$ and $\underline p_{\mathrm{amb}}$ into the
+commit and defer costs. The appendix expected-cost variant uses point estimates
+$\hat p_{\mathrm{pred}}$ and $\hat p_{\mathrm{amb}}$.
+
+\paragraph{Expected-cost LP.}
+For each calibration item $i$, the expected cost of committing is
+$c_{\mathrm{wrong}}(1-\hat p_{\mathrm{pred},i})$ and the expected cost of
+deferring is $c_{\mathrm{defer}}(1-\hat p_{\mathrm{amb},i})$. The Bayes variant
+solves
+\[
+\begin{aligned}
+\min_{\pi \in [0,1]^N}\quad
+&\sum_i \pi_i c_{\mathrm{wrong}}(1-\hat p_{\mathrm{pred},i})
+ +(1-\pi_i)c_{\mathrm{defer}}(1-\hat p_{\mathrm{amb},i}) \\
+\mathrm{s.t.}\quad
+&\kappa_{\min}N \le \sum_i \pi_i \le \kappa_{\max}N,\\
+&\sum_i \pi_i(\hat p_{\mathrm{pred},i}-(1-\alpha)) \ge 0.
+\end{aligned}
+\]
+
+\paragraph{Robust LP.}
+The robust variant replaces $\hat p$ with lower bounds
+$\underline p$. Because the objective and accuracy constraint are linear in the
+probabilities, the worst case over interval credal sets is attained at the lower
+endpoints. Thus the robust LP has the same form with
+$\hat p_{\mathrm{pred}}, \hat p_{\mathrm{amb}}$ replaced by
+$\underline p_{\mathrm{pred}}, \underline p_{\mathrm{amb}}$.
+
+\paragraph{Relation to gap thresholding.}
+When coverage-band constraints are inactive and credal intervals collapse to
+points, the LP commits when the reduced cost of committing is below the reduced
+cost of deferring. The conformal constraint contributes a dual variable
+$\lambda$, yielding a per-item commit rule of the form
+\[
+c_{\mathrm{wrong}}(1-p_{\mathrm{pred}})
+-\lambda(p_{\mathrm{pred}}-(1-\alpha))
+<
+c_{\mathrm{defer}}(1-p_{\mathrm{amb}}).
+\]
+This is a threshold rule in the two probe coordinates. The logit-space gap
+$\Delta=\operatorname{logit}(p_{\mathrm{pred}})
+-\operatorname{logit}(p_{\mathrm{amb}})$ is the simplest one-dimensional
+ranking induced by these two coordinates; the LP generalizes it by allowing the
+constraint duals and cost ratio to choose the operating point explicitly.
+
+\paragraph{Credal intervals.}
+For the ARR submission we use bootstrap probe intervals: train $K=20$
+bootstrap-resampled probes for each head and take per-item lower, mean, and
+upper probabilities. The lower bounds feed the robust LP; the means recover a
+point-estimate comparison. Appendix sensitivity can vary $K$ and the bootstrap
+regularization strength.
+

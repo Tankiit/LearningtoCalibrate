@@ -1,0 +1,139 @@
+{
+  "analysis_plan": {
+    "aggregation": "mean +/- std over seeds 0-4",
+    "main_audit_variants": [
+      "native",
+      "shuffled_within_y_correct",
+      "constant_half",
+      "inverse_y_correct_oracle"
+    ],
+    "main_table_methods": [
+      "logprob",
+      "seq_entropy",
+      "probe_pred_only",
+      "semantic_entropy",
+      "gap"
+    ],
+    "significance_test": "paired permutation test over examples, p < 0.01, comparing gap to next-best method per row"
+  },
+  "artifact": "ARR May 2026 pre-registration",
+  "content_sha256": "c6188cc2535e0be87239adf83e085df3fceed32911bd84f90f7e834eded36272",
+  "created_at_utc": "2026-05-15T13:08:19+00:00",
+  "decision_rules": [
+    {
+      "action": "run inverse-oracle semantic audit; if oracle helps but native does not, pivot framing or defer submission",
+      "case": "Showcase gap does not beat probe-only on ChaosNLI"
+    },
+    {
+      "action": "promote calibrated SCOD-additive or learned-2D to headline method before final writing",
+      "case": "SCOD-additive or learned-2D beats gap by >= 0.05 AURC on showcase datasets"
+    },
+    {
+      "action": "keep headline if showcase wins; revise diagnostic-regime claim to dataset-specific characterization",
+      "case": "Diagnostic datasets do not collapse"
+    }
+  ],
+  "disclosure": {
+    "known_existing_result_before_registration": "llama3_8b x truthfulqa contrastive/diagnostic cache and preliminary collapse-style outputs existed before this artifact",
+    "not_yet_observed_at_registration": [
+      "chaosnli showcase probe/audit results",
+      "pavlick_nli showcase probe/audit results",
+      "ambigqa_kge2 showcase probe/audit results"
+    ]
+  },
+  "headline_predictions": [
+    {
+      "datasets": [
+        "chaosnli",
+        "pavlick_nli",
+        "ambigqa_kge2"
+      ],
+      "expected_direction": "positive_delta",
+      "id": "H1_showcase_gap_beats_probe",
+      "prediction": "gap improves over probe_pred_only by at least 0.015 AURC on the mean over seeds",
+      "success_rule": "mean(probe_pred_only_aurc - gap_aurc) >= 0.015"
+    },
+    {
+      "datasets": [
+        "truthfulqa",
+        "halueval_qa"
+      ],
+      "expected_direction": "near_zero_delta",
+      "id": "H2_diagnostic_collapse",
+      "prediction": "gap is statistically indistinguishable from probe_pred_only or improves by less than 0.01 AURC",
+      "success_rule": "abs(mean(probe_pred_only_aurc - gap_aurc)) < 0.01 or paired permutation p >= 0.01"
+    },
+    {
+      "datasets": [
+        "chaosnli",
+        "pavlick_nli",
+        "ambigqa_kge2",
+        "truthfulqa",
+        "halueval_qa"
+      ],
+      "expected_direction": "showcase_higher",
+      "id": "H3_scod_effective_dimension",
+      "prediction": "showcase datasets have higher effective dimensionality in (p_pred, p_amb) than diagnostic datasets",
+      "success_rule": "showcase effective_dim generally > 1.6 and diagnostic effective_dim generally <= 1.15; threshold treated as diagnostic, not exclusionary"
+    },
+    {
+      "datasets": [
+        "chaosnli",
+        "pavlick_nli"
+      ],
+      "expected_direction": "native_lower_aurc",
+      "id": "H4_y_expert_native_load_bearing",
+      "prediction": "native y_expert gap beats shuffled-within-correctness and constant-half variants",
+      "success_rule": "native gap AURC < shuffled gap AURC and native gap AURC < constant-half gap AURC on mean over seeds"
+    }
+  ],
+  "locked": true,
+  "locked_method": {
+    "calibrated_gap_status": "P1 comparison, not headline unless it materially outperforms raw gap before method lock",
+    "definition": "raw logit-space difference: logit(f_pred) - logit(f_amb)",
+    "headline_name": "gap",
+    "probe_amb_ablation": "probe_amb_only = sigmoid(f_amb)",
+    "probe_pred_baseline": "probe_pred_only = sigmoid(f_pred)"
+  },
+  "project": {
+    "git_commit": null,
+    "git_status_short_at_registration": null,
+    "name": "OVA_ARR",
+    "repo_path": "/Users/tanmoy/research/OOD_detection/OVA_ARR",
+    "title": "LLMs Know What They Won't Say: Turning Internal-External Disagreement into Calibrated Deferral"
+  },
+  "representation_lock": {
+    "fallback_for_current_single-layer_cache": "use the cached layer/pool if only one representation is available; mark the run as legacy-single-representation",
+    "pool": "response_mean",
+    "relative_layer": -4
+  },
+  "scope": {
+    "diagnostic_datasets": [
+      "truthfulqa",
+      "halueval_qa"
+    ],
+    "lower_aurc_is_better": true,
+    "models": [
+      "llama3_8b",
+      "mistral_7b",
+      "qwen2_5_7b"
+    ],
+    "primary_metric": "AURC",
+    "secondary_metrics": [
+      "coverage_at_acc_80",
+      "coverage_at_acc_90"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "showcase_datasets": [
+      "chaosnli",
+      "pavlick_nli",
+      "ambigqa_kge2"
+    ]
+  }
+}
