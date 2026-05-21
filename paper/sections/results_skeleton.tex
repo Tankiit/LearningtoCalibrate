@@ -1,0 +1,151 @@
+\section{Results}
+\label{sec:results}
+
+We evaluate whether the logit-space disagreement between a correctness probe
+and an ambiguity/expert-reliability probe improves selective prediction. The
+main results are organized around three questions: whether the gap improves
+risk--coverage behavior across models and datasets, whether the diagnostic
+regime collapses as predicted, and whether the expert-reliability signal is
+load-bearing rather than an incidental label source.
+
+\subsection{Headline Risk--Coverage Matrix}
+\label{sec:results-headline}
+
+Table~\ref{tab:headline-matrix} reports AURC and Coverage@Acc across
+model--dataset pairs and scoring methods. Lower AURC is better; higher
+Coverage@Acc is better. We report mean and standard deviation over five seeds.
+Bold marks the best method per row. Asterisks mark paired-permutation
+significance against the next-best method at $p < 0.01$.
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Headline selective-prediction results.} Rows are organized
+with showcase datasets first, followed by diagnostic datasets. Placeholder
+columns should be filled from \texttt{outputs/aggregated\_results.parquet}.}
+\label{tab:headline-matrix}
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Dataset & Logprob & Seq. ent. & Probe-only & Sem. ent. & Gap \\
+\midrule
+% Llama-3.1-8B & ChaosNLI & -- & -- & -- & -- & -- \\
+% Llama-3.1-8B & Pavlick-NLI & -- & -- & -- & -- & -- \\
+% Llama-3.1-8B & AmbigQA-k$\geq$2 & -- & -- & -- & -- & -- \\
+\midrule
+% Llama-3.1-8B & TruthfulQA & -- & -- & -- & -- & -- \\
+% Llama-3.1-8B & HaluEval & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Risk--Coverage Curves}
+\label{sec:results-rc-curve}
+
+Figure~\ref{fig:chaosnli-rc} shows the full risk--coverage curve on the
+canonical showcase setting, ChaosNLI with the headline model. The shaded band
+is the seed-aggregated 95\% confidence interval. Vertical markers indicate the
+coverage achieved at Accuracy@0.90 thresholds from
+Table~\ref{tab:headline-matrix}.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=\linewidth]{figures/chaosnli_rc_curve.pdf}
+\caption{\textbf{Risk--coverage curve on ChaosNLI.} The gap should dominate
+single-signal baselines across the coverage range, not only in a narrow band.}
+\label{fig:chaosnli-rc}
+\end{figure}
+
+\subsection{Diagnostic Regime Collapse}
+\label{sec:results-diagnostic}
+
+Table~\ref{tab:diagnostic-collapse} reports the AURC delta between the gap and
+the single correctness probe, together with the effective dimensionality of the
+$(p_{\mathrm{pred}}, p_{\mathrm{amb}})$ cloud. The SCOD prediction is that
+datasets with effectively one-dimensional probe geometry should show little or
+no gain from the gap, while showcase datasets with genuine two-dimensional
+structure should benefit.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Diagnostic-regime collapse.} Positive $\Delta$ means the gap
+improves over the single correctness probe. Effective dimensionality comes from
+\texttt{scripts/scod\_diagnostics.py}.}
+\label{tab:diagnostic-collapse}
+\begin{tabular}{llrr}
+\toprule
+Model & Dataset & $\Delta$ AURC & Eff. dim. \\
+\midrule
+% -- & TruthfulQA & -- & -- \\
+% -- & HaluEval & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{\texorpdfstring{$y_{\mathrm{expert}}$}{y expert} Semantic Audit}
+\label{sec:results-yexpert-audit}
+
+Table~\ref{tab:yexpert-audit} tests whether the expert-reliability labels are
+semantically load-bearing. The native signal should improve over the
+single-probe baseline; shuffling within correctness strata and replacing the
+signal with a constant should collapse toward the single-probe baseline; the
+inverse-oracle variant should dominate as a sanity check.
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Semantic audit of the expert-reliability signal.} Lower AURC
+is better. This is the main-text defense that the second head is not merely an
+incidental label source.}
+\label{tab:yexpert-audit}
+\begin{tabular}{llrrrr}
+\toprule
+Model & Dataset & Native & Shuffled & Constant & Inverse oracle \\
+\midrule
+% -- & ChaosNLI & -- & -- & -- & -- \\
+% -- & Pavlick-NLI & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{SCOD-Optimal Selector Check}
+\label{sec:results-scod-selector}
+
+We compare the gap against calibrated SCOD-additive scoring and a learned 2D
+selector trained on $(\mathrm{logit}\,p_{\mathrm{pred}},
+\mathrm{logit}\,p_{\mathrm{amb}})$. This experiment is decision-revealing: if
+the learned 2D selector substantially outperforms the gap, the headline method
+should switch before submission.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{SCOD selector comparison.} This table can remain appendix-only
+unless the learned 2D selector changes the headline-method decision.}
+\label{tab:scod-selector}
+\begin{tabular}{llrrrr}
+\toprule
+Model & Dataset & Gap & Gap-cal. & SCOD-add. & Learned 2D \\
+\midrule
+% -- & ChaosNLI & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Conformal Validation}
+\label{sec:results-conformal}
+
+Table~\ref{tab:conformal-validation} validates that the conformal thresholding
+step achieves the intended selective-accuracy target within finite-sample
+tolerance. The operational quantity is committed coverage at each target.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Conformal validation.} Fill from the conformal validation
+sweep at $\alpha \in \{0.10, 0.20\}$.}
+\label{tab:conformal-validation}
+\begin{tabular}{llrrr}
+\toprule
+Model & Dataset & Target acc. & Realized acc. & Coverage \\
+\midrule
+% -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+

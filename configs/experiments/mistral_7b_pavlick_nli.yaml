@@ -1,0 +1,4 @@
+extends:
+  - models/mistral_7b
+  - datasets/pavlick_nli
+seed: 0

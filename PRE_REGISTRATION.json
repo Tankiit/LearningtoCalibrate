@@ -1,0 +1,131 @@
+{
+  "version": "3.0",
+  "registered_at": "2026-05-17T18:00:00Z",
+  "git_commit": "<fill before tagging>",
+  "git_tag": "arr-prereg-2026-05-17-interpretationA",
+  "scope": "ARR May 2026 submission, EMNLP main conference target",
+  "framing": "Deferral-as-operationalization; gap mechanism is one realization.",
+  "matrix": {
+    "models": [
+      "llama3.1-8b-instruct",
+      "mistral-7b-instruct-v0.3",
+      "qwen2.5-7b-instruct"
+    ],
+    "datasets_showcase": [
+      "chaosnli",
+      "pavlick_nli",
+      "ambigqa_kge2",
+      "pubmedqa"
+    ],
+    "datasets_diagnostic": [
+      "truthfulqa",
+      "medqa"
+    ],
+    "datasets_held_out": [],
+    "rationale": "Interpretation A: drop HaluEval, add PubMedQA as medical showcase and MedQA as medical diagnostic; skip Path 3 held-out to manage budget."
+  },
+  "predictions": {
+    "showcase_regime": {
+      "chaosnli_aurc_improvement_over_pred_only": {
+        "claim": "Gap mechanism improves AURC over single-probe baseline on ChaosNLI by at least 0.015 averaged across 3 models.",
+        "strength": "primary",
+        "rationale": "ChaosNLI has 100-annotator-per-item entropy supervision; f_amb has the richest per-item structure available."
+      },
+      "pavlick_nli_aurc_improvement": {
+        "claim": "Gap mechanism improves AURC over single-probe baseline on Pavlick-NLI by at least 0.010 averaged across 3 models.",
+        "strength": "primary",
+        "rationale": "Pavlick-NLI has approximately 10-annotator-per-item disagreement; smaller annotator count than ChaosNLI but still showcase-regime."
+      },
+      "ambigqa_aurc_improvement": {
+        "claim": "Gap mechanism improves AURC over single-probe baseline on AmbigQA-k>=2 by at least 0.010 averaged across 3 models.",
+        "strength": "primary",
+        "rationale": "AmbigQA has per-question answer-set size as y_expert; metadata-derived but per-item, distinct from per-category aggregates."
+      },
+      "pubmedqa_aurc_improvement": {
+        "claim": "Gap mechanism improves AURC over single-probe baseline on PubMedQA by at least 0.010 averaged across 3 models.",
+        "strength": "primary",
+        "rationale": "PubMedQA's maybe label directly encodes per-item expert uncertainty; medical-domain showcase test."
+      }
+    },
+    "diagnostic_regime": {
+      "truthfulqa_no_improvement": {
+        "claim": "Gap mechanism does NOT improve AURC over single-probe baseline on TruthfulQA; AURC(gap) - AURC(p_pred) >= 0.",
+        "strength": "primary",
+        "rationale": "TruthfulQA y_expert is per-category aggregate; current aggregate result for LLaMA shows AURC(gap)=0.445 vs AURC(p_pred)=0.323. Earlier references to 0.287/0.178 are stale intermediate-analysis values."
+      },
+      "truthfulqa_credal_width_bimodal": {
+        "claim": "Bootstrap K=20 credal width on f_pred has median > 0.5 and credal width on f_defer has median < 0.10 on TruthfulQA.",
+        "strength": "primary",
+        "rationale": "Mechanism-visible signature of SCOD-collapse regime; existing K=20 result already confirms median 0.97 vs 0.02."
+      },
+      "medqa_no_improvement": {
+        "claim": "Gap mechanism does NOT improve AURC over single-probe baseline on MedQA; AURC(gap) - AURC(p_pred) >= 0.",
+        "strength": "primary",
+        "rationale": "MedQA y_expert is metadata-derived from question length; expected to fall in diagnostic regime per the source-by-granularity argument."
+      },
+      "medqa_credal_width_diagnostic_signature": {
+        "claim": "Bootstrap K=20 credal width on f_defer has median < 0.10 on MedQA.",
+        "strength": "secondary",
+        "rationale": "Pre-deployment diagnostic should correctly identify MedQA as a regime where the gap mechanism will not help."
+      }
+    },
+    "operational_diagnostic": {
+      "credal_width_correlation_showcase": {
+        "claim": "On showcase datasets, per-item credal width on f_defer correlates negatively with model correctness with point-biserial rho <= -0.10 and p < 0.05 on at least 2 of 4 showcase datasets.",
+        "strength": "secondary",
+        "rationale": "If f_defer is informative, bootstrap probes should disagree more on items where the model is wrong."
+      },
+      "credal_width_correlation_diagnostic": {
+        "claim": "On diagnostic datasets, per-item credal width on f_defer does NOT correlate with model correctness with p > 0.05 on at least 1 of 2 diagnostic datasets.",
+        "strength": "secondary",
+        "rationale": "Null result confirms the diagnostic regime."
+      }
+    },
+    "regime_separation_via_credal_width": {
+      "showcase_vs_diagnostic_median_separation": {
+        "claim": "Median bootstrap credal width on f_defer is at least 5x larger on showcase datasets, mean across 4, than on diagnostic datasets, mean across 2.",
+        "strength": "secondary",
+        "rationale": "The diagnostic regime split should be visible in the credal-width signature without test-time labels."
+      }
+    }
+  },
+  "methodology_commitments": {
+    "bootstrap_K": 20,
+    "calibration_alpha": 0.10,
+    "primary_calibration_alphas": [
+      0.05,
+      0.10,
+      0.20
+    ],
+    "split_proportions": {
+      "train": 0.6,
+      "calibration": 0.2,
+      "evaluation": 0.2
+    },
+    "split_stratification": "stratified by gold answer correctness within each dataset",
+    "n_seeds_main": 5,
+    "seeds_main": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "probe_C": 1.0,
+    "probe_class_weight": "balanced",
+    "y_expert_binarization": "median for continuous targets",
+    "layer_pooling": {
+      "layer_rel": -4,
+      "pool": "response_mean"
+    },
+    "no_HARKing_commitment": "All hyperparameter choices and method variants are locked at the time of this pre-registration. Any post-hoc additions, including free-generation evaluation or semantic entropy baseline, are reported as sensitivity analyses in appendices and do not affect the primary headline numbers."
+  },
+  "results_to_report_regardless_of_outcome": [
+    "AURC for {gap, robust gap, p_pred, p_defer, output_logprob, semantic_entropy_if_available} on all 6 datasets x 3 models",
+    "Bootstrap K=20 credal width statistics on all cells",
+    "Per-item credal width vs y_correct correlations on all cells",
+    "Coverage at fixed accuracy targets {0.85, 0.90, 0.95} on all cells",
+    "Conformal coverage achievement vs target on all cells"
+  ],
+  "locked": true
+}

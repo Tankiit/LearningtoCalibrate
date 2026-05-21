@@ -1,0 +1,4 @@
+model_key: qwen2_5_7b
+hf_model_id: Qwen/Qwen2.5-7B-Instruct
+layer: -1
+pool_method: last_token

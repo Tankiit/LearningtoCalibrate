@@ -1,0 +1,4 @@
+model_key: llama3_8b
+hf_model_id: meta-llama/Meta-Llama-3-8B-Instruct
+layer: -1
+pool_method: last_token

@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.claude/
+.cursor/
+.DS_Store
+
+# Experiment artifacts (never commit)
+outputs/
+results/
+logs/
+figures/
+
+# Derived / cached data (regenerate locally)
+data/independence_panels/
+collaborator_kit/cached_extractions/
+
+# Model / tensor checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Tabular caches
+*.parquet
+*.npz
+*.npy
+*.pkl
+*.pickle
+
+# Auto-generated per-seed shim configs from run_full_sweep.py
+configs/experiments/_run_*.yaml
+
+# Secrets
+.env
+.env.*

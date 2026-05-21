@@ -1,0 +1,4 @@
+extends:
+  - models/qwen2_5_7b
+  - datasets/truthfulqa
+seed: 0
