@@ -1,0 +1,7 @@
+__pycache__/
+.DS_Store
+.pytest_cache/
+figures/*.png
+figures/*.pdf
+figures/*.svg
+.matplotlib-cache/

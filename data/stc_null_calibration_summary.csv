@@ -1,0 +1,2 @@
+n_cells,n_finite_stc_cells,observed_max,shuffle_p99_max,shuffle_max_max,aligned_marginal_min,aligned_exact_min,shuffle_cells_p99_lt_0p10,aligned_cells_gt_0p10
+27,18,0.00830715517046124,0.09477190396866603,0.12294733487826948,0.3235117741696499,0.9999999999999999,18,18
