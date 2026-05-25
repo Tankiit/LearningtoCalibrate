@@ -1,0 +1,24 @@
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/figure1_hero.pdf}
+\caption{\textbf{Independence implies underperformance.}
+\textbf{(a)} Per-item joint distribution of probe outputs
+$(p_{\mathrm{pred}}, p_{\mathrm{defer}})$ on MedQA / LLaMA.
+The model-correctness probe $f_{\mathrm{pred}}$ separates items
+along the horizontal axis (blue: correct; red: wrong), while
+the expert-reliability probe $f_{\mathrm{defer}}$ does not
+separate items along the vertical axis. The two probes encode
+genuinely uncorrelated per-item information.
+\textbf{(b)} AURC of the single-probe baseline $f_{\mathrm{pred}}$
+and the gap composite $\Delta = \mathrm{logit}\,f_{\mathrm{pred}}
+- \mathrm{logit}\,f_{\mathrm{defer}}$ on all $18$
+non-constant-baseline cells ($15$ non-degenerate per-item +
+$3$ TruthfulQA). Every line slopes upward: the gap is worse
+than the single probe on every cell. Line color indicates the
+BDD bootstrap-stability regime; tight BDD cells (blue) exhibit
+the largest penalties, while borderline PubMedQA (orange)
+exhibits the smallest. The two pre-deployment diagnostics
+together predict not just \emph{whether} two-signal composition
+will fail but also \emph{by how much}.}
+\label{fig:hero}
+\end{figure*}

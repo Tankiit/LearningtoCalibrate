@@ -1,0 +1,35 @@
+[project]
+name = "ova_arr"
+version = "0.1.0"
+description = "Generation-discrimination gap for calibrated LLM deferral"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4",
+    "transformers>=4.45",
+    "datasets>=2.18,<2.21",          # datasets script support — see BioASQ adapter
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "cvxpy>=1.5",
+    "pandas",
+    "pyarrow",
+    "pyyaml",
+    "tqdm",
+    "modal",                         # extraction pipeline
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ipython",
+    "matplotlib",
+    "seaborn",
+]
+
+[tool.setuptools.packages.find]
+include = ["data*", "eval*", "extraction*", "gap*", "probes*", "utils*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

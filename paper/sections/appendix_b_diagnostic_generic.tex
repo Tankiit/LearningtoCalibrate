@@ -1,0 +1,47 @@
+\section{Method-Agnostic Validation of the Credal-Width Diagnostic}
+\label{app:diagnostic-generic}
+
+The bootstrap credal-width diagnostic measures whether bootstrap-resampled
+probes can extract per-item information from the deferral target. To test
+whether this diagnostic is specific to our gap mechanism, we compute it for a
+Verma-style OVA learn-to-defer alternative and compare the predicted regime
+against the observed selective-prediction performance.
+
+\paragraph{Verma OVA-L2D alternative.}
+We replace our expert-reliability supervision $y_{\text{expert}}(x)$ with the
+original Verma-style construction $y_{\text{expert}}^{\text{Verma}} =
+1-y_{\text{model}}$ on contrastive pairs. This supervision is perfectly
+anti-correlated with the prediction-probe target by construction. The resulting
+deferral probe therefore tests whether the two-head architecture alone is
+responsible for the effect, or whether the dataset-specific
+$y_{\text{expert}}$ signal carries additional per-item structure.
+
+\paragraph{Hypothesis.}
+If the credal-width diagnostic is method-agnostic, it should predict the
+regime correctly for both deferral targets. On datasets where the diagnostic
+predicts collapse for our gap, it should also predict collapse for the Verma
+gap; on showcase datasets, both constructions should show wider bootstrap
+intervals than the diagnostic regime.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{Our $f_{\text{defer}}$}
+& \multicolumn{2}{c}{Verma $f_{\text{defer}}^{\text{Verma}}$} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Dataset & median & p90 & median & p90 \\
+\midrule
+ChaosNLI       & [.] & [.] & [.] & [.] \\
+Pavlick-NLI    & [.] & [.] & [.] & [.] \\
+AmbigQA-$k{\geq}2$ & [.] & [.] & [.] & [.] \\
+TruthfulQA     & [.] & [.] & [.] & [.] \\
+HaluEval       & [.] & [.] & [.] & [.] \\
+\bottomrule
+\end{tabular}
+\caption{Bootstrap credal-width statistics ($K=20$) on the deferral probe for
+our construction and the Verma OVA-L2D alternative.}
+\label{tab:diagnostic-generic}
+\end{table}
+
