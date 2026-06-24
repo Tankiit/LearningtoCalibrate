@@ -1,0 +1,9 @@
+[project]
+name = "rsuq"
+version = "0.1.0"
+description = "Random-set uncertainty quantification: frames, beliefs, signals, diagnostics"
+requires-python = ">=3.10"
+dependencies = ["torch", "numpy", "scipy", "scikit-learn"]
+
+[project.optional-dependencies]
+exp = ["transformers", "datasets", "pytest"]

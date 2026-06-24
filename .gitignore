@@ -1,0 +1,56 @@
+# ---- Model weights / checkpoints ----
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.gguf
+*.onnx
+
+# ---- Hugging Face cache ----
+.cache/
+hf_cache/
+*.cache/
+
+# ---- Output caches (hidden states, latents) ----
+outputs/
+latent_cache/
+
+# ---- Experiment results (large JSON) ----
+results_*.pt
+results_*.json
+
+# ---- Logs ----
+*.log
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# ---- Virtual envs ----
+.venv/
+venv/
+env/
+.env
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---- Editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# ---- Misc ----
+*.npy
+*.npz
+wandb/
+.mlruns/
