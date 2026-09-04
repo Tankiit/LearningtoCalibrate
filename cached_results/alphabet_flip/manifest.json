@@ -1,0 +1,93 @@
+{
+  "flip_cell": "llama3_8b/truthfulqa",
+  "alphabets": {
+    "letter11": "ABCDEFGHJKL = 0..100 step 10, in-context legend",
+    "digits101": "digits101-v1, 0..100 step 1, no legend"
+  },
+  "confounds": [
+    "glyph class",
+    "legend indirection",
+    "resolution K=11 vs K=101"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "folds": [
+    "test",
+    "train"
+  ],
+  "s_q_protocol": "always fitted on the fold complementary to the one scored",
+  "discipline": "exploratory decomposition of an observed flip; no confirmatory count",
+  "shuffled_legend_control": {
+    "available_offline": false,
+    "reason": "the legend is part of CONF_PROMPT, so a permuted legend is a new elicitation; no cached blob holds it",
+    "requires": "a CONF_LEVELS permutation in extraction/modal_app.py, then one confidence pass over the same items",
+    "decides": "if V is unchanged under permutation, V tracks the letter and not the value it denotes"
+  },
+  "next_experiment": "SINGLE-DIGIT ALPHABET (digit10-direct), levels 0-9 mapped to 0-90%.\n\nSingle digits are single tokens under both grouping and splitting tokenizers, so\nthis alphabet is clean on all three models. It is the only way to separate the\nalphabet effect from the tokenization effect: \"numeric vs letter\" is currently\nentangled with \"contaminated vs clean\", and exactly one cell is interpretable.\n\nWHAT IT HOLDS, AND HOW LOOSELY. K = 10 against the letter arm's 11, so\nresolution is held APPROXIMATELY, not matched by design. That the remaining\none-level mismatch does not carry the effect rests on (4) -- on Llama,\nrestricting the 101-level distribution to the 11-level letter support retained\n99% of the flip -- which is an argument plus a one-level gap, not a matched\ncontrol. Write it that way. K was never matched, and nobody should later be able\nto read this line as saying it was.\n\nWHAT STAYS ENTANGLED. digit10-direct against letter11 still varies glyph and\nmapping together, exactly as digits101 did: a digit carries its value directly,\na letter requires resolving an in-context legend. So the run establishes whether\nthe effect EXISTS beyond Llama. It does not say what the effect is made of.\nCharacterisation needs the permuted-legend arm (see shuffled_legend_status),\nwhich holds glyph fixed and moves mapping alone. A reviewer who reads\n\"characterised\" will ask which factor is responsible; without the permuted arm\nthere is no answer.\n\nWHAT IT MIGHT RETURN. Not necessarily six cells of one effect. An effect on\nLlama with nulls on Mistral and Qwen is a live outcome, and it yields a NARROWER\nclaim -- one model, format-sensitive -- rather than a broader one. Still worth\nthe pass, and still the run to do, but the decision rule mapping each outcome\nonto a claim must be fixed BEFORE the look, in the house style of\npaper/PREREGISTRATION_ADDITIVITY.md, whose second rule is the relevant shape:\npartial replication reports the narrower finding rather than nothing. No such\nprereg exists for this arm yet; it is a prerequisite, not a formality.\n\nCost: one elicitation pass. TruthfulQA alone is 817 items x 3 models x 2 sides.\n\nWhat it converts: an anomaly in one cell into an ESTABLISHED effect across six.\nWithout it the paper says the report result flipped on Llama under a different\nalphabet; with it the paper says whether elicitation format bears on the report\nchannel beyond one model. Protect this over the remaining appendix analyses.",
+  "checks": {
+    "cache_inventory": {
+      "rows": 6,
+      "csv": "cache_inventory.csv"
+    },
+    "answer_invariance_by_alphabet": {
+      "rows": 3,
+      "csv": "answer_invariance_by_alphabet.csv"
+    },
+    "adequacy_under_numeric": {
+      "rows": 8,
+      "csv": "adequacy_under_numeric.csv",
+      "rescued_cells": [
+        "llama3_8b/pavlick_nli"
+      ],
+      "blocked_cells": [
+        "mistral_7b/pavlick_nli",
+        "mistral_7b/truthfulqa",
+        "qwen2_5_7b/pavlick_nli",
+        "qwen2_5_7b/truthfulqa"
+      ]
+    },
+    "which_side_flips": {
+      "rows": 96,
+      "csv": "which_side_flips.csv",
+      "by_readout_csv": "which_side_flips_by_readout.csv"
+    },
+    "resolution_vs_content": {
+      "rows": 8,
+      "csv": "resolution_vs_content.csv",
+      "verdict": {
+        "llama3_8b/pavlick_nli": {
+          "flip_full": -0.30365940016612886,
+          "flip_at_matched_resolution": -0.31686499557296455,
+          "fraction_retained": 1.0434881824821198,
+          "effective_bins_letter": 1.0676162390060882,
+          "effective_bins_numeric": 3.0266881841163458,
+          "verdict": "different_judgement"
+        },
+        "llama3_8b/truthfulqa": {
+          "flip_full": 0.11753966466918167,
+          "flip_at_matched_resolution": 0.11650025718831108,
+          "fraction_retained": 0.9911569640444694,
+          "effective_bins_letter": 4.48696102146538,
+          "effective_bins_numeric": 28.4472744811115,
+          "verdict": "different_judgement"
+        }
+      }
+    },
+    "cross_alphabet_agreement": {
+      "rows": 12,
+      "csv": "cross_alphabet_agreement.csv",
+      "per_item_csv": "cross_alphabet_agreement_per_item.csv"
+    },
+    "paired_seed_test": {
+      "rows": 16,
+      "csv": "paired_seed_test.csv"
+    }
+  },
+  "figures": [
+    "scatter_llama3_8b_truthfulqa.png",
+    "scatter_llama3_8b_pavlick_nli.png"
+  ]
+}

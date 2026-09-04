@@ -1,0 +1,9 @@
+model,dataset,alphabet,K,n,pair_separation,status,note,effective_bins,max_bin_mass,measurable
+llama3_8b,truthfulqa,letter11,11.0,817.0,0.7089693282453741,readable,,4.48696102146538,0.44430844553243576,True
+llama3_8b,truthfulqa,digits101,101.0,817.0,0.9599803201574387,readable,,28.4472744811115,0.08445532435740515,True
+llama3_8b,pavlick_nli,letter11,11.0,496.0,0.023949169110459433,readable,,1.0676162390060882,0.9879032258064516,False
+llama3_8b,pavlick_nli,digits101,101.0,496.0,0.5962447051156728,readable,,3.0266881841163458,0.4657258064516129,True
+mistral_7b,truthfulqa,digits101,,,,requires_re_elicitation,no numeric-alphabet cache for mistral_7b/truthfulqa at /Users/tanmoy/research/OOD_detection/OVA_ARR/outputs/step1_extract/mistral_7b/truthfulqa/fine_conf.pt; this cell needs a re-elicitation pass (see cache_inventory),,,False
+mistral_7b,pavlick_nli,digits101,,,,requires_re_elicitation,no numeric-alphabet cache for mistral_7b/pavlick_nli at /Users/tanmoy/research/OOD_detection/OVA_ARR/outputs/step1_extract/mistral_7b/pavlick_nli/fine_conf.pt; this cell needs a re-elicitation pass (see cache_inventory),,,False
+qwen2_5_7b,truthfulqa,digits101,,,,requires_re_elicitation,no numeric-alphabet cache for qwen2_5_7b/truthfulqa at /Users/tanmoy/research/OOD_detection/OVA_ARR/outputs/step1_extract/qwen2_5_7b/truthfulqa/fine_conf.pt; this cell needs a re-elicitation pass (see cache_inventory),,,False
+qwen2_5_7b,pavlick_nli,digits101,,,,requires_re_elicitation,no numeric-alphabet cache for qwen2_5_7b/pavlick_nli at /Users/tanmoy/research/OOD_detection/OVA_ARR/outputs/step1_extract/qwen2_5_7b/pavlick_nli/fine_conf.pt; this cell needs a re-elicitation pass (see cache_inventory),,,False

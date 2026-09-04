@@ -1,0 +1,7 @@
+model,dataset,letter_cache,numeric_cache,letter_K,numeric_K,n_items,numeric_has_Vdist,ids_aligned,has_alt_form,conf_scheme,status
+llama3_8b,truthfulqa,True,True,11,101.0,817,True,True,True,digits101-v1,readable_both_alphabets
+llama3_8b,pavlick_nli,True,True,11,101.0,496,True,True,True,digits101-v1,readable_both_alphabets
+mistral_7b,truthfulqa,True,False,11,,817,False,False,False,,requires_re_elicitation
+mistral_7b,pavlick_nli,True,False,11,,496,False,False,False,,requires_re_elicitation
+qwen2_5_7b,truthfulqa,True,False,11,,817,False,False,False,,requires_re_elicitation
+qwen2_5_7b,pavlick_nli,True,False,11,,496,False,False,False,,requires_re_elicitation

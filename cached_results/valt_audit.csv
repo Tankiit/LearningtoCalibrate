@@ -1,0 +1,7 @@
+model,dataset,has_Valt_pos,has_Valt_neg,n_alt
+llama3_8b,pavlick_nli,True,True,496
+llama3_8b,truthfulqa,True,True,500
+mistral_7b,pavlick_nli,True,True,496
+mistral_7b,truthfulqa,True,True,500
+qwen2_5_7b,pavlick_nli,True,True,496
+qwen2_5_7b,truthfulqa,True,True,500

@@ -1,0 +1,17 @@
+{
+  "cells": [
+    "llama3_8b/pavlick_nli",
+    "llama3_8b/truthfulqa",
+    "mistral_7b/pavlick_nli",
+    "mistral_7b/truthfulqa",
+    "qwen2_5_7b/pavlick_nli",
+    "qwen2_5_7b/truthfulqa"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "direction_permutations": 1000,
+  "outcome": "logprob_pos_mean > logprob_neg_mean"
+}

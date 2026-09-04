@@ -1,0 +1,5 @@
+model,dataset,side,n,dist_corr,dist_mae,value_corr,value_mae,exact_state,state
+llama3_8b,truthfulqa,pos,817,0.7890438839817181,0.04339655896576836,0.9336137623184502,0.041559488084058016,False,mean_last_8_layers_then_final_RMSNorm
+llama3_8b,truthfulqa,neg,817,0.7999885135500983,0.042812130509323275,0.9422810004593103,0.03920582126953186,False,mean_last_8_layers_then_final_RMSNorm
+llama3_8b,pavlick_nli,pos,496,0.8223384269301247,0.04085297590799816,0.8299022484782811,0.012517073151238655,False,mean_last_8_layers_then_final_RMSNorm
+llama3_8b,pavlick_nli,neg,496,0.8178479578766213,0.04131668634107138,0.8124190689504612,0.012361945343324007,False,mean_last_8_layers_then_final_RMSNorm

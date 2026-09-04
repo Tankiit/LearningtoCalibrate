@@ -1,0 +1,2 @@
+model,dataset,n_cache,n_label_valid,coverage,agreement,preference_positive_rate,correct_rate,label_source,is_gold
+llama3_8b,truthfulqa,817,107,0.13096695226438188,0.8411214953271028,0.3925233644859813,0.40186915887850466,weak_exact_match_against_mc1_correct_wrong,False

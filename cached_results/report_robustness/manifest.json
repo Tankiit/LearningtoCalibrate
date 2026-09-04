@@ -1,0 +1,75 @@
+{
+  "cells": [
+    "llama3_8b/truthfulqa",
+    "llama3_8b/pavlick_nli",
+    "mistral_7b/truthfulqa",
+    "mistral_7b/pavlick_nli",
+    "qwen2_5_7b/truthfulqa",
+    "qwen2_5_7b/pavlick_nli"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "high_level": 0.7,
+  "compliance_strata": [
+    [
+      "low_[0,.70)",
+      0.0,
+      0.7
+    ],
+    [
+      "mid_[.70,.90)",
+      0.7,
+      0.9
+    ],
+    [
+      "high_[.90,1]",
+      0.9,
+      null
+    ]
+  ],
+  "delta_convention": "positive favors report channel",
+  "baseline_defence": "The question-only baseline is not artificially strong: on identical TruthfulQA items, the paired state probe improves its AURC from 0.481 to 0.335 for Llama, 0.402 to 0.298 for Mistral, and 0.414 to 0.260 for Qwen.",
+  "ordering_clarification": "Pair order is fixed by gold identity before the target is computed, and both channels receive both ordered branches. This differs from the withdrawn h_a construction, where the target selected the input branch.",
+  "concessions": "1. ONE a- PER QUESTION. The cache stores h_neg as [N, d], not\n[N, K, d]; a distractor sweep requires a full second extraction. The result is\nconditional on one draw of a-. Two qualitatively different constructions\n(curated falsehood on TruthfulQA and complementary label on Pavlick NLI) give\nthe same direction, which is weaker than robustness to the construction.\n\n2. a- IS DATASET-SUPPLIED, NOT MODEL-GENERATED. This is bounded by the deployed\nobject: V+ on the model's own answer performs worse than the paired report\n(-0.060 versus -0.011 over measurable cells). The objection therefore points\naway from the paper's conclusion, but it remains a construction limitation.\n\n3. TEACHER-FORCING IS OFF-POLICY. Forcing a- can put the model in a state that\nsampling would not reach. This is the cost of exact item-level difficulty\ncontrol. Alphabet mass (0.61--0.94 on Llama and Mistral) records how far the\nelicitation goes off-format and is reported rather than treated as harmless.\n\n4. SINGLE FIXED PARTITION. The experiment has no independent confirmatory\npartition; rerunning random splits cannot recreate one.\n",
+  "checks": {
+    "probe_readout": {
+      "n_rows": 36,
+      "per_seed": "probe_readout_per_seed.csv",
+      "summary": "probe_readout_summary.csv",
+      "decision": {
+        "threshold": 0.01,
+        "n_cells_probe_materially_better": 0,
+        "all_cells_within_0.01": false,
+        "verdict": "mixed_review_required"
+      }
+    },
+    "alternative_readouts": {
+      "n_rows": 72,
+      "per_seed": "alternative_readouts_per_seed.csv",
+      "summary": "alternative_readouts_summary.csv"
+    },
+    "compliance_stratified": {
+      "n_rows": 54,
+      "per_seed": "compliance_stratified_per_seed.csv",
+      "summary": "compliance_stratified_summary.csv"
+    },
+    "alphabet_robustness": {
+      "n_rows": 12,
+      "per_seed": "alphabet_robustness_per_seed.csv",
+      "summary": "alphabet_robustness_summary.csv"
+    },
+    "target_convention": {
+      "n_rows": 36,
+      "per_seed": "target_convention_per_seed.csv",
+      "summary": "target_convention_summary.csv"
+    },
+    "metric_robustness": {
+      "n_rows": 54,
+      "per_seed": "metric_robustness_per_seed.csv",
+      "summary": "metric_robustness_summary.csv"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "cells": [
+    "llama3_8b/pavlick_nli",
+    "llama3_8b/truthfulqa",
+    "mistral_7b/pavlick_nli",
+    "mistral_7b/truthfulqa",
+    "qwen2_5_7b/pavlick_nli",
+    "qwen2_5_7b/truthfulqa"
+  ],
+  "train_test_seed": 0,
+  "n_boot": 2000,
+  "n_perm": 1000,
+  "n_split": 200,
+  "taus": [
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "files": [
+    "vminus_compliance_asymmetry.csv",
+    "vminus_stability_and_shift.csv",
+    "vminus_marginal_shapes.csv",
+    "vminus_contrast_channels.csv",
+    "vminus_manipulation_ladder.csv",
+    "vminus_mass_mean_orientation.csv",
+    "vminus_mass_mean_components.csv",
+    "vminus_norm_length_residual.csv",
+    "vminus_complementarity_coherence.csv",
+    "vminus_complementarity_by_margin.csv",
+    "vminus_sum_question_signal.csv",
+    "vminus_reparameterisation_bins.csv",
+    "vminus_reparameterisation_summary.csv"
+  ]
+}

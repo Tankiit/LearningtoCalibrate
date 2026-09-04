@@ -1,0 +1,106 @@
+{
+  "protocol": "neutral-token-prior-v1",
+  "rows": [
+    {
+      "model": "mistral_7b",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "conf_scheme": "letter11",
+      "neutral_question": "[neutral question]",
+      "neutral_answer": "[neutral answer]",
+      "candidate_values": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "candidate_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "L"
+      ],
+      "candidate_token_ids": [
+        1098,
+        1133,
+        1102,
+        1152,
+        1181,
+        1169,
+        1188,
+        1150,
+        1243,
+        1292,
+        1161
+      ],
+      "dropped": {},
+      "candidate_mass": 0.34099578857421875,
+      "omitted_mass": 0.6590042114257812,
+      "conditional_entropy": 2.1370028185953696,
+      "effective_support": 8.474001409997468,
+      "tokenizer": "TokenizersBackend"
+    },
+    {
+      "model": "mistral_7b",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "conf_scheme": "digit10-direct",
+      "neutral_question": "[neutral question]",
+      "neutral_answer": "[neutral answer]",
+      "candidate_values": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90
+      ],
+      "candidate_labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "candidate_token_ids": [
+        29502,
+        29508,
+        29518,
+        29538,
+        29549,
+        29550,
+        29552,
+        29555,
+        29551,
+        29542
+      ],
+      "dropped": {},
+      "candidate_mass": 0.006318092346191406,
+      "omitted_mass": 0.9936819076538086,
+      "conditional_entropy": 2.1924215094801687,
+      "effective_support": 8.956876035862383,
+      "tokenizer": "TokenizersBackend"
+    }
+  ]
+}

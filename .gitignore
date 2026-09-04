@@ -1,0 +1,21 @@
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+*.so
+
+# Local environment folders
+.venv/
+venv/
+.env/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Large/local cache artifacts
+activation_cache/
+
+# Keep only the top-level README markdown file
+**/*.md
+**/*.MD
+!README.md
+!README.MD

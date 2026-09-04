@@ -1,0 +1,22 @@
+The question-only baseline is not artificially strong: on identical TruthfulQA items, the paired state probe improves its AURC from 0.481 to 0.335 for Llama, 0.402 to 0.298 for Mistral, and 0.414 to 0.260 for Qwen.
+
+Pair order is fixed by gold identity before the target is computed, and both channels receive both ordered branches. This differs from the withdrawn h_a construction, where the target selected the input branch.
+
+1. ONE a- PER QUESTION. The cache stores h_neg as [N, d], not
+[N, K, d]; a distractor sweep requires a full second extraction. The result is
+conditional on one draw of a-. Two qualitatively different constructions
+(curated falsehood on TruthfulQA and complementary label on Pavlick NLI) give
+the same direction, which is weaker than robustness to the construction.
+
+2. a- IS DATASET-SUPPLIED, NOT MODEL-GENERATED. This is bounded by the deployed
+object: V+ on the model's own answer performs worse than the paired report
+(-0.060 versus -0.011 over measurable cells). The objection therefore points
+away from the paper's conclusion, but it remains a construction limitation.
+
+3. TEACHER-FORCING IS OFF-POLICY. Forcing a- can put the model in a state that
+sampling would not reach. This is the cost of exact item-level difficulty
+control. Alphabet mass (0.61--0.94 on Llama and Mistral) records how far the
+elicitation goes off-format and is reported rather than treated as harmless.
+
+4. SINGLE FIXED PARTITION. The experiment has no independent confirmatory
+partition; rerunning random splits cannot recreate one.
