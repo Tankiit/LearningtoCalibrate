@@ -1,0 +1,24 @@
+{
+  "model": "llama3_8b",
+  "dataset": "truthfulqa",
+  "fold": "seed0_train",
+  "n_train": 491,
+  "n_rel_letter": 296,
+  "n_rel_numeric": 296,
+  "rho_cross_spearman": 0.20540652603001364,
+  "rel_letter_spearman": 0.26086055238597605,
+  "rel_numeric_spearman": 0.791477301646793,
+  "ceiling": 0.454384425468726,
+  "ratio": 0.4520545038886928,
+  "ratio_threshold": 0.5,
+  "verdict": "fails",
+  "band_letter_before": [
+    0.5675197585485876,
+    0.766043870896101
+  ],
+  "band_letter_after": [
+    0.05182926829268293,
+    0.9481707317073171
+  ],
+  "numeric_reliability_source": "Valt_pos alternate-form cache, same train fold"
+}

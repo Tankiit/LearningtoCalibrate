@@ -1,0 +1,23 @@
+{
+  "arm": "letter11-permuted",
+  "permutation": "reversal",
+  "models": [
+    "llama3_8b",
+    "mistral_7b",
+    "qwen2_5_7b"
+  ],
+  "datasets": [
+    "truthfulqa",
+    "pavlick_nli"
+  ],
+  "bootstrap": {
+    "unit": "item",
+    "draws": 2000,
+    "seed": 20260905
+  },
+  "ratio_threshold": 0.5,
+  "decision_basis": "V\u207a perm correlation against recomputed letter11-v1 alternate-form reliability",
+  "correlation_space": "denoted_value_space; Vdist dot arm-specific conf_values/100",
+  "interpretation": "six_of_six_legend_noninvariance; neither pure value-tracking nor unchanged-token reversal account predicts near-zero ordering agreement",
+  "status": "exploratory; fixed reversal, paired by example_id"
+}

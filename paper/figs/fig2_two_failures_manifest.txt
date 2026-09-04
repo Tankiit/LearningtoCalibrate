@@ -1,0 +1,6 @@
+item_id=d28dd71f5793f297
+selection=closest to median absolute delta V+ among fixed filtered set
+numeric_P100=0.382423
+first_split_token=1
+panel_A_source=llama3_8b/truthfulqa/fine_conf.pt
+panel_B_source=canonical letter11-v1 plus letter11-permuted

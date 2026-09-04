@@ -17,5 +17,5 @@ activation_cache/
 # Keep only the top-level README markdown file
 **/*.md
 **/*.MD
-!README.md
-!README.MD
+!/README.md
+!/README.MD
