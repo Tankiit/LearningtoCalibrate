@@ -10,6 +10,8 @@ import argparse
 from collections import defaultdict
 from pathlib import Path
 import os
+import subprocess
+from html import escape
 
 import matplotlib
 matplotlib.use("Agg")
@@ -246,26 +248,128 @@ def _draw_elicitation_failure(ax, cell_dir: Path, item_id: str):
               fontsize=6, frameon=False, loc="upper right")
 
 
-def fig2(out: Path, item_id: str, cell_dir: Path):
-    """Two real-cache failures, using one fixed Llama/TruthfulQA item."""
-    fig, (ax_a, ax_b) = plt.subplots(
-        1, 2, figsize=(6.75, 2.9), gridspec_kw={"width_ratios": [1, 1]})
-    p100, first_token = _draw_token_failure(ax_a, cell_dir, item_id)
-    _draw_elicitation_failure(ax_b, cell_dir, item_id)
-    fig.text(0.5, 0.015,
-             "Llama 3 8B / TruthfulQA: no token failure, still shows B",
-             ha="center", fontsize=7)
-    fig.subplots_adjust(left=0.10, right=0.98, top=0.86, bottom=0.23,
-                        wspace=0.42)
-    fig.savefig(out / "fig2_two_failures.pdf", bbox_inches="tight")
-    plt.close(fig)
+def _svg_text(x, y, text, size=8, fill="#222", anchor="start", weight="400"):
+    return (f'<text x="{x}" y="{y}" font-family="Helvetica,Arial,sans-serif" '
+            f'font-size="{size}px" font-weight="{weight}" fill="{fill}" '
+            f'text-anchor="{anchor}">{escape(str(text))}</text>')
+
+
+def write_fig2_svg(out: Path, vdist101, fmap, v1, perm, meta):
+    """Write the two-failure figure as a data-driven, converter-free SVG."""
+    W, H = 680, 340
+    x0, x1, base = 40, 200, 180
+    scale = 74.0 / float(np.max(vdist101))
+    inverse = collisions(fmap)
+    bins = sorted(inverse, key=lambda token: min(inverse[token]))
+    reread = [sum(float(vdist101[v]) for v in inverse[token]) for token in bins]
+    spikes = "".join(
+        f'<rect x="{x0 + (x1-x0)*v/100:.2f}" y="{base-m*scale:.2f}" '
+        f'width="1.45" height="{m*scale:.2f}" fill="{"#D85A30" if v == 100 else "#888780"}"/>'
+        for v, m in enumerate(vdist101) if m > 0.002
+    )
+    rx0, rw = 254, 70
+    bars = "".join(
+        f'<rect x="{rx0 + rw*i/len(bins)+0.8:.2f}" y="{base-m*scale:.2f}" '
+        f'width="{rw/len(bins)-1.5:.2f}" height="{m*scale:.2f}" '
+        f'fill="{"#D85A30" if token == fmap[100] else "#888780"}"/>'
+        for i, (token, m) in enumerate(zip(bins, reread))
+    )
+    hot_i = bins.index(fmap[100])
+    hot_x = rx0 + rw*(hot_i + 0.5)/len(bins)
+    source_y = base - float(vdist101[100])*scale
+    arrow = (f'<path d="M {x1-2:.1f},{source_y:.1f} C 225,{source_y-30:.1f} '
+             f'235,{base-45:.1f} {hot_x:.1f},{base-18:.1f}" fill="none" '
+             'stroke="#D85A30" stroke-width="1.2" marker-end="url(#arrow)"/>')
+    b_x0, b_x1 = 370, 640
+    def marker(value, y, kind):
+        x = b_x0 + (b_x1-b_x0)*float(value)
+        if kind == "p":
+            return f'<circle cx="{x:.1f}" cy="{y}" r="5" fill="#534AB7"/>'
+        return f'<rect x="{x-5:.1f}" y="{y-5}" width="10" height="10" fill="#AFA9EC"/>'
+    def labels(vp, vn, y):
+        xp = b_x0 + (b_x1-b_x0)*float(vp)
+        xn = b_x0 + (b_x1-b_x0)*float(vn)
+        close = abs(xp-xn) < 18
+        p_anchor = "middle"
+        n_anchor = "start" if close else "middle"
+        n_x = xn + (12 if close else 0)
+        return (_svg_text(xp, y-11, f"V⁺ {vp:.2f}", 7, "#534AB7", p_anchor) +
+                _svg_text(n_x, y+17, f"V⁻ {vn:.2f}", 7, "#534AB7", n_anchor))
+    railB = (f'<line x1="{b_x0}" y1="92" x2="{b_x1}" y2="92" stroke="#C8C7C2"/>'
+             f'<line x1="{b_x0}" y1="172" x2="{b_x1}" y2="172" stroke="#C8C7C2"/>'
+             + marker(v1["Vp"], 92, "p") + marker(v1["Vn"], 92, "n")
+             + marker(perm["Vp"], 172, "p") + marker(perm["Vn"], 172, "n")
+             + labels(v1["Vp"], v1["Vn"], 92)
+             + labels(perm["Vp"], perm["Vn"], 172))
+    tick_lines = "".join(
+        f'<line x1="{b_x0+270*t:.1f}" y1="178" x2="{b_x0+270*t:.1f}" y2="183" stroke="#555"/>'
+        f'{_svg_text(b_x0+270*t, 195, f"{t:.1f}".replace("0.", "."), 6, "#444", "middle")}'
+        for t in np.linspace(0, 1, 6)
+    )
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
+<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#D85A30"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+{_svg_text(40, 24, "A. Token failure: one distribution, two readings", 11, weight="500")}
+{_svg_text(370, 24, "B. Elicitation failure: same tokens, two legends", 11, weight="500")}
+{_svg_text(40, 47, "model expressed: 101 value bins", 7, "#555")}
+{_svg_text(254, 47, f"Mistral/Qwen first-token reread: {len(bins)} bins", 7, "#555")}
+<line x1="{x0}" y1="{base}" x2="{x1}" y2="{base}" stroke="#555" stroke-width="0.7"/>
+<line x1="{rx0}" y1="{base}" x2="{rx0+rw}" y2="{base}" stroke="#555" stroke-width="0.7"/>
+{spikes}{bars}{arrow}
+{_svg_text(197, max(66, source_y-4), f"P(100) = {meta['P100']:.3f}", 7, "#D85A30", "end")}
+{_svg_text(40, 206, "0", 6, "#555", "middle")}{_svg_text(120, 206, "50", 6, "#555", "middle")}{_svg_text(200, 206, "100", 6, "#555", "middle")}
+{_svg_text(120, 220, "intended value", 7, "#444", "middle")}
+{_svg_text(289, 220, "first-token bin", 7, "#444", "middle")}
+{_svg_text(40, 244, '1     15     100  →  shared first token “1”', 8, "#D85A30")}
+{_svg_text(40, 258, "the model expressed 101 levels; the readout receives 10", 7, "#555")}
+{_svg_text(370, 54, "same item; values are in denoted-value space", 7, "#555")}
+{_svg_text(344, 96, "letter11-v1", 7, "#333", "end")}{_svg_text(344, 176, "letter11-permuted", 7, "#333", "end")}
+{railB}
+<line x1="{b_x0}" y1="180" x2="{b_x1}" y2="180" stroke="#555" stroke-width="0.7"/>{tick_lines}
+{_svg_text(505, 216, "V (denoted value)", 7, "#444", "middle")}
+{_svg_text(370, 239, "6/6 cells: Spearman ρ(V⁺v1,V⁺perm) = −.054…+.067", 7, "#333")}
+{_svg_text(370, 252, "same-instrument reliability = .261", 7, "#333")}
+{_svg_text(370, 271, "● V⁺    ■ V⁻", 7, "#534AB7")}
+{_svg_text(340, 317, "Llama 3 8B: no token failure, still shows B", 8, "#222", "middle")}
+</svg>'''
+    (out / "fig2_two_failures.svg").write_text(svg)
+    pdf_path = out / "fig2_two_failures.pdf"
+    try:
+        subprocess.run(["convert", "-font", "/System/Library/Fonts/Supplemental/Arial.ttf",
+                        "-background", "white", str(out / "fig2_two_failures.svg"),
+                        str(pdf_path)], check=True, capture_output=True, text=True)
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        # The SVG is canonical; keep the previous PDF only if conversion is
+        # unavailable so LaTeX users can still inspect the vector source.
+        pass
     (out / "fig2_two_failures_manifest.txt").write_text(
-        f"item_id={item_id}\n"
+        f"item_id={meta['item_id']}\n"
         "selection=closest to median absolute delta V+ among fixed filtered set\n"
-        f"numeric_P100={p100:.6f}\nfirst_split_token={first_token}\n"
+        f"numeric_P100={meta['P100']:.6f}\nfirst_split_token={fmap[100]}\n"
+        f"suppressed_mass_below_0.002={meta['suppressed_mass']:.6f}\n"
         "panel_A_source=llama3_8b/truthfulqa/fine_conf.pt\n"
         "panel_B_source=canonical letter11-v1 plus letter11-permuted\n"
     )
+
+
+def fig2(out: Path, item_id: str, cell_dir: Path):
+    """Two real-cache failures, using one fixed Llama/TruthfulQA item."""
+    tok = AutoTokenizer.from_pretrained(
+        _tokenizer_source("mistral_7b", MODELS["mistral_7b"]), local_files_only=True)
+    fmap = first_token_map(tok, range(101))
+    qwen_tok = AutoTokenizer.from_pretrained(
+        _tokenizer_source("qwen2_5_7b", MODELS["qwen2_5_7b"]), local_files_only=True)
+    if fmap != first_token_map(qwen_tok, range(101)):
+        raise RuntimeError("Mistral and Qwen split maps differ; figure assumption failed")
+    vdist, _ = load_vdist_item(cell_dir / "fine_conf.pt", item_id, "pos")
+    v1p, v1n = load_V_item(cell_dir / "logprobs.pt", item_id)
+    perm_path = Path(__file__).parent / "letter11_permuted_remote" / "llama3_8b_truthfulqa.pt"
+    permp, permn = load_V_item(perm_path, item_id)
+    suppressed = float(vdist[vdist <= 0.002].sum())
+    write_fig2_svg(out, vdist, fmap, {"Vp": v1p, "Vn": v1n},
+                   {"Vp": permp, "Vn": permn},
+                   {"item_id": item_id, "P100": float(vdist[100]),
+                    "suppressed_mass": suppressed})
 
 
 def load_V(cache_path: Path, scheme: str):
