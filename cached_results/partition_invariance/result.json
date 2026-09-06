@@ -10,6 +10,15 @@
   "rel_numeric_spearman": 0.791477301646793,
   "ceiling": 0.454384425468726,
   "ratio": 0.4520545038886928,
+  "ratio_ci": [
+    0.26180154068817046,
+    0.6468898438988836
+  ],
+  "ratio_bootstrap": {
+    "unit": "training item",
+    "draws": 2000,
+    "seed": 20260905
+  },
   "ratio_threshold": 0.5,
   "verdict": "fails",
   "band_letter_before": [

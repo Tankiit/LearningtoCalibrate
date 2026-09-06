@@ -25,6 +25,8 @@ from scripts.step_token_contribution import aurc
 # Frozen decision rule: ratio below one half of the reliability ceiling is
 # treated as disagreement beyond instrument noise.
 RATIO_THRESHOLD = 0.50
+BOOT = 2000
+BOOT_SEED = 20260905
 MODEL = "llama3_8b"
 DATASET = "truthfulqa"
 CELL = ROOT / "outputs" / "step1_extract" / MODEL / DATASET
@@ -87,6 +89,12 @@ def main():
     rho = rel_spearman(L_pos[train], D_pos[train])
     ceiling = float(np.sqrt(rel_L * rel_D))
     ratio = float(rho / ceiling)
+    rng = np.random.default_rng(BOOT_SEED)
+    draws = rng.integers(0, int(train.sum()), size=(BOOT, int(train.sum())))
+    rho_boot = np.asarray([
+        rel_spearman(L_pos[train][ix], D_pos[train][ix]) for ix in draws
+    ])
+    ratio_ci = np.percentile(rho_boot / ceiling, [2.5, 97.5]).tolist()
 
     # The transform is a sanity check, not an additional score.
     y = (np.asarray(letter_data["logprob_pos"], dtype=float)
@@ -101,6 +109,9 @@ def main():
         "n_rel_numeric": n_rel_D, "rho_cross_spearman": rho,
         "rel_letter_spearman": rel_L, "rel_numeric_spearman": rel_D,
         "ceiling": ceiling, "ratio": ratio,
+        "ratio_ci": [float(x) for x in ratio_ci],
+        "ratio_bootstrap": {"unit": "training item", "draws": BOOT,
+                             "seed": BOOT_SEED},
         "ratio_threshold": RATIO_THRESHOLD,
         "verdict": "fails" if ratio < RATIO_THRESHOLD else "holds",
         "band_letter_before": np.percentile(L_pos[train], [5, 95]).tolist(),

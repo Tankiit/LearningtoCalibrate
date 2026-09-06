@@ -22,11 +22,13 @@ ceiling of `0.454`.
 | numeric alternate-form Spearman | 0.791 |
 | geometric ceiling | 0.454 |
 | ratio | 0.452 |
+| 95% item-bootstrap interval for ratio | [0.262, 0.647] |
 | frozen threshold | 0.500 |
 | verdict | fails |
 
-The verdict is therefore that the two item orderings disagree beyond the
-prespecified half-ceiling threshold on this TRAIN fold. The quantile-transform
+The point estimate is close to the threshold, so its item-bootstrap interval
+is reported explicitly: `[0.262, 0.647]`. This exploratory result is
+supporting evidence, not a decisive threshold crossing. The quantile-transform
 sanity check passed: it left AURC unchanged. It did not produce the verdict;
 the verdict comes from the cross-format Spearman correlation relative to the
 reliability ceiling.

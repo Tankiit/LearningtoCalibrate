@@ -274,33 +274,17 @@ def write_fig2_svg(out: Path, vdist101, fmap, v1, perm, meta):
         f'fill="{"#D85A30" if token == fmap[100] else "#888780"}"/>'
         for i, (token, m) in enumerate(zip(bins, reread))
     )
-    hot_i = bins.index(fmap[100])
-    hot_x = rx0 + rw*(hot_i + 0.5)/len(bins)
-    source_y = base - float(vdist101[100])*scale
-    arrow = (f'<path d="M {x1-2:.1f},{source_y:.1f} C 225,{source_y-30:.1f} '
-             f'235,{base-45:.1f} {hot_x:.1f},{base-18:.1f}" fill="none" '
-             'stroke="#D85A30" stroke-width="1.2" marker-end="url(#arrow)"/>')
     b_x0, b_x1 = 370, 640
     def marker(value, y, kind):
         x = b_x0 + (b_x1-b_x0)*float(value)
         if kind == "p":
             return f'<circle cx="{x:.1f}" cy="{y}" r="5" fill="#534AB7"/>'
         return f'<rect x="{x-5:.1f}" y="{y-5}" width="10" height="10" fill="#AFA9EC"/>'
-    def labels(vp, vn, y):
-        xp = b_x0 + (b_x1-b_x0)*float(vp)
-        xn = b_x0 + (b_x1-b_x0)*float(vn)
-        close = abs(xp-xn) < 18
-        p_anchor = "middle"
-        n_anchor = "start" if close else "middle"
-        n_x = xn + (12 if close else 0)
-        return (_svg_text(xp, y-11, f"V⁺ {vp:.2f}", 7, "#534AB7", p_anchor) +
-                _svg_text(n_x, y+17, f"V⁻ {vn:.2f}", 7, "#534AB7", n_anchor))
     railB = (f'<line x1="{b_x0}" y1="92" x2="{b_x1}" y2="92" stroke="#C8C7C2"/>'
              f'<line x1="{b_x0}" y1="172" x2="{b_x1}" y2="172" stroke="#C8C7C2"/>'
              + marker(v1["Vp"], 92, "p") + marker(v1["Vn"], 92, "n")
              + marker(perm["Vp"], 172, "p") + marker(perm["Vn"], 172, "n")
-             + labels(v1["Vp"], v1["Vn"], 92)
-             + labels(perm["Vp"], perm["Vn"], 172))
+             )
     tick_lines = "".join(
         f'<line x1="{b_x0+270*t:.1f}" y1="178" x2="{b_x0+270*t:.1f}" y2="183" stroke="#555"/>'
         f'{_svg_text(b_x0+270*t, 195, f"{t:.1f}".replace("0.", "."), 6, "#444", "middle")}'
@@ -309,28 +293,17 @@ def write_fig2_svg(out: Path, vdist101, fmap, v1, perm, meta):
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
 <defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#D85A30"/></marker></defs>
 <rect width="100%" height="100%" fill="white"/>
-{_svg_text(40, 24, "A. Token failure: one distribution, two readings", 11, weight="500")}
-{_svg_text(370, 24, "B. Elicitation failure: same tokens, two legends", 11, weight="500")}
-{_svg_text(40, 47, "model expressed: 101 value bins", 7, "#555")}
-{_svg_text(254, 47, f"Mistral/Qwen first-token reread: {len(bins)} bins", 7, "#555")}
+{_svg_text(40, 24, "A", 11, weight="500")}
+{_svg_text(370, 24, "B", 11, weight="500")}
 <line x1="{x0}" y1="{base}" x2="{x1}" y2="{base}" stroke="#555" stroke-width="0.7"/>
 <line x1="{rx0}" y1="{base}" x2="{rx0+rw}" y2="{base}" stroke="#555" stroke-width="0.7"/>
-{spikes}{bars}{arrow}
-{_svg_text(197, max(66, source_y-4), f"P(100) = {meta['P100']:.3f}", 7, "#D85A30", "end")}
+{spikes}{bars}
 {_svg_text(40, 206, "0", 6, "#555", "middle")}{_svg_text(120, 206, "50", 6, "#555", "middle")}{_svg_text(200, 206, "100", 6, "#555", "middle")}
 {_svg_text(120, 220, "intended value", 7, "#444", "middle")}
 {_svg_text(289, 220, "first-token bin", 7, "#444", "middle")}
-{_svg_text(40, 244, '1     15     100  →  shared first token “1”', 8, "#D85A30")}
-{_svg_text(40, 258, "the model expressed 101 levels; the readout receives 10", 7, "#555")}
-{_svg_text(370, 54, "same item; values are in denoted-value space", 7, "#555")}
-{_svg_text(344, 96, "letter11-v1", 7, "#333", "end")}{_svg_text(344, 176, "letter11-permuted", 7, "#333", "end")}
 {railB}
 <line x1="{b_x0}" y1="180" x2="{b_x1}" y2="180" stroke="#555" stroke-width="0.7"/>{tick_lines}
 {_svg_text(505, 216, "V (denoted value)", 7, "#444", "middle")}
-{_svg_text(370, 239, "6/6 cells: Spearman ρ(V⁺v1,V⁺perm) = −.054…+.067", 7, "#333")}
-{_svg_text(370, 252, "same-instrument reliability = .261", 7, "#333")}
-{_svg_text(370, 271, "● V⁺    ■ V⁻", 7, "#534AB7")}
-{_svg_text(340, 317, "Llama 3 8B: no token failure, still shows B", 8, "#222", "middle")}
 </svg>'''
     (out / "fig2_two_failures.svg").write_text(svg)
     pdf_path = out / "fig2_two_failures.pdf"

@@ -58,7 +58,11 @@ def _candidate_ids(tokenizer):
     tails = [tail[lead:] for _, _, tail in continuations]
     if any(len(tail) != 1 for tail in tails):
         raise RuntimeError(f"permuted letter arm is not single-token: {tails}")
-    return [tail[0] for tail in tails], list(VALUES), [int(x) for x in base]
+    candidate_ids = [tail[0] for tail in tails]
+    if len(set(candidate_ids)) != len(candidate_ids):
+        raise RuntimeError("confidence letters collide at the read position")
+    common_prefix = continuations[0][2][:lead]
+    return candidate_ids, list(VALUES), common_prefix
 
 
 def _run(model_key: str, datasets: list[str], batch_size: int = 8):
@@ -77,7 +81,7 @@ def _run(model_key: str, datasets: list[str], batch_size: int = 8):
     model = AutoModelForCausalLM.from_pretrained(
         hf_name, torch_dtype=dtype, device_map="auto").eval()
     device = next(model.parameters()).device
-    candidate_ids, values, _ = _candidate_ids(tokenizer)
+    candidate_ids, values, common_prefix = _candidate_ids(tokenizer)
     candidate_ids_t = torch.tensor(candidate_ids, dtype=torch.long, device=device)
     values_np = np.asarray(values, dtype=np.float32) / 100.0
     print(f"{model_key}: candidate IDs={candidate_ids}, values={values}")
@@ -86,6 +90,7 @@ def _run(model_key: str, datasets: list[str], batch_size: int = 8):
         records = load_dataset(dataset)
         ids = []
         pos_rows, neg_rows = [], []
+        mass_rows = {"pos": [], "neg": []}
         for start in range(0, len(records), batch_size):
             batch = records[start:start + batch_size]
             for side, field, rows in (("pos", "correct_answer", pos_rows),
@@ -93,12 +98,22 @@ def _run(model_key: str, datasets: list[str], batch_size: int = 8):
                 prompts = [PROMPT.format(q=r.question, a=getattr(r, field))
                            for r in batch]
                 enc = tokenizer(prompts, padding=True, return_tensors="pt").to(device)
+                # Condition on any shared continuation tokens before reading
+                # the token that actually distinguishes the confidence values.
+                if common_prefix:
+                    prefix = torch.tensor(common_prefix, device=device).expand(len(batch), -1)
+                    enc["input_ids"] = torch.cat((enc["input_ids"], prefix), dim=1)
+                    enc["attention_mask"] = torch.cat((enc["attention_mask"], torch.ones_like(prefix)), dim=1)
                 with torch.no_grad():
                     logits = model(**enc).logits
-                last = enc["attention_mask"].sum(1).long() - 1
-                row_logits = logits[torch.arange(len(batch), device=device), last]
+                # With left padding the final real token is at column -1.
+                # sum(mask)-1 is valid only for right-padded batches.
+                row_logits = logits[:, -1, :].float()
                 selected = row_logits.index_select(1, candidate_ids_t)
                 dist = torch.softmax(selected, dim=1).float().cpu().numpy()
+                mass = torch.exp(torch.logsumexp(selected, dim=1)
+                                 - torch.logsumexp(row_logits, dim=1))
+                mass_rows[side].extend(mass.cpu().numpy())
                 rows.extend(dist)
                 del enc, logits, selected
             ids.extend(r.example_id for r in batch)
@@ -111,8 +126,8 @@ def _run(model_key: str, datasets: list[str], batch_size: int = 8):
         out = {
             "Vdist_pos": pos, "Vdist_neg": neg,
             "V_pos": pos @ values_np, "V_neg": neg @ values_np,
-            "Vmass_pos": np.ones(len(records), dtype=np.float32),
-            "Vmass_neg": np.ones(len(records), dtype=np.float32),
+            "Vmass_pos": np.asarray(mass_rows["pos"], dtype=np.float32),
+            "Vmass_neg": np.asarray(mass_rows["neg"], dtype=np.float32),
             "conf_values": np.asarray(values, dtype=np.int64),
             "example_ids": np.asarray(ids, dtype=object),
             "meta": {
@@ -120,10 +135,16 @@ def _run(model_key: str, datasets: list[str], batch_size: int = 8):
                 "conf_scheme": "letter11-permuted", "permutation": "reversal",
                 "conf_prompt": PROMPT, "has_s_conf": False,
                 "candidate_ids": candidate_ids,
+                "extractor_version": "leftpad-readout-v2",
+                "read_position": "final token after common continuation prefix",
+                "common_prefix_ids": common_prefix,
+                "padding_side": "left",
+                "mass_semantics": "full_vocabulary_probability_of_candidate_tokens",
+                "distribution_semantics": "conditional_on_candidate_tokens",
             },
         }
         import torch
-        out_path = f"/extract/letter11_permuted/{model_key}/{dataset}/letter11_permuted.pt"
+        out_path = f"/extract/letter11_permuted_v2/{model_key}/{dataset}/letter11_permuted.pt"
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
         torch.save(out, out_path)
         out_vol.commit()

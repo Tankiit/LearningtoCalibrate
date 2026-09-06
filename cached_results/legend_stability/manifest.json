@@ -1,0 +1,17 @@
+{
+  "forward": "canonical letter11-v1 logprobs.pt",
+  "reverse": "independently elicited letter11-permuted cache",
+  "score": "conditional V+ - V- in each arm's denoted-value space",
+  "mass": "forward Vmass reported; reverse full-vocabulary mass unavailable because legacy candidate-conditional cache was used",
+  "target": "mean-logprob preference; not candidate correctness",
+  "top_fraction": 0.2,
+  "tie_tolerance": 1e-12,
+  "bootstrap": {
+    "unit": "test question",
+    "draws": 2000,
+    "seed": 20260905
+  },
+  "status": "cached analysis; no forward pass; legacy letter11-permuted cache explicitly requested",
+  "summary_counts": "mean per split; overlapping test sets are not independent replications",
+  "selection_ties": "exact score ties broken by item ID; boundary tie means tied across cutoff"
+}

@@ -36,8 +36,7 @@ All cached cells use the same 11-value numeric alphabet, 0 through 100 in steps 
 (`H_norm` 0.888–0.932); Qwen is much sharper (0.152–0.291) and has much higher mean
 `V_pos` (0.895–0.922). Qwen also places about 99.8% probability mass on the allowed
 alphabet. Llama places 85–94% and Mistral 61–86%, so high entropy is not solely an
-off-alphabet syntax failure: their normalized restricted readout is itself diffuse and
-non-discriminating.
+off-alphabet syntax failure: their normalized restricted readout is itself diffuse.
 
 ## 3. Survives table
 
