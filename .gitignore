@@ -13,10 +13,17 @@ venv/
 
 # Large/local cache artifacts
 activation_cache/
+tinker_uq/runs/*/predictions.jsonl
 
 # Keep only the top-level README markdown file
 **/*.md
 **/*.MD
 !/README.md
 !/README.MD
-!/iclr_2027.md
+!/aistats_2027.md
+!/ptrue_preregistration.md
+!/p2_iclr/
+!/p2_iclr/**/*.md
+!/p2_iclr/**/*.py
+!/p1_aistats/
+!/p1_aistats/**/*.md

@@ -1,0 +1,7 @@
+model,dataset,n,n_alt,rho_forward_reversed,bootstrap_lo,bootstrap_hi,paired_bootstrap,bootstrap_unit,bootstrap_draws,bootstrap_seed,rel_fwd,falsified,usable_forward,usable_reversed,model_revision,legacy_artifact_used
+llama3_8b,truthfulqa,817,500,0.1227,0.0475,0.1960,true,item,2000,20260908,0.3510,true,1.000,1.000,0e9e39f249a16976918f6564b8830bc894c89659,false
+llama3_8b,pavlick_nli,496,496,0.1686,0.0809,0.2497,true,item,2000,20260908,0.2682,true,1.000,1.000,0e9e39f249a16976918f6564b8830bc894c89659,false
+mistral_7b,truthfulqa,817,500,0.0583,-0.0094,0.1223,true,item,2000,20260908,0.3653,true,1.000,1.000,c170c708c41dac9275d15a8fff4eca08d52bab71,false
+mistral_7b,pavlick_nli,496,496,0.7820,0.7507,0.8081,true,item,2000,20260908,0.8663,true,1.000,1.000,c170c708c41dac9275d15a8fff4eca08d52bab71,false
+qwen2_5_7b,truthfulqa,817,500,0.3400,0.2755,0.4037,true,item,2000,20260908,0.4684,true,1.000,1.000,a09a35458c702b33eeacc393d103063234e8bc28,false
+qwen2_5_7b,pavlick_nli,496,496,0.1250,0.0315,0.2137,true,item,2000,20260908,0.2075,false,1.000,1.000,a09a35458c702b33eeacc393d103063234e8bc28,false

@@ -1,5 +1,11 @@
 # `letter11-permuted` results
 
+**PROVISIONAL — not a live paper result.** The legacy artifacts in this
+directory have no recoverable schema, padding, checkpoint, or extractor
+version. A provenance regression against the current runner failed at
+`max_abs(Vdist)=0.988` on the first cell. The tables are retained for audit
+only until `letter11_permuted_v3` passes the amended regression gate.
+
 This is the fixed adversarial reversal preregistered in
 [`letter11_permuted_preregistration.md`](../../letter11_permuted_preregistration.md):
 `A=100% ... L=0%`, run on all three models and both datasets. The new arm was
@@ -31,9 +37,10 @@ The observed result is neither account.
 | Qwen | TruthfulQA | 0.067 | [-0.006, 0.134] | 0.468 | legend-noninvariant |
 | Qwen | Pavlick NLI | -0.054 | [-0.145, 0.035] | 0.207 | legend-noninvariant |
 
-The result is consistent across all three models on TruthfulQA and Pavlick NLI:
-the reversed legend does not preserve `V⁺` item ordering. The result is a
-six-of-six failure of invariance to admissible re-encoding. It does not identify
+The provisional table is consistent across all three models on TruthfulQA and
+Pavlick NLI: the legacy reversed legend does not preserve `V⁺` item ordering.
+This would be a six-of-six failure of invariance to admissible re-encoding if
+the v3 reproduction passes. It does not identify
 what replaces the original ordering: neither pure denoted-value tracking nor
 pure unchanged-token/glyph tracking predicts the near-zero correlations. The
 reversal holds the glyph sequence and list positions fixed, so no mechanism

@@ -7,6 +7,7 @@ fails closed when a cache schema or item-id alignment is not what it expects.
 from __future__ import annotations
 
 import argparse
+import csv
 from collections import defaultdict
 from pathlib import Path
 import os
@@ -216,9 +217,9 @@ def _draw_token_failure(ax, cell_dir: Path, item_id: str):
 
 def _draw_elicitation_failure(ax, cell_dir: Path, item_id: str):
     """Panel B: paired V+ and V- for one item under two legends."""
-    rows = [("letter11-v1", cell_dir / "logprobs.pt", 1.0),
-            ("letter11-permuted", Path(__file__).parent /
-             "letter11_permuted_remote" / "llama3_8b_truthfulqa.pt", 0.0)]
+    fresh = Path(__file__).parent / "letter11_provenance_v1" / "llama3_8b" / "truthfulqa"
+    rows = [("letter11-v1 (fresh)", fresh / "forward.pt", 1.0),
+            ("letter11-reversed (fresh)", fresh / "reversed.pt", 0.0)]
     for label, path, y in rows:
         vp, vn = load_V_item(path, item_id)
         ax.hlines(y, 0, 1, color="0.82", lw=0.7)
@@ -290,6 +291,31 @@ def write_fig2_svg(out: Path, vdist101, fmap, v1, perm, meta):
         f'{_svg_text(b_x0+270*t, 195, f"{t:.1f}".replace("0.", "."), 6, "#444", "middle")}'
         for t in np.linspace(0, 1, 6)
     )
+    # Fresh provenance-controlled population footer.  The grey marks are the
+    # ID-aligned alternate-form references; the orange dots are raw paired
+    # forward/reversed ordering correlations.
+    footer_x0, footer_x1, footer_y = 370, 640, 286
+    footer_axis = (f'<line x1="{footer_x0}" y1="{footer_y}" '
+                   f'x2="{footer_x1}" y2="{footer_y}" stroke="#555" stroke-width="0.7"/>')
+    footer_ticks = "".join(
+        f'<line x1="{footer_x0 + (footer_x1-footer_x0)*(t+1)/2:.1f}" '
+        f'y1="{footer_y-3}" x2="{footer_x0 + (footer_x1-footer_x0)*(t+1)/2:.1f}" '
+        f'y2="{footer_y+3}" stroke="#555"/>'
+        f'{_svg_text(footer_x0 + (footer_x1-footer_x0)*(t+1)/2, footer_y+13, f"{t:g}", 6, "#444", "middle")}'
+        for t in (-1, 0, 1)
+    )
+    footer_marks = ""
+    for i, row in enumerate(meta.get("rho_rows", [])):
+        x_rho = footer_x0 + (footer_x1-footer_x0) * (float(row["rho"]) + 1) / 2
+        x_rel = footer_x0 + (footer_x1-footer_x0) * (float(row["rel_fwd"]) + 1) / 2
+        y = footer_y - 8 - (i % 2) * 12
+        footer_marks += (f'<line x1="{x_rel:.1f}" y1="{y-4}" x2="{x_rel:.1f}" y2="{y+4}" '
+                         f'stroke="#8A8984" stroke-width="1"/>'
+                         f'<circle cx="{x_rho:.1f}" cy="{y}" r="3.2" fill="#BB632B"/>')
+    footer_labels = "".join(
+        _svg_text(footer_x1, footer_y-19, str(row["label"]), 5.2, "#666", "end")
+        for row in meta.get("rho_rows", [])
+    )
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
 <defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#D85A30"/></marker></defs>
 <rect width="100%" height="100%" fill="white"/>
@@ -304,6 +330,9 @@ def write_fig2_svg(out: Path, vdist101, fmap, v1, perm, meta):
 {railB}
 <line x1="{b_x0}" y1="180" x2="{b_x1}" y2="180" stroke="#555" stroke-width="0.7"/>{tick_lines}
 {_svg_text(505, 216, "V (denoted value)", 7, "#444", "middle")}
+{_svg_text(370, 248, "fresh across-item ordering: forward vs reversed legend", 7, "#444")}
+{footer_axis}{footer_ticks}{footer_marks}{footer_labels}
+{_svg_text(505, 322, "orange = rho; grey tick = rel_fwd", 6, "#666", "middle")}
 </svg>'''
     (out / "fig2_two_failures.svg").write_text(svg)
     pdf_path = out / "fig2_two_failures.pdf"
@@ -321,7 +350,9 @@ def write_fig2_svg(out: Path, vdist101, fmap, v1, perm, meta):
         f"numeric_P100={meta['P100']:.6f}\nfirst_split_token={fmap[100]}\n"
         f"suppressed_mass_below_0.002={meta['suppressed_mass']:.6f}\n"
         "panel_A_source=llama3_8b/truthfulqa/fine_conf.pt\n"
-        "panel_B_source=canonical letter11-v1 plus letter11-permuted\n"
+        "panel_B_source=letter11_provenance_v1 forward plus reversed (fresh, pinned)\n"
+        "panel_B_status=requires locked item-selection filter before rendering\n"
+        "population_rho=.123,.169,.058,.782,.340,.125\n"
     )
 
 
@@ -335,14 +366,22 @@ def fig2(out: Path, item_id: str, cell_dir: Path):
     if fmap != first_token_map(qwen_tok, range(101)):
         raise RuntimeError("Mistral and Qwen split maps differ; figure assumption failed")
     vdist, _ = load_vdist_item(cell_dir / "fine_conf.pt", item_id, "pos")
-    v1p, v1n = load_V_item(cell_dir / "logprobs.pt", item_id)
-    perm_path = Path(__file__).parent / "letter11_permuted_remote" / "llama3_8b_truthfulqa.pt"
-    permp, permn = load_V_item(perm_path, item_id)
+    fresh_dir = Path(__file__).parent / "letter11_provenance_v1" / "llama3_8b" / "truthfulqa"
+    v1p, v1n = load_V_item(fresh_dir / "forward.pt", item_id)
+    permp, permn = load_V_item(fresh_dir / "reversed.pt", item_id)
     suppressed = float(vdist[vdist <= 0.002].sum())
+    rows = []
+    with (Path(__file__).parent / "cached_results" / "letter11_provenance_v1" / "summary.csv").open() as fh:
+        for row in csv.DictReader(fh):
+            rows.append({
+                "label": f"{row['model']}/{row['dataset']}",
+                "rho": float(row["rho_forward_reversed"]),
+                "rel_fwd": float(row["rel_fwd"]),
+            })
     write_fig2_svg(out, vdist, fmap, {"Vp": v1p, "Vn": v1n},
                    {"Vp": permp, "Vn": permn},
                    {"item_id": item_id, "P100": float(vdist[100]),
-                    "suppressed_mass": suppressed})
+                    "suppressed_mass": suppressed, "rho_rows": rows})
 
 
 def load_V(cache_path: Path, scheme: str):
@@ -446,8 +485,14 @@ if __name__ == "__main__":
     parser.add_argument("--cell", type=Path,
                         default=ROOT / "outputs" / "step1_extract" /
                         "llama3_8b" / "truthfulqa")
-    parser.add_argument("--fig2-item", default="d28dd71f5793f297")
+    parser.add_argument("--fig2-item",
+                        help="item selected by the locked pre-render filter")
+    parser.add_argument("--fig3-only", action="store_true",
+                        help="regenerate Figure 3 without selecting Figure 2's item")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
-    fig2(args.out, args.fig2_item, args.cell)
+    if not args.fig3_only:
+        if not args.fig2_item:
+            parser.error("--fig2-item is required unless --fig3-only is used")
+        fig2(args.out, args.fig2_item, args.cell)
     fig3(args.out, args.cell)

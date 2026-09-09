@@ -1,0 +1,52 @@
+{
+  "command": "train",
+  "data": "data/pilot_llama31_8b/cached_answers.jsonl",
+  "model": "Qwen/Qwen3-8B",
+  "out": "runs/pilot_qwen3_8b",
+  "seed": 0,
+  "epochs": 1,
+  "rank": 16,
+  "batch_size": 8,
+  "lr": 0.0001,
+  "max_tokens": 4096,
+  "score_window": 256,
+  "data_sha256": "d03b2e258e19d5fe4f3c524b23c0918e03a23bc7c7f79ce22c1a01173b3ea425",
+  "audit": {
+    "train": {
+      "rows": 1003,
+      "questions": 1003,
+      "accuracy": 0.7936191425722832
+    },
+    "val": {
+      "rows": 200,
+      "questions": 200,
+      "accuracy": 0.755
+    },
+    "cal": {
+      "rows": 397,
+      "questions": 397,
+      "accuracy": 0.818639798488665
+    },
+    "test": {
+      "rows": 399,
+      "questions": 399,
+      "accuracy": 0.8270676691729323
+    }
+  },
+  "versions": {
+    "tinker": "0.26.1",
+    "torch": "2.10.0",
+    "transformers": "5.5.4"
+  },
+  "label_token_ids": [
+    [
+      32,
+      198
+    ],
+    [
+      33,
+      198
+    ]
+  ],
+  "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+}

@@ -1,0 +1,258 @@
+{
+  "q/base/normal/train": {
+    "n": 150,
+    "brier": 0.23999942707007957,
+    "nll": 5.117426921662532,
+    "auroc": 0.5855263157894737,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/normal/val": {
+    "n": 30,
+    "brier": 0.29982158168923767,
+    "nll": 5.698018498050644,
+    "auroc": 0.7037037037037037,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/normal/test": {
+    "n": 60,
+    "brier": 0.16665985113064424,
+    "nll": 3.1134070075203746,
+    "auroc": 0.7000000000000001,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/normal/cal": {
+    "n": 60,
+    "brier": 0.18333327546172118,
+    "nll": 3.87718167656201,
+    "auroc": 0.5732838589981447,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/reversed/train": {
+    "n": 150,
+    "brier": 0.22946924965302704,
+    "nll": 2.331006636246425,
+    "auroc": 0.6252436647173489,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/reversed/val": {
+    "n": 30,
+    "brier": 0.2922285880322139,
+    "nll": 2.9414108737909332,
+    "auroc": 0.6931216931216931,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/reversed/test": {
+    "n": 60,
+    "brier": 0.1494612945117106,
+    "nll": 1.4698370435065695,
+    "auroc": 0.642,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/base/reversed/cal": {
+    "n": 60,
+    "brier": 0.183352184113541,
+    "nll": 1.984570920587408,
+    "auroc": 0.5714285714285714,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/normal/train": {
+    "n": 150,
+    "brier": 0.16861875643828772,
+    "nll": 0.5126292748379861,
+    "auroc": 0.7436647173489278,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/normal/val": {
+    "n": 30,
+    "brier": 0.2022471972775499,
+    "nll": 0.5907958254546802,
+    "auroc": 0.6931216931216931,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/normal/test": {
+    "n": 60,
+    "brier": 0.14505329595353939,
+    "nll": 0.46591655321945813,
+    "auroc": 0.532,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/normal/cal": {
+    "n": 60,
+    "brier": 0.14759089035724796,
+    "nll": 0.46897374392535024,
+    "auroc": 0.6307977736549165,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/reversed/train": {
+    "n": 150,
+    "brier": 0.39675504437707537,
+    "nll": 1.015206323572743,
+    "auroc": 0.6228070175438596,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/reversed/val": {
+    "n": 30,
+    "brier": 0.37503855371993616,
+    "nll": 0.9695520423736305,
+    "auroc": 0.5079365079365079,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/reversed/test": {
+    "n": 60,
+    "brier": 0.40837451768346544,
+    "nll": 1.0333128148689952,
+    "auroc": 0.738,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "q/trained/reversed/cal": {
+    "n": 60,
+    "brier": 0.4299725793365849,
+    "nll": 1.0881240723878232,
+    "auroc": 0.5769944341372912,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/normal/train": {
+    "n": 150,
+    "brier": 0.19413641395762427,
+    "nll": 2.903136049678711,
+    "auroc": 0.8302875243664717,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/normal/val": {
+    "n": 30,
+    "brier": 0.20010202689153442,
+    "nll": 3.9903275828528106,
+    "auroc": 0.8518518518518519,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/normal/test": {
+    "n": 60,
+    "brier": 0.17998784853858102,
+    "nll": 2.1711249378300352,
+    "auroc": 0.874,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/normal/cal": {
+    "n": 60,
+    "brier": 0.1932037009208983,
+    "nll": 3.6169253433802364,
+    "auroc": 0.7068645640074211,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/reversed/train": {
+    "n": 150,
+    "brier": 0.18892273269235937,
+    "nll": 2.2408261456170386,
+    "auroc": 0.8396686159844053,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/reversed/val": {
+    "n": 30,
+    "brier": 0.19028250558150717,
+    "nll": 2.8085830037517967,
+    "auroc": 0.8518518518518519,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/reversed/test": {
+    "n": 60,
+    "brier": 0.1715946064844935,
+    "nll": 1.4834647565144339,
+    "auroc": 0.8679999999999999,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/base/reversed/cal": {
+    "n": 60,
+    "brier": 0.18479815545387088,
+    "nll": 2.7593335840923885,
+    "auroc": 0.7421150278293136,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/normal/train": {
+    "n": 150,
+    "brier": 0.10431081738050749,
+    "nll": 0.3339431680572192,
+    "auroc": 0.922270955165692,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/normal/val": {
+    "n": 30,
+    "brier": 0.16860221126052652,
+    "nll": 0.4693023025523472,
+    "auroc": 0.8306878306878307,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/normal/test": {
+    "n": 60,
+    "brier": 0.1059178339511191,
+    "nll": 0.3173461641915194,
+    "auroc": 0.8500000000000001,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/normal/cal": {
+    "n": 60,
+    "brier": 0.131336984583702,
+    "nll": 0.41392307095832115,
+    "auroc": 0.7551020408163265,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/reversed/train": {
+    "n": 150,
+    "brier": 0.12498177446949879,
+    "nll": 0.39703093040392556,
+    "auroc": 0.8993664717348927,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/reversed/val": {
+    "n": 30,
+    "brier": 0.15831404197765409,
+    "nll": 0.44602309592457984,
+    "auroc": 0.8412698412698413,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/reversed/test": {
+    "n": 60,
+    "brier": 0.15177832839644143,
+    "nll": 0.4480932064953457,
+    "auroc": 0.8340000000000001,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  },
+  "qa/trained/reversed/cal": {
+    "n": 60,
+    "brier": 0.1533330704250489,
+    "nll": 0.45668075014901366,
+    "auroc": 0.7588126159554731,
+    "within_question_pair_accuracy": null,
+    "paired_questions": 0
+  }
+}

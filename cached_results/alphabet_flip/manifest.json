@@ -32,62 +32,14 @@
       "rows": 6,
       "csv": "cache_inventory.csv"
     },
-    "answer_invariance_by_alphabet": {
-      "rows": 3,
-      "csv": "answer_invariance_by_alphabet.csv"
-    },
-    "adequacy_under_numeric": {
-      "rows": 8,
-      "csv": "adequacy_under_numeric.csv",
-      "rescued_cells": [
-        "llama3_8b/pavlick_nli"
-      ],
-      "blocked_cells": [
-        "mistral_7b/pavlick_nli",
-        "mistral_7b/truthfulqa",
-        "qwen2_5_7b/pavlick_nli",
-        "qwen2_5_7b/truthfulqa"
-      ]
-    },
     "which_side_flips": {
       "rows": 96,
       "csv": "which_side_flips.csv",
       "by_readout_csv": "which_side_flips_by_readout.csv"
     },
-    "resolution_vs_content": {
-      "rows": 8,
-      "csv": "resolution_vs_content.csv",
-      "verdict": {
-        "llama3_8b/pavlick_nli": {
-          "flip_full": -0.30365940016612886,
-          "flip_at_matched_resolution": -0.31686499557296455,
-          "fraction_retained": 1.0434881824821198,
-          "effective_bins_letter": 1.0676162390060882,
-          "effective_bins_numeric": 3.0266881841163458,
-          "verdict": "different_judgement"
-        },
-        "llama3_8b/truthfulqa": {
-          "flip_full": 0.11753966466918167,
-          "flip_at_matched_resolution": 0.11650025718831108,
-          "fraction_retained": 0.9911569640444694,
-          "effective_bins_letter": 4.48696102146538,
-          "effective_bins_numeric": 28.4472744811115,
-          "verdict": "different_judgement"
-        }
-      }
-    },
-    "cross_alphabet_agreement": {
-      "rows": 12,
-      "csv": "cross_alphabet_agreement.csv",
-      "per_item_csv": "cross_alphabet_agreement_per_item.csv"
-    },
     "paired_seed_test": {
       "rows": 16,
       "csv": "paired_seed_test.csv"
     }
-  },
-  "figures": [
-    "scatter_llama3_8b_truthfulqa.png",
-    "scatter_llama3_8b_pavlick_nli.png"
-  ]
+  }
 }
