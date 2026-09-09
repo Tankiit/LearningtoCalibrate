@@ -31,3 +31,12 @@ tinker_uq/runs/*/predictions.jsonl
 # Documentation for the vendored tinker_uq runner
 !/tinker_uq/README.md
 !/tinker_uq/VALIDATION.md
+
+# Tinker UQ derived artifacts: regenerable, kept out of git
+# datasets rebuild from evaluations_revisited/ via prepare_triviaqa.py
+# (each run's prepare_manifest.json records the source hash and settings)
+tinker_uq/data/*/cached_answers.jsonl
+tinker_uq/demo/
+tinker_uq/runs/*/predictions.jsonl
+tinker_uq/runs/*/aistats/sets.jsonl
+.DS_Store
