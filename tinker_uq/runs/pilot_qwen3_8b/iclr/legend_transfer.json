@@ -1,0 +1,218 @@
+{
+  "q/base/val": {
+    "spearman": 0.7602505062626567,
+    "mean_absolute_probability_change": 0.014642568631241137,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 100,
+        "intersection_fraction": 0.79,
+        "normal_error": 0.19,
+        "reversed_error": 0.18
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 160,
+        "intersection_fraction": 0.93125,
+        "normal_error": 0.225,
+        "reversed_error": 0.21875
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 180,
+        "intersection_fraction": 0.9833333333333333,
+        "normal_error": 0.22777777777777777,
+        "reversed_error": 0.22777777777777777
+      }
+    ]
+  },
+  "qa/base/val": {
+    "spearman": 0.8977682422181552,
+    "mean_absolute_probability_change": 0.03998685297705181,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 100,
+        "intersection_fraction": 0.9,
+        "normal_error": 0.04,
+        "reversed_error": 0.05
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 160,
+        "intersection_fraction": 0.9625,
+        "normal_error": 0.14375,
+        "reversed_error": 0.1375
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 180,
+        "intersection_fraction": 0.9777777777777777,
+        "normal_error": 0.19444444444444445,
+        "reversed_error": 0.17777777777777778
+      }
+    ]
+  },
+  "q/trained/val": {
+    "spearman": 0.45050626265656646,
+    "mean_absolute_probability_change": 0.6350165580793948,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 100,
+        "intersection_fraction": 0.67,
+        "normal_error": 0.13,
+        "reversed_error": 0.14
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 160,
+        "intersection_fraction": 0.83125,
+        "normal_error": 0.19375,
+        "reversed_error": 0.21875
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 180,
+        "intersection_fraction": 0.9,
+        "normal_error": 0.23333333333333334,
+        "reversed_error": 0.2222222222222222
+      }
+    ]
+  },
+  "qa/trained/val": {
+    "spearman": 0.8990234755868898,
+    "mean_absolute_probability_change": 0.2505798332699025,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 100,
+        "intersection_fraction": 0.94,
+        "normal_error": 0.04,
+        "reversed_error": 0.03
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 160,
+        "intersection_fraction": 0.95,
+        "normal_error": 0.14375,
+        "reversed_error": 0.14375
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 180,
+        "intersection_fraction": 0.95,
+        "normal_error": 0.18888888888888888,
+        "reversed_error": 0.18333333333333332
+      }
+    ]
+  },
+  "q/base/test": {
+    "spearman": 0.7252711608107449,
+    "mean_absolute_probability_change": 0.0145789773942988,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 200,
+        "intersection_fraction": 0.77,
+        "normal_error": 0.105,
+        "reversed_error": 0.12
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 320,
+        "intersection_fraction": 0.915625,
+        "normal_error": 0.1375,
+        "reversed_error": 0.140625
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 360,
+        "intersection_fraction": 0.9611111111111111,
+        "normal_error": 0.1527777777777778,
+        "reversed_error": 0.14444444444444443
+      }
+    ]
+  },
+  "qa/base/test": {
+    "spearman": 0.9010498737793133,
+    "mean_absolute_probability_change": 0.03357326081918274,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 200,
+        "intersection_fraction": 0.9,
+        "normal_error": 0.025,
+        "reversed_error": 0.04
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 320,
+        "intersection_fraction": 0.984375,
+        "normal_error": 0.1125,
+        "reversed_error": 0.109375
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 360,
+        "intersection_fraction": 0.9833333333333333,
+        "normal_error": 0.14166666666666666,
+        "reversed_error": 0.14444444444444443
+      }
+    ]
+  },
+  "q/trained/test": {
+    "spearman": 0.353617901537764,
+    "mean_absolute_probability_change": 0.6313276442852608,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 200,
+        "intersection_fraction": 0.645,
+        "normal_error": 0.075,
+        "reversed_error": 0.15
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 320,
+        "intersection_fraction": 0.834375,
+        "normal_error": 0.096875,
+        "reversed_error": 0.15625
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 360,
+        "intersection_fraction": 0.9111111111111111,
+        "normal_error": 0.13055555555555556,
+        "reversed_error": 0.1638888888888889
+      }
+    ]
+  },
+  "qa/trained/test": {
+    "spearman": 0.9045868439944083,
+    "mean_absolute_probability_change": 0.2454332889445676,
+    "retention": [
+      {
+        "fraction": 0.5,
+        "n_retained": 200,
+        "intersection_fraction": 0.895,
+        "normal_error": 0.025,
+        "reversed_error": 0.03
+      },
+      {
+        "fraction": 0.8,
+        "n_retained": 320,
+        "intersection_fraction": 0.925,
+        "normal_error": 0.1,
+        "reversed_error": 0.103125
+      },
+      {
+        "fraction": 0.9,
+        "n_retained": 360,
+        "intersection_fraction": 0.9583333333333334,
+        "normal_error": 0.12777777777777777,
+        "reversed_error": 0.11944444444444445
+      }
+    ]
+  }
+}

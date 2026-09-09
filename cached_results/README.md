@@ -66,13 +66,18 @@ the aggregate.
 
 ### Legend invariance
 
+**Status: provisional pending `letter11_permuted_v3`.** The legacy reversal
+artifact has no recoverable schema, padding, checkpoint, or extractor-version
+provenance, and failed regression against the current runner at
+`max_abs(Vdist)=0.988`. The correlations below are retained for audit only.
+
 The fixed reversed `letter11-permuted` arm is a same-glyph, same-position
 re-encoding test. In all six cells, the primary Spearman correlation between
 `V⁺_v1` and `V⁺_perm` is near zero (0.020, -0.004, -0.026, 0.055, 0.067,
 -0.054). These correlations are computed in each arm's **denoted-value
 space**: each cached `Vdist` is multiplied by that arm's mapped confidence
-levels before ranking. The result is therefore a six-of-six failure of item
-ordering invariance to the legend. It does not identify a replacement
+levels before ranking. The legacy table would therefore be a six-of-six failure
+of item-ordering invariance to the legend if reproduced by v3. It does not identify a replacement
 mechanism: neither pure value tracking (`rho=+1`) nor unchanged-token tracking
 under reversal (`rho=-1`) predicts the observed near-zero agreement. See
 [`letter11_permuted/README.md`](letter11_permuted/README.md).

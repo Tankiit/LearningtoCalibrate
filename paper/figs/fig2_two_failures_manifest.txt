@@ -1,7 +1,10 @@
-item_id=d28dd71f5793f297
+item_id=PENDING_SELECTION
+status=withdrawn_until_locked_filter_rerun
 selection=closest to median absolute delta V+ among fixed filtered set
 numeric_P100=0.382423
 first_split_token=1
 suppressed_mass_below_0.002=0.041001
 panel_A_source=llama3_8b/truthfulqa/fine_conf.pt
-panel_B_source=canonical letter11-v1 plus letter11-permuted
+panel_B_source=letter11_provenance_v1 forward plus reversed (fresh, pinned)
+panel_B_status=blocked until locked item-selection filter is rerun
+population_rho=0.123,0.169,0.058,0.782,0.340,0.125

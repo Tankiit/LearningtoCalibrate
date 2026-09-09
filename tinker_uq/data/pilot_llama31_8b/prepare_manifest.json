@@ -1,0 +1,41 @@
+{
+  "source_csv": "../evaluations_revisited/llama3.1_8b_chat/trivia_qa_60k/base/main_generations_evaluated_revisited.csv",
+  "source_sha256": "2e755baa4a4e6453cc18f8e598070d4eb6d673cde7ef21a6ff4c1f2bd4e716b2",
+  "generator_model": "llama3.1_8b_chat",
+  "dataset": "trivia_qa_60k",
+  "grading_column": "correct_revisited",
+  "split_fractions": {
+    "train": 0.5,
+    "val": 0.1,
+    "cal": 0.2,
+    "test": 0.2
+  },
+  "split_salt": "tinker-uq-v1",
+  "pilot_questions": 2000,
+  "pilot_seed": 0,
+  "stats": {
+    "csv_rows": 58546,
+    "dropped_empty_answer": 5,
+    "dropped_duplicate_question": 5214,
+    "exported_rows": 1999,
+    "accuracy": 0.8014,
+    "by_split": {
+      "train": {
+        "rows": 1003,
+        "accuracy": 0.7936
+      },
+      "val": {
+        "rows": 200,
+        "accuracy": 0.755
+      },
+      "cal": {
+        "rows": 397,
+        "accuracy": 0.8186
+      },
+      "test": {
+        "rows": 399,
+        "accuracy": 0.8271
+      }
+    }
+  }
+}

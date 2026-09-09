@@ -1,0 +1,38 @@
+{
+  "base/val": {
+    "question_mean_brier_gain_qa_over_q": 0.06278694016501926,
+    "question_bootstrap95": [
+      0.013068642282627867,
+      0.11170734000552181
+    ],
+    "questions": 200,
+    "bootstrap_draws": 1000
+  },
+  "trained/val": {
+    "question_mean_brier_gain_qa_over_q": 0.021515078726620066,
+    "question_bootstrap95": [
+      0.012685913668507735,
+      0.0307912371482485
+    ],
+    "questions": 200,
+    "bootstrap_draws": 1000
+  },
+  "base/test": {
+    "question_mean_brier_gain_qa_over_q": -0.0035589318680759987,
+    "question_bootstrap95": [
+      -0.03203488136149283,
+      0.02847290149303032
+    ],
+    "questions": 399,
+    "bootstrap_draws": 1000
+  },
+  "trained/test": {
+    "question_mean_brier_gain_qa_over_q": 0.0095939305609132,
+    "question_bootstrap95": [
+      0.004445366526205608,
+      0.015202001283224657
+    ],
+    "questions": 399,
+    "bootstrap_draws": 1000
+  }
+}
