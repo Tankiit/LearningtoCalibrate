@@ -27,3 +27,7 @@ tinker_uq/runs/*/predictions.jsonl
 !/p2_iclr/**/*.py
 !/p1_aistats/
 !/p1_aistats/**/*.md
+
+# Documentation for the vendored tinker_uq runner
+!/tinker_uq/README.md
+!/tinker_uq/VALIDATION.md
