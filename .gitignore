@@ -20,17 +20,6 @@ tinker_uq/runs/*/predictions.jsonl
 **/*.MD
 !/README.md
 !/README.MD
-!/aistats_2027.md
-!/ptrue_preregistration.md
-!/p2_iclr/
-!/p2_iclr/**/*.md
-!/p2_iclr/**/*.py
-!/p1_aistats/
-!/p1_aistats/**/*.md
-
-# Documentation for the vendored tinker_uq runner
-!/tinker_uq/README.md
-!/tinker_uq/VALIDATION.md
 
 # Tinker UQ derived artifacts: regenerable, kept out of git
 # datasets rebuild from evaluations_revisited/ via prepare_triviaqa.py
