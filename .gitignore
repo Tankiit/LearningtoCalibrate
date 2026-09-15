@@ -18,12 +18,13 @@ venv/
 activation_cache/
 tinker_uq/runs/*/predictions.jsonl
 
-# Keep only the top-level README markdown file
+# Keep the top-level README and explicitly requested experiment plan
 **/*.md
 **/*.MD
 !/README.md
 !/README.MD
 !/readme.md
+!/things2do.md
 
 # Tinker UQ derived artifacts: regenerable, kept out of git
 # datasets rebuild from evaluations_revisited/ via prepare_triviaqa.py
@@ -57,3 +58,9 @@ verbalized_confidence/clear_plots/
 /tinker_uq/tests/test_reporting.py
 /tinker_uq/tests/test_student_analysis.py
 /tinker_uq/tests/test_report_sets.py
+
+# One-off local report/status builders; retain scientific runners and analyses
+/build_iclr_report.py
+/compile_results.py
+/tinker_uq/post_analysis.py
+/tinker_uq/finish_training_report.py
