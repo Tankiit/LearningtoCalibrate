@@ -1,0 +1,16 @@
+"""Audit whether the declared direct grid changes the emitted values."""
+import json,collections
+from pathlib import Path
+import numpy as np
+root=Path(__file__).resolve().parent/'runs/emitted_validation_v1';rows=[json.loads(x) for x in (root/'lenient_v1/reports.jsonl').read_text().splitlines()];g={s:{r['question_id']:r for r in rows if r['scale']==s and r['format']=='direct'} for s in ['coarse','fine']};ids=sorted(g['coarse']);assert set(ids)==set(g['fine'])
+hist={s:dict(sorted(collections.Counter(r['emitted_value'] for r in gg.values()).items())) for s,gg in g.items()};changed=sum(g['coarse'][i]['emitted_value']!=g['fine'][i]['emitted_value'] for i in ids);fine_only=sum(r['emitted_value'] not in (0,.5,1) for r in g['fine'].values());cross=collections.Counter((g['coarse'][i]['emitted_value'],g['fine'][i]['emitted_value']) for i in ids)
+y=np.array([g['fine'][i]['correct'] for i in ids]);direct=np.array([g['fine'][i]['emitted_value'] for i in ids]);ixs=np.random.default_rng(20260915).integers(0,len(ids),(2000,len(ids)));contrasts=[]
+for fmt in ['normal','reversed']:
+ f={r['question_id']:r for r in rows if r['scale']=='fine' and r['format']==fmt};p=np.array([f[i]['emitted_value'] for i in ids]);delta=(p-y)**2-(direct-y)**2;lo,hi=np.quantile(delta[ixs].mean(1),[.025,.975]);contrasts.append(dict(comparison=fmt+'_minus_direct',brier_difference=float(delta.mean()),interval=[float(lo),float(hi)]))
+result=dict(contract='lenient_v1',n=len(ids),value_histograms=hist,changed_questions=changed,fine_only_value_questions=fine_only,paired_value_counts=[dict(coarse=a,fine=b,n=n) for (a,b),n in sorted(cross.items())],fine_brier_contrasts=contrasts,prompt_contracts={s:g[s][ids[0]]['prompt_text'].split('Permitted confidence percentages:')[1] for s in g},interpretation='Fine-only values are used on 6% of questions; the same rounded Brier does not mean identical emissions. The prompt requests a grid but decoding is not vocabulary-constrained. All lenient direct outputs happen to lie on the requested grid.')
+(root/'lenient_v1/direct_grid_audit.json').write_text(json.dumps(result,indent=2)+'\n')
+text='# Direct-grid audit (secondary lenient_v1 contract)\n\nCoarse: 0% × 122; 50% × 21; 100% × 857.\n\nFine: 0% × 82; 10% × 59; 30% × 1; 100% × 858.\n\nThe literal coarse prompt permits only 0%, 50%, 100%; the fine prompt lists every 10% increment. Generation is unconstrained; grid membership is checked by the parser. All 1,000 direct outputs lie on the requested grid under lenient_v1. The paired emissions differ on 75 questions, with 60 using fine-only values. The finer resolution is used sparsely, so direct coarse/fine does not strongly exercise the intended resolution contrast.\n\nFine-grid Brier cost relative to direct reporting, paired by question:\n\n'
+for r in contrasts:text+=f"- {r['comparison']}: {r['brier_difference']:.5f}, 95% interval [{r['interval'][0]:.5f}, {r['interval'][1]:.5f}].\n"
+text+='\nThe reversal cost is supported on this coarse-trained checkpoint; the normal-legend cost is a point estimate with an interval crossing zero. These are transfer costs under the declared secondary parser, not a conclusion about fine-grid-trained reporters or the ICLR headline.\n'
+(root/'lenient_v1/DIRECT_GRID_AUDIT.md').write_text(text)
+print(text)

@@ -1,0 +1,12 @@
+{
+  "contract": "lenient_v1",
+  "declaration_date": "2026-09-15",
+  "declaration_order": "Written before applying this contract to any cached response",
+  "primary_status": "strict_v1 remains primary for all previously reported results; no original result or raw cache is replaced",
+  "grammar": "One integer or finite decimal numeral, optionally followed by %. Leading/trailing whitespace allowed; no other text or internal whitespace, multiple numbers, signs, exponent notation, NaN or infinity.",
+  "units": "With %: divide by 100. Without %: values in [0,1] are probabilities; values in (1,100] are percentages divided by 100. Thus bare 1 is 100% confidence, while 1% is 1% confidence.",
+  "grid": "Exact Decimal equality against the declared numerical grid. No clipping, rounding or tolerance-based repair.",
+  "examples_fine": {"100": 1, "70": 0.7, "0.7": 0.7, "70%": 0.7, "1": 1, "1.0": 1},
+  "reject_fine": ["75", "0.75", "0.70000000000001", "70 80", "70% or 80%", "70\n80", "confidence: 70", "1e2", "0.7%"],
+  "scope": "Secondary cached-response interpretation is retrospective relative to original data collection. This declaration precedes applying lenient_v1, not the collection itself. Old optional_percent_v1 is a distinct percentage-units-only diagnostic."
+}

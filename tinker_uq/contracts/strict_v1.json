@@ -1,0 +1,8 @@
+{
+  "contract": "strict_v1",
+  "legacy_implementation_name": "strict_percent_v1",
+  "status": "Frozen primary contract for all already reported results",
+  "direct_grammar": "One permitted percentage with a required % suffix; outer whitespace ignored. No text extraction or output repair.",
+  "letter_grammar": "One exact permitted symbol; outer whitespace ignored",
+  "policy": "Preserve original raw caches and published strict metrics. Secondary lenient results do not replace them."
+}

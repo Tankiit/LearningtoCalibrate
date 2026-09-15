@@ -7,6 +7,9 @@ __pycache__/
 .venv/
 venv/
 .env/
+.env
+.env.*
+!.env.example
 
 # Notebook checkpoints
 .ipynb_checkpoints/
@@ -20,6 +23,7 @@ tinker_uq/runs/*/predictions.jsonl
 **/*.MD
 !/README.md
 !/README.MD
+!/readme.md
 
 # Tinker UQ derived artifacts: regenerable, kept out of git
 # datasets rebuild from evaluations_revisited/ via prepare_triviaqa.py
@@ -29,3 +33,27 @@ tinker_uq/demo/
 tinker_uq/runs/*/predictions.jsonl
 tinker_uq/runs/*/aistats/sets.jsonl
 .DS_Store
+
+# Generated experiment results and reports (historically tracked files stay tracked)
+cached_results/
+results/
+results_*/
+tinker_uq/runs/
+tinker_uq/audit_*/
+letter11_provenance_v1/
+letter11_provenance_download/
+letter11_permuted_remote/
+neutral_prior/
+token_mode_mean/
+paper/figs/
+verbalized_confidence/plots/
+verbalized_confidence/clear_plots/
+*.log
+/iclr_report_sources.json
+/tinker_uq/EXPERIMENT_STATUS.json
+
+# Local tests added during the September 14–15 experiment work
+/tinker_uq/tests/test_emissions.py
+/tinker_uq/tests/test_reporting.py
+/tinker_uq/tests/test_student_analysis.py
+/tinker_uq/tests/test_report_sets.py
