@@ -1,0 +1,46 @@
+Étape 4 (things2do.md §1) : note de décision, émissions réelles, brouillon à valider (2026-09-15)
+
+Protocole : naim-emissions-letter11-v2, sha256 6b171a6e9716b72e5039cb9643d1f2630544e6d81666b276a8e13ed76bcd7f02
+Cellules : Llama 3.1 8B, Mistral 7B v0.3, Qwen 2.5 7B (révisions épinglées), 817 questions TruthfulQA,
+2 candidats, légendes forward et reversed : 9 804 réponses sur 9 804, génération greedy, GPU A100-40GB.
+Contrôles : un seul protocole ; aucune clé dupliquée ; les 96 réponses du shard v2 sont reproduites
+token par token dans le run complet.
+Écart de protocole : après le shard v1, la grammaire passe en v2 (blancs initiaux ignorés), car
+Mistral écrit souvent '\nA'. Décision prise sur la validité du format ; shard v1 archivé dans shard_v1/.
+Les catégories d'analyse ont été fixées avant le run complet, mais aucun seuil numérique n'a été
+pré-déclaré.
+
+1. Validité (parser strict ; les invalides ne comptent jamais comme une confiance de 0)
+   Llama   forward 99,8 %  reversed 99,6 %
+   Mistral forward 69,5 %  reversed 89,1 %  (surtout la légende récitée 'A=0%', ou un pourcentage en chiffres)
+   Qwen    forward 100 %   reversed 100 %
+
+2. Changement numérique (candidats valides sous les deux légendes, IC 95 % par question)
+   Llama   |Δ| moyen 0,20 [0,20 ; 0,21], valeur changée pour 89 % des candidats
+   Mistral |Δ| moyen 0,62 [0,58 ; 0,65], 67 %  (n = 1 035 sur 1 634)
+   Qwen    |Δ| moyen 0,42 [0,40 ; 0,45], 72 %
+   -> La confiance émise change fortement quand la légende est inversée.
+
+3. Ordre des candidats (4 réponses par question)
+                inversion stricte   égalité   même ordre   invalide   taux d'inversion (paquets valides)   readout conditionnel
+   Llama        32                  707       73           5          3,9 % [2,7 ; 5,3]                     30,7 %
+   Mistral       7                  403        7           400        1,7 % [0,5 ; 3,0]                     39,3 %
+   Qwen         26                  700       91           0          3,2 % [2,1 ; 4,4]                     31,8 %
+   -> Les inversions strictes sont rares, parce que les modèles donnent le plus souvent la même lettre
+      aux deux candidats (égalités). Ce n'est pas une preuve de stabilité : l'émission ne sépare presque
+      pas les candidats.
+
+4. Qualité prédictive par légende (AUROC sur réponses valides)
+   Llama 0,53 / 0,53 ; Mistral 0,46 / 0,50 ; Qwen 0,52 / 0,49 -> proche du hasard.
+   Forte préférence de position : Qwen forward 'L' 89 % ; Mistral 'A' 59 % en forward et 93 % en reversed.
+
+5. Sensibilité (parser tolérant) : Mistral valide à 80 % / 98 % ; mêmes conclusions pour les points 2 à 4.
+
+Décision proposée
+- Affirmation soutenue sur les émissions (3 modèles) : inverser la légende change fortement la
+  confiance émise (point 2).
+- Affirmation NON soutenue sur les émissions : « l'inversion change quel candidat reçoit la plus haute
+  confiance ». Les inversions d'ordre (30,7 / 39,3 / 31,8 %) restent un résultat du readout conditionnel
+  seulement.
+- Limite à rapporter : les émissions sont grossières, dominées par les égalités et une préférence de
+  position, prédictives proches du hasard ; forte non-conformité de Mistral en forward.

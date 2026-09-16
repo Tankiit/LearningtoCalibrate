@@ -1,0 +1,5 @@
+legend,failure_reason,n,model
+forward,texte_en_trop,3,llama3_8b
+reversed,texte_en_trop,6,llama3_8b
+forward,texte_en_trop,498,mistral_7b
+reversed,texte_en_trop,178,mistral_7b

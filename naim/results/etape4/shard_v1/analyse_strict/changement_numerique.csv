@@ -1,0 +1,4 @@
+model,candidats_valides_deux_legendes,candidats_total,ecart_absolu_moyen,ecart_ic_bas,ecart_ic_haut,part_valeur_changee,part_ic_bas,part_ic_haut
+llama3_8b,16,16,0.16249999999999998,0.11249999999999998,0.20640624999999913,0.875,0.6875,1.0
+mistral_7b,4,16,0.0,0.0,0.0,0.0,0.0,0.0
+qwen2_5_7b,16,16,0.54375,0.325,0.75625,0.8125,0.5625,1.0

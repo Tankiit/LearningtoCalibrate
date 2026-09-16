@@ -1,0 +1,7 @@
+model,legende,reponses,valides,taux_validite
+llama3_8b,forward,16,16,1.0
+llama3_8b,reversed,16,16,1.0
+mistral_7b,forward,16,5,0.3125
+mistral_7b,reversed,16,14,0.875
+qwen2_5_7b,forward,16,16,1.0
+qwen2_5_7b,reversed,16,16,1.0

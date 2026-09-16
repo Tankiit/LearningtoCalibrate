@@ -1,0 +1,67 @@
+{
+  "script": "naim/etape3_sonde_correction.py",
+  "date_utc": "2026-09-16T00:48:12.853131+00:00",
+  "cible": "correction curée du candidat (mc1 TruthfulQA), pas la préférence teacher-forced",
+  "entree_lecteur": "h(q,a) d'un seul candidat ; ni paire ordonnée ni position",
+  "etats": {
+    "llama3_8b": {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "layer": -1,
+      "n_probe_layers": 8,
+      "pool_method": "first"
+    },
+    "mistral_7b": {
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "layer": -1,
+      "n_probe_layers": 8,
+      "pool_method": "first"
+    },
+    "qwen2_5_7b": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "layer": -1,
+      "n_probe_layers": 8,
+      "pool_method": "first"
+    }
+  },
+  "splits": "cached_results/state_readout/cross_fitted_predictions.csv (truthfulqa, letter11, seeds 0-2)",
+  "lecteur": {
+    "modele": "StandardScaler + LogisticRegression L2",
+    "grille_C": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "selection": "GroupKFold(5) par question sur le train, AUROC"
+  },
+  "baseline_longueur": "log1p(nombre de tokens du candidat), même lecteur",
+  "population": "817 paires = population du rapport ; test = 326 questions par seed",
+  "bootstrap": {
+    "unite": "question test (deux candidats ensemble)",
+    "n": 2000,
+    "seed": "20260915 + seed"
+  },
+  "controle_question_seule": "ordre = 1/2 par construction, non calculé",
+  "sous_ensemble_secondaire": "V_pos <= V_neg sous forward ET reversed ; évalué après ajustement",
+  "emissions": {
+    "source": "/media/naim/encrypted_drive/project/ICLR26/LearningtoCalibrate/naim/results/etape4/complet/emissions.jsonl",
+    "parser": "strict",
+    "regle": "questions dont les deux réponses ont une lettre lisible sous la légende ; une réponse invalide est exclue, jamais comptée comme confiance 0",
+    "comparaison": "sonde recalculée sur ce même sous-ensemble, différence bootstrapée par question"
+  },
+  "entrees_sha256": {
+    "letter11_provenance_v1/llama3_8b/truthfulqa/forward.pt": "d2f8226d32131ba6b10e423cf5bdc29ff776945faf2e67e7a68b40e026c0fb05",
+    "letter11_provenance_v1/llama3_8b/truthfulqa/reversed.pt": "dd35a30e24a0488386e3809c6a82ed3b7a8ec14d5d38f3e54c26141f77c1e3bc",
+    "letter11_provenance_v1/mistral_7b/truthfulqa/forward.pt": "ce8ea52cf1b3a7ed768c929363a848372504459f167773a1ea559409e06f20fb",
+    "letter11_provenance_v1/mistral_7b/truthfulqa/reversed.pt": "af1cfa5f41a8935d9b3e6d253324a06359c2fbef9c7ba116e1906a5d8c59c8fb",
+    "letter11_provenance_v1/qwen2_5_7b/truthfulqa/forward.pt": "e0822a3b14e3a88986e8e41907bf87d2848fa3ad2d6b55f1485c5ed38dafa285",
+    "letter11_provenance_v1/qwen2_5_7b/truthfulqa/reversed.pt": "65f89efd86c7f681c914f7ccb4d7576baf209e38626804534b8f5efa6f45c70c",
+    "llama3_8b/truthfulqa/hidden_states.pt": "eedfa054cc2971464e95d1950b3533b657e3f534d43ea4073777b99979a9bc87",
+    "llama3_8b/truthfulqa/logprobs.pt": "eb112134846cdd0c7cf3c1efbc04809a0e2be6df3422ecb09dd13f54a582cb1c",
+    "mistral_7b/truthfulqa/hidden_states.pt": "b760932e0b2acc55b29c4914d4df996afc06b17b15e083e8135a403bcd420fae",
+    "mistral_7b/truthfulqa/logprobs.pt": "b3a14a264ade88c648ad0278989c5c45d4d89282cce73acd940a6c3a384e7e80",
+    "qwen2_5_7b/truthfulqa/hidden_states.pt": "eae62a491d9bd7e179f7d13bda4a22b404047aedb7fc4a24df6ee1ba0c3c519f",
+    "qwen2_5_7b/truthfulqa/logprobs.pt": "3190a2c874e730e49b2b4807aa5be492a8f796560167b5dbf5c53238ecb0b1f8"
+  }
+}

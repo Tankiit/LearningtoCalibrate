@@ -1,0 +1,4 @@
+model,questions,n_inversion_stricte,n_egalite,n_meme_ordre,n_invalide,inversion_sur_paquets_valides,ic_bas_valides,ic_haut_valides,inversion_sur_toutes_questions,ic_bas_toutes,ic_haut_toutes,readout_conditionnel_inversion_memes_questions
+llama3_8b,8,1,7,0,0,0.125,0.0,0.375,0.125,0.0,0.375,0.25
+mistral_7b,8,0,2,0,6,0.0,0.0,0.0,0.0,0.0,0.0,0.375
+qwen2_5_7b,8,0,7,1,0,0.0,0.0,0.0,0.0,0.0,0.0,0.25

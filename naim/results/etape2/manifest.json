@@ -1,0 +1,21 @@
+{
+  "script": "naim/etape2_incertitude_reference.py",
+  "date_utc": "2026-09-15T16:30:03.152312+00:00",
+  "n_boot": 2000,
+  "seed": 20260915,
+  "unite_bootstrap": "question (mêmes tirages pour les trois modèles)",
+  "intervalles": "percentiles 2,5 / 97,5",
+  "analyse_principale": "population_complete",
+  "inference": "conditionnelle aux caches extraits ; aucun composant réajusté",
+  "entrees_sha256": {
+    "letter11_provenance_v1/llama3_8b/truthfulqa/forward.pt": "d2f8226d32131ba6b10e423cf5bdc29ff776945faf2e67e7a68b40e026c0fb05",
+    "letter11_provenance_v1/llama3_8b/truthfulqa/reversed.pt": "dd35a30e24a0488386e3809c6a82ed3b7a8ec14d5d38f3e54c26141f77c1e3bc",
+    "letter11_provenance_v1/mistral_7b/truthfulqa/forward.pt": "ce8ea52cf1b3a7ed768c929363a848372504459f167773a1ea559409e06f20fb",
+    "letter11_provenance_v1/mistral_7b/truthfulqa/reversed.pt": "af1cfa5f41a8935d9b3e6d253324a06359c2fbef9c7ba116e1906a5d8c59c8fb",
+    "letter11_provenance_v1/qwen2_5_7b/truthfulqa/forward.pt": "e0822a3b14e3a88986e8e41907bf87d2848fa3ad2d6b55f1485c5ed38dafa285",
+    "letter11_provenance_v1/qwen2_5_7b/truthfulqa/reversed.pt": "65f89efd86c7f681c914f7ccb4d7576baf209e38626804534b8f5efa6f45c70c",
+    "llama3_8b/truthfulqa/logprobs.pt": "eb112134846cdd0c7cf3c1efbc04809a0e2be6df3422ecb09dd13f54a582cb1c",
+    "mistral_7b/truthfulqa/logprobs.pt": "b3a14a264ade88c648ad0278989c5c45d4d89282cce73acd940a6c3a384e7e80",
+    "qwen2_5_7b/truthfulqa/logprobs.pt": "3190a2c874e730e49b2b4807aa5be492a8f796560167b5dbf5c53238ecb0b1f8"
+  }
+}

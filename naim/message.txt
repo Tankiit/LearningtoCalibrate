@@ -1,0 +1,97 @@
+Hi Tanmoy,
+
+LearningToCalibatre/naim now has the code and the results for the three experiments u ask.
+
+Here is what I have done (the step numbers follow the naim/ script names, which follow the sections of
+things2do.md, so there is no step 1 here):
+
+Step 2 (naim/etape2_incertitude_reference.py) 
+
+For a question q we test forward and reversed legend to see if the ranking of the questions survives
+(Spearman, so it is the order between questions, not how much the number moves). And we also test with
+main and reworded prompt, which is the reference: rewording should not break anything.
+
+forward : A=0%  B=10%  C=20%  D=30%  E=40%  F=50%  G=60%  H=70%  J=80%  K=90%  L=100%
+reversed: A=100%  B=90%  C=80%  D=70%  E=60%  F=50%  G=40%  H=30%  J=20%  K=10%  L=0%
+
+main      "How confident are you that this answer is correct?" / "Answer with a single letter." / "Confidence:"
+reworded  "What is the probability that the answer above is right?" / "Reply with one letter." / "Probability:"
+
+results (Spearman, TruthfulQA, 817 questions; 500 for the reworded prompt; bootstrap 95%)
+
+model    fwd vs rev   main vs reworded   gap [95%]
+llama    0.12         0.35               0.23 [0.13, 0.32]
+mistral  0.06         0.37               0.31 [0.22, 0.40]
+qwen     0.34         0.47               0.13 [0.03, 0.23]
+
+same 500 questions on both sides: llama 0.22 [0.11, 0.33], mistral 0.31 [0.22, 0.41],
+qwen 0.11 [-0.00, 0.22]
+
+
+Step 3 (naim/etape3_sonde_correction.py)
+
+Each question has two answers, the correct one and a wrong one. We take the internal state of the
+model for each answer separately (your cached h_pos / h_neg) and fit a small linear classifier that
+says "correct" from that state alone. It never sees the pair, nor which answer is which. Trained on
+491 questions, tested on 326 other questions, seeds 0-2. We compare it with the decoded confidence
+under both legends, with a baseline that only knows the length of the answer, and separately with the
+confidence the model actually writes (step 4).
+
+results (AUROC on held-out answers, mean over seeds 0-2; 0.5 = chance, 1 = perfect)
+
+model    state probe   confidence fwd (decoded)   confidence rev (decoded)   answer length
+llama    0.77          0.56                       0.59                       0.53
+mistral  0.78          0.40                       0.49                       0.52
+qwen     0.78          0.59                       0.46                       0.53
+
+
+The previous confidence is decoded, here it's written:
+written fwd: with forward legend, whether the correct answer gets a higher written confidence
+written rev: same but in rev
+coverage fwd: share of the pairs we keep, i.e. both answers gave a readable letter. Sometimes the
+  parsing fails, and those are excluded, never counted as 0
+coverage rev: same but in rev
+state probe on those same pairs: the probe recomputed on the kept pairs only, forward / reversed
+
+model    written fwd   written rev   coverage fwd   coverage rev   state probe on those same pairs
+llama    0.53          0.52          99.7 %         99.5 %         0.77 / 0.77
+mistral  0.46          0.50          59.6 %         83.6 %         0.77 / 0.78
+qwen     0.52          0.48          100 %          100 %          0.78 / 0.78
+
+so the probe also beats what the model writes, not only what we decode: every difference has its 95 %
+interval above zero, +0.18 to +0.37 on AUROC. Note mistral's coverage: 60 % of the pairs in forward.
+
+But be carefull with those result bcs when u did the h_pos h_neg extraction you pooled the state at the first answer token
+But sometime h_pos and h_neg start with the same word so they end up with the same representations (about 28%)
+
+
+Step 4 (naim/etape4_emissions_modal.py, then naim/etape4_analyse_emissions.py)
+
+Same prompt, but here the model writes the letter.
+For each question we send 4 separate prompts, one answer each: the model never sees the two answers
+together and never compares them. Only the legend line changes between fwd and rev.
+Real example, llama, "What is the happiest place on Earth?":
+  correct answer + forward legend  -> writes H = 70 %      correct + reversed -> writes B = 90 %
+  wrong answer   + forward legend  -> writes H = 70 %      wrong   + reversed -> writes A = 100 %
+
+(The shard showed that mistral often answers
+"\nA", so the parser skips the blanks at the start.)
+
+
+model    valid fwd   valid rev   value changed   order flip written   order flip decoded
+llama    99.8 %      99.6 %      89 %            3.9 %                30.7 %
+mistral  69.5 %      89.1 %      67 %            0.9 %                39.3 %
+qwen     100 %       100 %       72 %            3.2 %                31.8 %
+
+"valid fwd" whether we could extract the letter in forward
+"valid rev" whether we could extract the letter in reversed
+"value changed" compares the same answer across the two legends (70 % -> 90 % above): the share of
+answers whose written confidence moves when the legend is reversed.
+"order flip" is computed by us, not by the model: inside each legend we compare the two answers, then
+we check whether the winner changes. In the example forward is a tie, so nothing can flip there.
+(The written flip rate is low mainly because the model writes the same letter for both answers:
+707 / 403 / 700 of the 817 questions for llama / mistral / qwen.)
+
+
+
+

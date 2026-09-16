@@ -59,6 +59,12 @@ verbalized_confidence/clear_plots/
 /tinker_uq/tests/test_student_analysis.py
 /tinker_uq/tests/test_report_sets.py
 
+# naim/ (things2do experiments): code AND results are tracked, overriding results/ above.
+# Only the caches re-downloadable from the Modal volume stay out.
+!naim/results/
+!naim/results/**
+naim/cached_results/
+
 # One-off local report/status builders; retain scientific runners and analyses
 /build_iclr_report.py
 /compile_results.py

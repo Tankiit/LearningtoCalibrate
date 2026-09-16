@@ -1,0 +1,7 @@
+model,legende,reponses_valides,auroc,questions_deux_candidats_valides,ordre_correct
+llama3_8b,forward,16,0.5078125,8,0.5
+llama3_8b,reversed,16,0.4609375,8,0.4375
+mistral_7b,forward,5,0.5,2,0.5
+mistral_7b,reversed,15,0.5714285714285714,7,0.5714285714285714
+qwen2_5_7b,forward,16,0.625,8,0.625
+qwen2_5_7b,reversed,16,0.4921875,8,0.5

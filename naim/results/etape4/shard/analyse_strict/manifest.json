@@ -1,0 +1,8 @@
+{
+  "emissions": "/media/naim/encrypted_drive/project/ICLR26/LearningtoCalibrate/naim/results/etape4/shard/emissions.jsonl",
+  "parser": "strict",
+  "n_boot": 2000,
+  "seed": 20260915,
+  "protocol_sha256": "6b171a6e9716b72e5039cb9643d1f2630544e6d81666b276a8e13ed76bcd7f02",
+  "reponses": 96
+}
