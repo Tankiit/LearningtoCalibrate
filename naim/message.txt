@@ -1,6 +1,9 @@
 Hi Tanmoy,
 
-LearningToCalibatre/naim now has the code and the results for the three experiments u ask.
+
+First, could you give me push access to Tankiit/LearningtoCalibrate? 
+
+LearningtoCalibrate/naim is ready locally with the code and the results for the three experiments u ask.
 
 Here is what I have done (the step numbers follow the naim/ script names, which follow the sections of
 things2do.md, so there is no step 1 here):
