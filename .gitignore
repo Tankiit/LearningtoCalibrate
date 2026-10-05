@@ -27,6 +27,7 @@ tinker_uq/runs/*/predictions.jsonl
 !/p2_iclr/**/*.py
 !/p1_aistats/
 !/p1_aistats/**/*.md
+!/mondrian/HANDOFF_AISTATS_P1.md
 
 # Documentation for the vendored tinker_uq runner
 !/tinker_uq/README.md
