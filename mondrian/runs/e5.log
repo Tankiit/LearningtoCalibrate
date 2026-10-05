@@ -1,0 +1,55 @@
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+done llama3_8b
+done mistral_7b
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5_partition.py:131: RuntimeWarning: Mean of empty slice
+  "cell_cov": np.nanmean(np.array([x[3] for x in per]), 0).tolist()}
+done qwen2_5_7b
+tqa_llama3_8b {'60': (4, True, True), '120': (4, True, True), '180': (4, True, True), '272': (16, True, True)} Q4 {'MC': -0.0112, 'D': 0.0234}
+tqa_mistral_7b {'60': (1, False, False), '120': (4, True, True), '180': (8, True, True), '272': (8, True, True)} Q4 {'MC': -0.0058, 'D': 0.0249}
+tqa_qwen2_5_7b {'60': (4, True, True), '120': (4, True, True), '180': (4, True, True), '272': (8, True, True)} Q4 {'MC': -0.0059, 'D': 0.0235}
+popqa {'100': (1, False, False), '200': (1, False, False), '500': (1, False, False), '1000': (1, False, False), '2720': (1, False, False)} Q4 {'MC': 0.0043, 'D': 0.0089}

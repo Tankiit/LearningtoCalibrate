@@ -1,0 +1,17 @@
+{
+  "archive_sha256": "e9a0cb853443790893b884e912930bb9a4a0c356788964ea7df397ab79dbfacb",
+  "mapping": {
+    "README.md": "reports/archive_README.md",
+    "splits.py": "mondrian/splits.py",
+    "exemplars.py": "mondrian/exemplars.py",
+    "cells.py": "mondrian/cells.py",
+    "conformal.py": "mondrian/conformal.py",
+    "theory.py": "mondrian/theory.py",
+    "audit.py": "mondrian/audit.py",
+    "x1_synthetic.py": "experiments/x1_synthetic.py",
+    "x2_tabular.py": "experiments/x2_tabular.py",
+    "level2_balanced.py": "experiments/level2_balanced.py",
+    "x5_llm_cache.py": "experiments/x5_llm_cache.py",
+    "test_write_free.py": "tests/test_write_free.py"
+  }
+}

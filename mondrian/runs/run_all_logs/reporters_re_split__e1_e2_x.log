@@ -1,0 +1,54 @@
+  e1x_q: seed 0 done
+  e1x_q: seed 1 done
+  e1x_q: seed 2 done
+  e1x_q: seed 3 done
+  e1x_q: seed 4 done
+  e1x_q: seed 5 done
+  e1x_q: seed 6 done
+  e1x_q: seed 7 done
+  e1x_q: seed 8 done
+  e1x_q: seed 9 done
+  e1x_q: seed 10 done
+  e1x_q: seed 11 done
+  e1x_q: seed 12 done
+  e1x_q: seed 13 done
+  e1x_q: seed 14 done
+  e1x_q: seed 15 done
+  e1x_q: seed 16 done
+  e1x_q: seed 17 done
+  e1x_q: seed 18 done
+  e1x_q: seed 19 done
+  e1x_qa: seed 0 done
+  e1x_qa: seed 1 done
+  e1x_qa: seed 2 done
+  e1x_qa: seed 3 done
+  e1x_qa: seed 4 done
+  e1x_qa: seed 5 done
+  e1x_qa: seed 6 done
+  e1x_qa: seed 7 done
+  e1x_qa: seed 8 done
+  e1x_qa: seed 9 done
+  e1x_qa: seed 10 done
+  e1x_qa: seed 11 done
+  e1x_qa: seed 12 done
+  e1x_qa: seed 13 done
+  e1x_qa: seed 14 done
+  e1x_qa: seed 15 done
+  e1x_qa: seed 16 done
+  e1x_qa: seed 17 done
+  e1x_qa: seed 18 done
+  e1x_qa: seed 19 done
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e_llm.py:252: RuntimeWarning: Mean of empty slice
+  mean_c = np.nanmean(cells, 0); se_c = np.nanstd(cells, 0, ddof=1) / np.sqrt(np.sum(np.isfinite(cells), 0))
+/Users/tanmoy/anaconda3/envs/torch-multimodal/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:2019: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e_llm.py:252: RuntimeWarning: Mean of empty slice
+  mean_c = np.nanmean(cells, 0); se_c = np.nanstd(cells, 0, ddof=1) / np.sqrt(np.sum(np.isfinite(cells), 0))
+/Users/tanmoy/anaconda3/envs/torch-multimodal/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:2019: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+{
+ "forecast": null,
+ "e2": "PASS"
+}
+q FAIL {'interior': False, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [3.2, 3.8, 4.0, 6.2, 7.5, 8.9, 10.2, 12.2] slope 0.433 [0.38559552780906026, 0.45694112499595135]
+qa PASS {'interior': True, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [4.3, 7.0, 9.0, 11.5, 14.1, 16.5, 20.5, 24.6] slope 0.5 [0.46083856970393744, 0.5363205804062892]

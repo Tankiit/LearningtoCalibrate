@@ -1,0 +1,24 @@
+d=1 seed=0 done (2s)
+d=1 seed=1 done (4s)
+d=1 seed=2 done (6s)
+d=1 seed=3 done (7s)
+d=1 seed=4 done (9s)
+d=1 seed=5 done (10s)
+d=1 seed=6 done (12s)
+d=1 seed=7 done (14s)
+d=1 seed=8 done (15s)
+d=1 seed=9 done (17s)
+d=2 seed=0 done (22s)
+d=2 seed=1 done (26s)
+d=2 seed=2 done (31s)
+d=2 seed=3 done (35s)
+d=2 seed=4 done (39s)
+d=2 seed=5 done (43s)
+d=2 seed=6 done (47s)
+d=2 seed=7 done (52s)
+d=2 seed=8 done (56s)
+d=2 seed=9 done (60s)
+d1_voronoi {'slope_all_M': -0.969, 'slope_M>=4': -1.001, 'slope_M>=4_seed_sd': 0.03, 'slope_cover_radius_M>=4': -1.019, 'intercept_M>=4': 1.431, 'K_hat_max_over_seeds_and_M': 1.906, 'K_hat_max_over_seeds_M>=4': 1.906, 'theory_K_inf': 4.0, 'theory_K_lemma': 6.0, 'mc_vs_exact': [(4, 0.38620143519708205, np.float64(0.386185591031431)), (30, 0.0434709412709442, np.float64(0.043464970748682275)), (190, 0.007695546151815058, np.float64(0.007675962314569462))]}
+d1_kmeans {'slope_all_M': -0.923, 'slope_M>=4': -0.91, 'slope_M>=4_seed_sd': 0.008, 'slope_cover_radius_M>=4': -0.893, 'intercept_M>=4': 0.888, 'K_hat_max_over_seeds_and_M': 1.547, 'K_hat_max_over_seeds_M>=4': 1.547, 'theory_K_inf': 4.0, 'theory_K_lemma': 6.0, 'mc_vs_exact': [(4, 0.26960122328875147, np.float64(0.2695955999226477)), (30, 0.04063359564118163, np.float64(0.04062431085175344)), (190, 0.00803672570153946, np.float64(0.008031681470160645))]}
+d2_voronoi {'slope_all_M': -0.513, 'slope_M>=4': -0.539, 'slope_M>=4_seed_sd': 0.007, 'slope_cover_radius_M>=4': -0.562, 'intercept_M>=4': 2.053, 'K_hat_max_over_seeds_and_M': 2.286, 'K_hat_max_over_seeds_M>=4': 2.286, 'theory_K_inf': 4.514, 'theory_K_lemma': 6.77, 'mc_vs_exact': [(4, 0.9333806390562889, np.float64(0.9315421740904403)), (30, 0.36053225200198297, np.float64(0.3589077231640441)), (190, 0.12721460211913024, np.float64(0.1267374334101782))]}
+d2_kmeans {'slope_all_M': -0.476, 'slope_M>=4': -0.462, 'slope_M>=4_seed_sd': 0.004, 'slope_cover_radius_M>=4': -0.426, 'intercept_M>=4': 1.411, 'K_hat_max_over_seeds_and_M': 1.943, 'K_hat_max_over_seeds_M>=4': 1.943, 'theory_K_inf': 4.514, 'theory_K_lemma': 6.77, 'mc_vs_exact': [(4, 0.7146381945682361, np.float64(0.7103999166044614)), (30, 0.28231244257231536, np.float64(0.2793600165689541)), (190, 0.13349745846008995, np.float64(0.12916697659789117))]}

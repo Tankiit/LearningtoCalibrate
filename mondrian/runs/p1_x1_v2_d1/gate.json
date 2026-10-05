@@ -1,0 +1,108 @@
+{
+  "stage": "x1",
+  "status": "PASS",
+  "paper_status": "HOLD",
+  "criterion": "reports/estimand_note_2026-10-02.md",
+  "checks": {
+    "interior": true,
+    "mechanism": true,
+    "b0_argmin_M1": true,
+    "b0_beta": true,
+    "decomposition": true
+  },
+  "failed": [],
+  "equivalence_ci": [
+    0.04160164980871383,
+    0.08562704614694003
+  ],
+  "equivalence_ci_width": 0.0440253963382262,
+  "inconclusive_width": 0.2,
+  "edge_n_cal_below_min_mstar": [],
+  "floor_table": [
+    {
+      "n_cal": 300,
+      "Mstar_smoothed": 8.352902820261098,
+      "M_discrete": 8,
+      "R_pt_min": 0.0047317493122557685,
+      "R_pt_min_over_ceiling": 0.47317493122557674,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 11
+    },
+    {
+      "n_cal": 500,
+      "Mstar_smoothed": 11.875994656342483,
+      "M_discrete": 11,
+      "R_pt_min": 0.003490887563624674,
+      "R_pt_min_over_ceiling": 0.34908875636246733,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 18
+    },
+    {
+      "n_cal": 800,
+      "Mstar_smoothed": 14.186136699247138,
+      "M_discrete": 18,
+      "R_pt_min": 0.002638049092523598,
+      "R_pt_min_over_ceiling": 0.2638049092523598,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 23
+    },
+    {
+      "n_cal": 1300,
+      "Mstar_smoothed": 20.267791930927284,
+      "M_discrete": 23,
+      "R_pt_min": 0.001982553608496495,
+      "R_pt_min_over_ceiling": 0.19825536084964948,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 39
+    },
+    {
+      "n_cal": 2000,
+      "Mstar_smoothed": 21.610366444485873,
+      "M_discrete": 23,
+      "R_pt_min": 0.001351124511899079,
+      "R_pt_min_over_ceiling": 0.1351124511899079,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 51
+    },
+    {
+      "n_cal": 3200,
+      "Mstar_smoothed": 25.27493955229206,
+      "M_discrete": 23,
+      "R_pt_min": 0.0010106480106635016,
+      "R_pt_min_over_ceiling": 0.10106480106635014,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 87
+    },
+    {
+      "n_cal": 5000,
+      "Mstar_smoothed": 28.55971045816018,
+      "M_discrete": 23,
+      "R_pt_min": 0.0007898639287375666,
+      "R_pt_min_over_ceiling": 0.07898639287375664,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 112
+    },
+    {
+      "n_cal": 8000,
+      "Mstar_smoothed": 35.19941326199957,
+      "M_discrete": 39,
+      "R_pt_min": 0.0005598162707479498,
+      "R_pt_min_over_ceiling": 0.05598162707479497,
+      "n_below_floor_at_M_discrete": 0.0,
+      "infinite_mass_at_M_discrete": 0.0,
+      "first_M_with_floor_activity": 190
+    }
+  ],
+  "source_sha256": "32d32a34ede1525dbe4b241700afb2ec68dc4179cabbc5da909c41d9fa35edb6",
+  "max_decomposition_residual": 1.7515286096503324e-16,
+  "beta_msce_minus_expectation_seed_mean": 1.4215180896244078e-05,
+  "beta_msce_minus_expectation_seed_se": 2.8753315268103044e-05,
+  "scope": "PASS supports the decomposition mechanism and an interior optimum; not the asymptotic rate"
+}

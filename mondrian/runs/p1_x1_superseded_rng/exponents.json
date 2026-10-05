@@ -1,0 +1,123 @@
+{
+  "status": "DIAGNOSTIC",
+  "n_cal_grid": [
+    400,
+    800,
+    1600,
+    3200
+  ],
+  "M_grid": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "n_seeds": 8,
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 2027,
+  "functionals": {
+    "msce": {
+      "slope": 0.0,
+      "ci95": [
+        -0.10000000000000014,
+        0.3999999999999999
+      ],
+      "Mstar": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "boundary_minimum": true
+    },
+    "spread": {
+      "slope": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "Mstar": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "boundary_minimum": true
+    },
+    "concentrated": {
+      "slope": -1.499999999999999,
+      "ci95": [
+        -1.899999999999998,
+        -1.3975000000000004
+      ],
+      "Mstar": [
+        64,
+        1,
+        1,
+        2
+      ],
+      "boundary_minimum": true
+    },
+    "pointwise_msce": {
+      "slope": 0.5999999999999995,
+      "ci95": [
+        0.2999999999999997,
+        0.6999999999999997
+      ],
+      "Mstar": [
+        8,
+        16,
+        16,
+        32
+      ],
+      "boundary_minimum": false
+    }
+  },
+  "paired_slope_differences": {
+    "spread minus msce": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.3999999999999999,
+        0.10000000000000014
+      ]
+    },
+    "concentrated minus msce": {
+      "estimate": -1.499999999999999,
+      "ci95": [
+        -2.0999999999999983,
+        -1.2999999999999992
+      ]
+    },
+    "concentrated minus spread": {
+      "estimate": -1.499999999999999,
+      "ci95": [
+        -1.899999999999998,
+        -1.3975000000000004
+      ]
+    },
+    "pointwise_msce minus msce": {
+      "estimate": 0.5999999999999995,
+      "ci95": [
+        -5.551115123125783e-17,
+        0.7999999999999992
+      ]
+    },
+    "pointwise_msce minus spread": {
+      "estimate": 0.5999999999999995,
+      "ci95": [
+        0.2999999999999997,
+        0.6999999999999997
+      ]
+    },
+    "pointwise_msce minus concentrated": {
+      "estimate": 2.0999999999999983,
+      "ci95": [
+        1.699999999999998,
+        2.4999999999999973
+      ]
+    }
+  }
+}

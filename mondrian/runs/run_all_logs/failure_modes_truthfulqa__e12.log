@@ -1,0 +1,3 @@
+llama3_8b {'none_transport_moves_lt_0.005': True, 'level_positive_control_within_0.01': True}
+mistral_7b {'none_transport_moves_lt_0.005': True, 'level_positive_control_within_0.01': True}
+qwen2_5_7b {'none_transport_moves_lt_0.005': True, 'level_positive_control_within_0.01': True}

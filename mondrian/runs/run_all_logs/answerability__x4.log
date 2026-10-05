@@ -1,0 +1,7 @@
+X4 completed c=-1.5
+X4 completed c=-0.6
+X4 completed c=+0.0
+X4 completed c=+0.9
+X4 completed c=+2.2
+X4 completed c=+5.0
+X4 gate: PASS {'valid_arms_marginal': True, 'valid_arms_per_cell_in_expectation': True, 'mismatched_breaks_per_cell': True, 'answerable_matches_closed_form': True}

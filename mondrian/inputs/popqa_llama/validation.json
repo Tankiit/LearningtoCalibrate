@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "n_questions": 7377,
+  "state_shape": [
+    7377,
+    4096
+  ],
+  "role_counts": {
+    "fit": 2657,
+    "test": 2950,
+    "cal": 885,
+    "update": 885
+  },
+  "preserved_test_questions": 2950,
+  "unique_question_ids": true,
+  "disjoint_roles": true,
+  "development_ids_fit_only": true,
+  "predictor_replay_max_abs_error": 0.0,
+  "head_iterations": 144,
+  "selected_negative_alias_collisions": 95,
+  "cache_hashes": {
+    "rows.jsonl": "311c0680c9b41187db0b661402142c02fca30aa2e18cb0e62db536226ff60812",
+    "states.npz": "eea1bbb00889170437f3ae2f7aac029b1efcc4335c561ef24f514cd30296c771",
+    "manifest.json": "144ec0cdabf25d93942bff29123f8ca5b4f1de8d0549859117212b11db94c5c9"
+  }
+}

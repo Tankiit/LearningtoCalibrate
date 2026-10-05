@@ -1,0 +1,65 @@
+{
+  "cache": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/inputs/popqa_llama",
+  "cache_hashes": {
+    "rows.jsonl": "311c0680c9b41187db0b661402142c02fca30aa2e18cb0e62db536226ff60812",
+    "states.npz": "eea1bbb00889170437f3ae2f7aac029b1efcc4335c561ef24f514cd30296c771",
+    "manifest.json": "144ec0cdabf25d93942bff29123f8ca5b4f1de8d0549859117212b11db94c5c9"
+  },
+  "reference_fitted": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_fit",
+  "reference_evaluated": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_eval",
+  "reference_fit_sha256": "95b25723355685e7d453e873fd929e05a1998c4fefd38c50b853e773ce3993fa",
+  "reference_memory_k": 20,
+  "top_k": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "score_powers": [
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "config": {
+    "bins": 4,
+    "graph_k": 20,
+    "graph_seed": 0,
+    "memory_neighbors": 20,
+    "prior_strength": 5.0,
+    "budget": 200,
+    "cal_size": null,
+    "alpha": 0.1
+  },
+  "seeds": [
+    0
+  ],
+  "bootstrap_draws": 1000,
+  "bootstrap_seed": 0,
+  "code_sha256": "f1085b0360fc7bde33066c44a92c801f433b6b1bf283e7ec74bb71338ebfd90a",
+  "inference": "Exploratory paired comparisons on an already inspected test set. Two-sided exact McNemar coverage test and exact paired-swap mean-set-size test. Holm adjustment across all top-k/arm/partition comparisons and both outcomes together. Pointwise 95% question-bootstrap intervals condition on fitted snapshots; they exclude training/calibration variability. No setting selected from test results.",
+  "exponent_definition": "R_gamma(x,y)=R(x,y)**gamma, applied to both candidate labels and calibration true-label scores; thresholds re-estimated in the same cells. This is not a memory kernel exponent or probability renormalization.",
+  "status": "complete",
+  "n_summary_rows": 120,
+  "n_paired_comparisons": 224,
+  "holm_family_size": 448,
+  "score_power_changed_sets": 0,
+  "runs": {
+    "20": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_eval",
+    "1": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_paired_topk/k1_eval",
+    "5": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_paired_topk/k5_eval",
+    "10": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_paired_topk/k10_eval",
+    "50": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_paired_topk/k50_eval",
+    "100": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/popqa_seed0_paired_topk/k100_eval"
+  },
+  "report_sha256": {
+    "top_k_summary.csv": "10624addd1284c7dcdea654e7667e05ea9ba8ae1508bd28f3b675261b86c4128",
+    "paired_tests.csv": "8fc134de46c2c780c45ce54736779c4e66f951751829cae59dee100a81a88d9b",
+    "paired_tests.jsonl": "e841d76686b1ad1f69cdd8d57c8305771e0fa82580172d8ba2dc8f88fea1ec76",
+    "score_power.csv": "daa7ec22eaddb3eafbc62f91b4727e677eeeb00f5a3934c012fb762a6272aa68",
+    "score_power_thresholds.jsonl": "43b21757eab73bcbeb0d4b4ce1eac4f84cf4d181383833ba08e08325f08dfed1",
+    "plan.json": "d8da61da4f7338a1304067a0a3b360bd221f7eb3e24d77362a7db68d8a058992"
+  }
+}

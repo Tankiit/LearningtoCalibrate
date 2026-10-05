@@ -1,0 +1,11 @@
+{
+  "reporter_sha256": "4ce714e94674464f14c1a3d9adfe1dc95737d2ae66c64eca9504d2aceaa1402b",
+  "artifacts": {
+    "runs/truthfulqa_seed0_group_scaling/RESULTS.md": "b990e43240b6e9b31d65c4fd824e703f2a2d5655e882721c6907fbd9aaf590af",
+    "runs/truthfulqa_seed0_group_scaling/group_scaling.png": "079363b6920670edf4566de4d7e8ac8893468359a1e9da131e5bf6bd7bec99bc",
+    "runs/truthfulqa_seed0_group_scaling/group_scaling.svg": "4557097beb2bb2ea7f1230c11afe934603ae545734295bc033aed9580e02385c",
+    "runs/truthfulqa_seed0_group_scaling/loss_curves.png": "c683bc59565d66e25025cacdcd261b13729a7c51b31cecf9c1d60d4d97081dad",
+    "runs/truthfulqa_seed0_group_scaling/validation.json": "83c44f8ffd05d2a346df62eade25cc7fa1cd49c13fd283d235697acde7c0f440"
+  },
+  "selection_changed": false
+}

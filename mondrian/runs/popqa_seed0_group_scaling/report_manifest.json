@@ -1,0 +1,10 @@
+{
+  "report_code_sha256": "de1d9433f124a704cc8efccee0afe6a019eeda1945aae6077320ae6e64594441",
+  "artifacts": {
+    "RESULTS.md": "ac9e06a7a5efd99c0d27678820de1ad09a2f7bf9f25e8918a4380f4489cb8887",
+    "group_scaling.png": "3bdc0fa1e85a1c4d4f5a13505ccc5a703844bf5b2d795a5be181a68e1fed949f",
+    "group_scaling.svg": "2f0f671a58ee7ad585d518918673acf911424df7dd56d06f0eb65b6282ee0bb4",
+    "loss_curves.png": "f112032e446d3e2c6f38ad4a59b25c2bb07e2ae8d2926f1fa7283c4ac3cc4370",
+    "validation.json": "5deb24e57bd0d96d94bdfecc71aab0f921f12fb92adb1148f951b38e7d45e157"
+  }
+}

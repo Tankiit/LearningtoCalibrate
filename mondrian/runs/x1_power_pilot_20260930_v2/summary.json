@@ -1,0 +1,245 @@
+{
+  "gaps": [
+    {
+      "n_cal": 256,
+      "M": 2,
+      "gap": -0.002213340930394466,
+      "ci": [
+        -0.005112002892813678,
+        0.00026971756487098684
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 256,
+      "M": 4,
+      "gap": -0.00037226388432426893,
+      "ci": [
+        -0.002932195278945412,
+        0.002588040923530656
+      ],
+      "mean_extra_power_below_floor": -0.2
+    },
+    {
+      "n_cal": 256,
+      "M": 8,
+      "gap": -0.0008064803822368892,
+      "ci": [
+        -0.003978890548011352,
+        0.0018937453224878585
+      ],
+      "mean_extra_power_below_floor": -0.5
+    },
+    {
+      "n_cal": 256,
+      "M": 16,
+      "gap": 0.0032598992822358633,
+      "ci": [
+        -0.0009940704264794979,
+        0.008012349014578462
+      ],
+      "mean_extra_power_below_floor": -3.7
+    },
+    {
+      "n_cal": 256,
+      "M": 32,
+      "gap": 0.00015639704695871048,
+      "ci": [
+        -0.0009544110604634453,
+        0.0012340244076212215
+      ],
+      "mean_extra_power_below_floor": 1.6
+    },
+    {
+      "n_cal": 512,
+      "M": 2,
+      "gap": -0.0010724953644053214,
+      "ci": [
+        -0.003686744095303717,
+        0.0014311541278809925
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 512,
+      "M": 4,
+      "gap": -0.001512444087336728,
+      "ci": [
+        -0.0042535545795073645,
+        0.0016321037611146162
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 512,
+      "M": 8,
+      "gap": -0.0019880700386624628,
+      "ci": [
+        -0.004374256878401681,
+        0.0002344116641465386
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 512,
+      "M": 16,
+      "gap": 0.002202128786419697,
+      "ci": [
+        0.0004043247135667126,
+        0.003989256200668799
+      ],
+      "mean_extra_power_below_floor": -1.7
+    },
+    {
+      "n_cal": 512,
+      "M": 32,
+      "gap": 0.0019226355908305074,
+      "ci": [
+        -0.00032234308304120206,
+        0.0043416857535104846
+      ],
+      "mean_extra_power_below_floor": -7.1
+    },
+    {
+      "n_cal": 1024,
+      "M": 2,
+      "gap": -0.00048246477360168737,
+      "ci": [
+        -0.0020116579563340432,
+        0.0008885215699770004
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 1024,
+      "M": 4,
+      "gap": -0.0006827562257273243,
+      "ci": [
+        -0.002773145913318302,
+        0.001432929216900146
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 1024,
+      "M": 8,
+      "gap": -0.0013782138377939556,
+      "ci": [
+        -0.0037672531238263827,
+        0.0006163778214963833
+      ],
+      "mean_extra_power_below_floor": 0.0
+    },
+    {
+      "n_cal": 1024,
+      "M": 16,
+      "gap": 0.0006176430550179533,
+      "ci": [
+        -0.0007993428631028444,
+        0.0016494469256133433
+      ],
+      "mean_extra_power_below_floor": -0.3
+    },
+    {
+      "n_cal": 1024,
+      "M": 32,
+      "gap": 0.0012356880629022346,
+      "ci": [
+        -0.0007295984320823667,
+        0.0030945126582014298
+      ],
+      "mean_extra_power_below_floor": -2.2
+    }
+  ],
+  "optima": [
+    {
+      "rule": "voronoi",
+      "n_cal": 256,
+      "M_star": 32,
+      "ci": [
+        32.0,
+        32.0
+      ],
+      "boundary": true,
+      "mean_infinite_threshold_test_mass": 0.4915,
+      "bootstrap_boundary_fraction": 1.0
+    },
+    {
+      "rule": "voronoi",
+      "n_cal": 512,
+      "M_star": 32,
+      "ci": [
+        32.0,
+        32.0
+      ],
+      "boundary": true,
+      "mean_infinite_threshold_test_mass": 0.12944999999999998,
+      "bootstrap_boundary_fraction": 0.977
+    },
+    {
+      "rule": "voronoi",
+      "n_cal": 1024,
+      "M_star": 32,
+      "ci": [
+        32.0,
+        32.0
+      ],
+      "boundary": true,
+      "mean_infinite_threshold_test_mass": 0.018225,
+      "bootstrap_boundary_fraction": 0.991
+    },
+    {
+      "rule": "power",
+      "n_cal": 256,
+      "M_star": 32,
+      "ci": [
+        32.0,
+        32.0
+      ],
+      "boundary": true,
+      "mean_infinite_threshold_test_mass": 0.7330249999999999,
+      "bootstrap_boundary_fraction": 1.0
+    },
+    {
+      "rule": "power",
+      "n_cal": 512,
+      "M_star": 32,
+      "ci": [
+        32.0,
+        32.0
+      ],
+      "boundary": true,
+      "mean_infinite_threshold_test_mass": 0.05069166666666667,
+      "bootstrap_boundary_fraction": 0.991
+    },
+    {
+      "rule": "power",
+      "n_cal": 1024,
+      "M_star": 32,
+      "ci": [
+        32.0,
+        32.0
+      ],
+      "boundary": true,
+      "mean_infinite_threshold_test_mass": 0.0,
+      "bootstrap_boundary_fraction": 1.0
+    }
+  ],
+  "exponents": {
+    "voronoi": {
+      "descriptive_slope": null,
+      "ci": null,
+      "identifiable_on_grid": false,
+      "warning": "Grid-selected synthetic optima; boundary optima cannot identify an exponent."
+    },
+    "power": {
+      "descriptive_slope": null,
+      "ci": null,
+      "identifiable_on_grid": false,
+      "warning": "Grid-selected synthetic optima; boundary optima cannot identify an exponent."
+    }
+  },
+  "power_nonconverged": 0,
+  "uncertainty": "Pointwise percentile bootstrap of whole paired seed curves; not simultaneous.",
+  "scope": "Synthetic pilot, no paper claim or automatic winner selection."
+}

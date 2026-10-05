@@ -1,0 +1,136 @@
+{
+  "created_utc": "2026-09-28T19:14:25.331777+00:00",
+  "experiment": "paired optimal-M scaling pilot",
+  "dataset_name": "TruthfulQA",
+  "dataset": "TruthfulQA supplied-candidate correctness",
+  "total_cache_questions": 817,
+  "n_test": 326,
+  "n_cal_grid": [
+    10,
+    20,
+    40,
+    80,
+    160
+  ],
+  "M_grid": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32
+  ],
+  "repetitions": 200,
+  "alpha": 0.1,
+  "goals": [
+    "average",
+    "spread",
+    "worst_group"
+  ],
+  "objectives": {
+    "average": "sum_g w_g * abs(coverage_g - (1-alpha))",
+    "spread": "sqrt(sum_g w_g * (coverage_g - sum_h w_h coverage_h)**2)",
+    "worst_group": "max_g abs(coverage_g - (1-alpha))"
+  },
+  "audit_groups": [
+    "category-Advertising",
+    "category-Confusion: Other",
+    "category-Confusion: People",
+    "category-Confusion: Places",
+    "category-Conspiracies",
+    "category-Distraction",
+    "category-Economics",
+    "category-Education",
+    "category-Fiction",
+    "category-Finance",
+    "category-Health",
+    "category-History",
+    "category-Indexical Error: Identity",
+    "category-Indexical Error: Location",
+    "category-Indexical Error: Other",
+    "category-Indexical Error: Time",
+    "category-Language",
+    "category-Law",
+    "category-Logical Falsehood",
+    "category-Misconceptions",
+    "category-Misconceptions: Topical",
+    "category-Misinformation",
+    "category-Misquotations",
+    "category-Myths and Fairytales",
+    "category-Nutrition",
+    "category-Paranormal",
+    "category-Politics",
+    "category-Proverbs",
+    "category-Psychology",
+    "category-Religion",
+    "category-Science",
+    "category-Sociology",
+    "category-Statistics",
+    "category-Stereotypes",
+    "category-Subjective",
+    "category-Superstitions",
+    "category-Weather",
+    "category-unmatched"
+  ],
+  "audit_groups_without_test_support": [
+    "category-Mandela Effect"
+  ],
+  "audit_weights": "Fixed test question frequencies; groups are source metadata, independent of M. Every test question retained, including groups absent from fit. Categories with zero test questions cannot have coverage estimated and are listed separately.",
+  "predictor": "Frozen anchor_p only, held constant across M, n_cal and repetition. No memory updates.",
+  "grouping": "Fit-only spectral partitions of the same graph; nearest-fit-node assignment; graph k and bandwidth fixed.",
+  "graph_k": 20,
+  "graph_seed": 0,
+  "bandwidth": 0.8599188202318966,
+  "calibration_pool": "Original cal role only; update and fit questions excluded.",
+  "draw_seed": 271828,
+  "draw_rule": "Independent seeded permutations of the calibration pool; nested prefixes across n_cal; same draw for every M and goal. All historical test questions fixed across repetitions.",
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 314159,
+  "bootstrap_rule": "Resample whole repetition blocks jointly across all sizes, M values and goals; recompute mean losses, argmin with smallest-M tie break, and OLS log(M_star) on log(n_cal) in every bootstrap draw.",
+  "headline_pair": [
+    "average",
+    "worst_group"
+  ],
+  "decision_rule": "Headline statistical criterion holds iff the two pointwise percentile 95% slope CIs do not overlap. No direction selected. Paired slope-difference CI also reported.",
+  "interpretability_guard": "For both headline goals, point M_star must be interior to the M grid at >=3 of 5 sizes (or ceiling(0.6*n_sizes)), vary across sizes, and never yield mean full-set rate >=0.99. Headline supported requires both statistical criterion and this guard.",
+  "tie_rule": "Choose smallest M among mean losses within absolute 1e-12 of the minimum.",
+  "sparse_cell_rule": "TorchCP finite-sample threshold; empty/too-small calibration cells get infinity and full sets. No merging.",
+  "selection_scope": "Evaluation-optimal M on the already-inspected test set, descriptive only; no deployed M selected.",
+  "limitations": [
+    "Rep-bootstrap CIs condition on the finite calibration pool, test data, predictor and partitions; they measure repeated-draw/Monte Carlo variability, not population or new-dataset uncertainty.",
+    "Spread alone can prefer all-full sets; efficiency/full-set diagnostics are mandatory.",
+    "Grid-boundary minima and discrete unstable optima cannot establish an asymptotic power law.",
+    "Supplied-candidate PopQA labels and historical-test limitations remain as in the cache manifest."
+  ],
+  "cache_path": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/inputs/truthfulqa_llama",
+  "cache_hashes": {
+    "rows.jsonl": "52d74e819a75043b6885d92d0be2197a7644048961f2ad176a31ea7e37c42c03",
+    "states.npz": "8263be6e58922dac3a363a675716ace70e127396153d756c10ae33d60c3ac697",
+    "manifest.json": "74394ed0a04bcd589a939478f59e9b117d3f91d970e84f91162f356d8edbaafb"
+  },
+  "reference_fit": "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/runs/truthfulqa_seed0_reference_fit",
+  "reference_fit_sha256": "4744088af5988a6cc0a9c503f3ffc43552b4a4274c8341c04e26d0a0948014da",
+  "code_sha256": "32f4b04b1d23b707be8eb3d208b36a23476bc6b059c233c62ea65749e8244022",
+  "torchcp_api": "SplitPredictor(LAC(score_type=\"identity\")); calculate_threshold per feature cell; predict_with_logits.",
+  "torchcp_sources": {
+    "SplitPredictor": {
+      "path": "/Users/tanmoy/anaconda3/envs/torch-multimodal/lib/python3.12/site-packages/torchcp/classification/predictor/split.py",
+      "sha256": "fa07e28792d58ee12e1e500ea3d5c3b4a1c035fd18b9a83df74e8c019a4eb2f0"
+    },
+    "LAC": {
+      "path": "/Users/tanmoy/anaconda3/envs/torch-multimodal/lib/python3.12/site-packages/torchcp/classification/score/lac.py",
+      "sha256": "fe92a0016760b937b40b4d1dfc0097daa1831b844cffeabaa120dba0c07c80a1"
+    }
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.5.1",
+    "torch": "2.10.0",
+    "torchcp": "1.2.1"
+  }
+}

@@ -1,0 +1,770 @@
+  llama3_8b: seed 0
+  llama3_8b: seed 20
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  llama3_8b: seed 40
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  llama3_8b: seed 60
+  llama3_8b: seed 80
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  llama3_8b: seed 100
+  llama3_8b: seed 120
+  llama3_8b: seed 140
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  llama3_8b: seed 160
+  llama3_8b: seed 180
+done llama3_8b
+  mistral_7b: seed 0
+  mistral_7b: seed 20
+  mistral_7b: seed 40
+  mistral_7b: seed 60
+  mistral_7b: seed 80
+  mistral_7b: seed 100
+  mistral_7b: seed 120
+  mistral_7b: seed 140
+  mistral_7b: seed 160
+  mistral_7b: seed 180
+done mistral_7b
+  qwen2_5_7b: seed 0
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 20
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 40
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 60
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 80
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 100
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 120
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 140
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+  qwen2_5_7b: seed 160
+  qwen2_5_7b: seed 180
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:167: RuntimeWarning: overflow encountered in exp
+  p = 1 / (1 + np.exp(-(X @ w + off))); g = X.T @ (p - y) + ridge * w
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e5v2.py:169: RuntimeWarning: overflow encountered in exp
+  return np.clip(1 / (1 + np.exp(-(Xt @ w + off_te))), EPS, 1 - EPS)
+done qwen2_5_7b
+  popqa: seed 0
+  popqa: seed 20
+  popqa: seed 40
+  popqa: seed 60
+  popqa: seed 80
+[
+{
+"model": "llama3_8b",
+"n_lab": 60,
+"p": 0.4651672445976164,
+"reject": false
+},
+{
+"model": "llama3_8b",
+"n_lab": 120,
+"p": 0.2968216090357094,
+"reject": false
+},
+{
+"model": "llama3_8b",
+"n_lab": 180,
+"p": 0.19320252987144798,
+"reject": false
+},
+{
+"model": "llama3_8b",
+"n_lab": 272,
+"p": 0.11896650955315835,
+"reject": false
+},
+{
+"model": "mistral_7b",
+"n_lab": 60,
+"p": 0.5331362902428041,
+"reject": false
+},
+{
+"model": "mistral_7b",
+"n_lab": 120,
+"p": 0.3949110578176847,
+"reject": false
+},
+{
+"model": "mistral_7b",
+"n_lab": 180,
+"p": 0.2585854077490239,
+"reject": false
+},
+{
+"model": "mistral_7b",
+"n_lab": 272,
+"p": 0.16556739189083486,
+"reject": false
+},
+{
+"model": "qwen2_5_7b",
+"n_lab": 60,
+"p": 0.4232241427228678,
+"reject": false
+},
+{
+"model": "qwen2_5_7b",
+"n_lab": 120,
+"p": 0.2516605033316276,
+"reject": false
+},
+{
+"model": "qwen2_5_7b",
+"n_lab": 180,
+"p": 0.12018720237192233,
+"reject": false
+},
+{
+"model": "qwen2_5_7b",
+"n_lab": 272,
+"p": 0.044023727029917525,
+"reject": false
+}
+]

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "source_questions": 817,
+  "retained_questions": 817,
+  "dropped_questions": 0,
+  "one_candidate_per_question": true,
+  "role_counts": {
+    "cal": 200,
+    "test": 326,
+    "fit": 246,
+    "update": 45
+  },
+  "preserved_test_questions": 326,
+  "disjoint_roles": true,
+  "fit_only_head": true,
+  "head_replay_max_abs_error": 0.0,
+  "state_shape": [
+    817,
+    4096
+  ],
+  "source_categories": 39,
+  "unmatched_category_questions": 1,
+  "cache_hashes": {
+    "rows.jsonl": "52d74e819a75043b6885d92d0be2197a7644048961f2ad176a31ea7e37c42c03",
+    "states.npz": "8263be6e58922dac3a363a675716ace70e127396153d756c10ae33d60c3ac697",
+    "manifest.json": "74394ed0a04bcd589a939478f59e9b117d3f91d970e84f91162f356d8edbaafb"
+  }
+}

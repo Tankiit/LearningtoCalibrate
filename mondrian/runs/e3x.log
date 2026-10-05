@@ -1,0 +1,88 @@
+  e3x_rep_pca8: seed 0 done
+  e3x_rep_pca8: seed 1 done
+  e3x_rep_pca8: seed 2 done
+  e3x_rep_pca8: seed 3 done
+  e3x_rep_pca8: seed 4 done
+  e3x_rep_pca8: seed 5 done
+  e3x_rep_pca8: seed 6 done
+  e3x_rep_pca8: seed 7 done
+  e3x_rep_pca8: seed 8 done
+  e3x_rep_pca8: seed 9 done
+  e3x_rep_pca8: seed 10 done
+  e3x_rep_pca8: seed 11 done
+  e3x_rep_pca8: seed 12 done
+  e3x_rep_pca8: seed 13 done
+  e3x_rep_pca8: seed 14 done
+  e3x_rep_pca8: seed 15 done
+  e3x_rep_pca8: seed 16 done
+  e3x_rep_pca8: seed 17 done
+  e3x_rep_pca8: seed 18 done
+  e3x_rep_pca8: seed 19 done
+  e3x_rep_pca32: seed 0 done
+  e3x_rep_pca32: seed 1 done
+  e3x_rep_pca32: seed 2 done
+  e3x_rep_pca32: seed 3 done
+  e3x_rep_pca32: seed 4 done
+  e3x_rep_pca32: seed 5 done
+  e3x_rep_pca32: seed 6 done
+  e3x_rep_pca32: seed 7 done
+  e3x_rep_pca32: seed 8 done
+  e3x_rep_pca32: seed 9 done
+  e3x_rep_pca32: seed 10 done
+  e3x_rep_pca32: seed 11 done
+  e3x_rep_pca32: seed 12 done
+  e3x_rep_pca32: seed 13 done
+  e3x_rep_pca32: seed 14 done
+  e3x_rep_pca32: seed 15 done
+  e3x_rep_pca32: seed 16 done
+  e3x_rep_pca32: seed 17 done
+  e3x_rep_pca32: seed 18 done
+  e3x_rep_pca32: seed 19 done
+  e3x_prompt_pca8: seed 0 done
+  e3x_prompt_pca8: seed 1 done
+  e3x_prompt_pca8: seed 2 done
+  e3x_prompt_pca8: seed 3 done
+  e3x_prompt_pca8: seed 4 done
+  e3x_prompt_pca8: seed 5 done
+  e3x_prompt_pca8: seed 6 done
+  e3x_prompt_pca8: seed 7 done
+  e3x_prompt_pca8: seed 8 done
+  e3x_prompt_pca8: seed 9 done
+  e3x_prompt_pca8: seed 10 done
+  e3x_prompt_pca8: seed 11 done
+  e3x_prompt_pca8: seed 12 done
+  e3x_prompt_pca8: seed 13 done
+  e3x_prompt_pca8: seed 14 done
+  e3x_prompt_pca8: seed 15 done
+  e3x_prompt_pca8: seed 16 done
+  e3x_prompt_pca8: seed 17 done
+  e3x_prompt_pca8: seed 18 done
+  e3x_prompt_pca8: seed 19 done
+  e3x_probe_cells: seed 0 done
+  e3x_probe_cells: seed 1 done
+  e3x_probe_cells: seed 2 done
+  e3x_probe_cells: seed 3 done
+  e3x_probe_cells: seed 4 done
+  e3x_probe_cells: seed 5 done
+  e3x_probe_cells: seed 6 done
+  e3x_probe_cells: seed 7 done
+  e3x_probe_cells: seed 8 done
+  e3x_probe_cells: seed 9 done
+  e3x_probe_cells: seed 10 done
+  e3x_probe_cells: seed 11 done
+  e3x_probe_cells: seed 12 done
+  e3x_probe_cells: seed 13 done
+  e3x_probe_cells: seed 14 done
+  e3x_probe_cells: seed 15 done
+  e3x_probe_cells: seed 16 done
+  e3x_probe_cells: seed 17 done
+  e3x_probe_cells: seed 18 done
+  e3x_probe_cells: seed 19 done
+{
+ "forecast": null,
+ "conformal": "FAIL"
+}
+rep_pca8 INCONCLUSIVE {'interior': False, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [49.0, 1.0, 1.2, 1.4, 66.2, 67.0, 67.0] slope 2.961 [1.8504221592473187, 3.136395717614042]
+rep_pca32 INCONCLUSIVE {'interior': False, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [1.0, 1.2, 1.4, 1.6, 67.0, 67.0, 67.0] slope 2.86 [2.0579094126570108, 3.0337557702815574]
+prompt_pca8 FAIL {'interior': False, 'slope_positive': False, 'cell_level_argmin_M1': True} M* [1.0, 1.0, 1.2, 1.4, 1.5, 1.3, 1.3] slope -0.003 [-0.2300364949063266, 0.22377418133123464]
+probe_cells FAIL {'interior': False, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [4.0, 5.5, 6.4, 7.9, 8.9, 18.0, 13.5] slope 0.575 [0.37453554250332804, 0.6153781033111483]

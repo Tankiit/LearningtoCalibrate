@@ -1,0 +1,48 @@
+  e1_q: seed 0 done
+  e1_q: seed 1 done
+  e1_q: seed 2 done
+  e1_q: seed 3 done
+  e1_q: seed 4 done
+  e1_q: seed 5 done
+  e1_q: seed 6 done
+  e1_q: seed 7 done
+  e1_q: seed 8 done
+  e1_q: seed 9 done
+  e1_q: seed 10 done
+  e1_q: seed 11 done
+  e1_q: seed 12 done
+  e1_q: seed 13 done
+  e1_q: seed 14 done
+  e1_q: seed 15 done
+  e1_q: seed 16 done
+  e1_q: seed 17 done
+  e1_q: seed 18 done
+  e1_q: seed 19 done
+  e1_qa: seed 0 done
+  e1_qa: seed 1 done
+  e1_qa: seed 2 done
+  e1_qa: seed 3 done
+  e1_qa: seed 4 done
+  e1_qa: seed 5 done
+  e1_qa: seed 6 done
+  e1_qa: seed 7 done
+  e1_qa: seed 8 done
+  e1_qa: seed 9 done
+  e1_qa: seed 10 done
+  e1_qa: seed 11 done
+  e1_qa: seed 12 done
+  e1_qa: seed 13 done
+  e1_qa: seed 14 done
+  e1_qa: seed 15 done
+  e1_qa: seed 16 done
+  e1_qa: seed 17 done
+  e1_qa: seed 18 done
+  e1_qa: seed 19 done
+{
+ "n": null,
+ "forecast": null,
+ "conformal": "PASS",
+ "e2": "FAIL"
+}
+q FAIL {'interior': True, 'slope_positive': True, 'cell_level_argmin_M1': False} M* [3.2, 4.3, 5.0, 6.3, 8.0, 9.2, 9.6, 15.9] slope 0.443 [0.4122103395665508, 0.46986701149125965]
+qa FAIL {'interior': True, 'slope_positive': True, 'cell_level_argmin_M1': False} M* [4.5, 7.1, 9.5, 10.8, 13.4, 16.2, 20.7, 22.7] slope 0.473 [0.42168379135205775, 0.5082610744046814]

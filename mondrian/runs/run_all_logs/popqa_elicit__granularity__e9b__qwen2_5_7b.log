@@ -1,0 +1,6 @@
+  popqa_qwen2_5_7b: seed 0
+  popqa_qwen2_5_7b: seed 20
+  popqa_qwen2_5_7b: seed 40
+  popqa_qwen2_5_7b: seed 60
+  popqa_qwen2_5_7b: seed 80
+done qwen2_5_7b

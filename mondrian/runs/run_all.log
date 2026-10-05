@@ -1,0 +1,65 @@
+[ok] Known-Law (X1) ff d=1 (16.7s)
+[ok] Known-Law (X1) ff d=2 (17.8s)
+[ok] Answerability (X4) (12.4s)
+[ok] Known-Law (X1) d=1 (57.4s)
+[ok] Known-Law (X1) d=2 (92.6s)
+[ok] PopQA-Probe (E3) (71.5s)
+[ok] PopQA-Probe re-split (E3 x) (157.3s)
+[ok] Trained-Reporters/Legend-Swap (E1/E2) (281.2s)
+[ok] Reporters re-split (E1/E2 x) (279.3s)
+[ok] Elicitation-Shift (E2-frozen) (173.0s)
+[ok] Granularity pre-set (E5 v1) (91.0s)
+[ok] Rank nulls (154.2s)
+[ok] Diameter lemma check (61.2s)
+[ok] Communities (X2) (6.1s)
+[ok] Extras (top-k, balanced, argmin) (13.4s)
+[ok] Synthetic-Reliability (E7) (185.0s)
+[ok] Label-Free-Transfer (E8) (119.0s)
+[ok] Controlled-Shifts (E10) (119.3s)
+[ok] Granularity extra (E5 TOST, one-cell) (465.2s)
+[ok] Failure-Modes TruthfulQA (E12) (94.3s)
+[ok] Real-Geometry (E11) (297.4s)
+[ok] Granularity (E5) (2605.5s)
+[ok] Figures: main, Granularity, Synthetic (1.9s)
+[ok] Figure: legend (Fig 1a, Fig 4) (2.7s)
+[ok] Figure: transport plans (3.0s)
+[ok] Figure: reliability diagrams (3.9s)
+[ok] Failure-Modes PopQA (E12) (44.2s)
+[ok] PopQA-Elicit: Label-Free-Transfer (E9c) (106.0s)
+[ok] PopQA-Elicit: Elicitation-Shift (E9a) (370.7s)
+[ok] PopQA-Elicit: Granularity (E9b) llama3_8b (550.1s)
+[ok] PopQA-Elicit: Granularity (E9b) mistral_7b (563.2s)
+[ok] PopQA-Elicit: Granularity (E9b) qwen2_5_7b (594.5s)
+ok                                       Known-Law (X1) d=1
+ok                                       Known-Law (X1) d=2
+ok                                       Known-Law (X1) ff d=1
+ok                                       Known-Law (X1) ff d=2
+ok                                       Answerability (X4)
+ok                                       Trained-Reporters/Legend-Swap (E1/E2)
+ok                                       PopQA-Probe (E3)
+ok                                       Reporters re-split (E1/E2 x)
+ok                                       PopQA-Probe re-split (E3 x)
+ok                                       Elicitation-Shift (E2-frozen)
+ok                                       Rank nulls
+ok                                       Granularity pre-set (E5 v1)
+ok                                       Diameter lemma check
+ok                                       Communities (X2)
+ok                                       Extras (top-k, balanced, argmin)
+ok                                       Granularity (E5)
+ok                                       Granularity extra (E5 TOST, one-cell)
+ok                                       Synthetic-Reliability (E7)
+ok                                       Label-Free-Transfer (E8)
+ok                                       Controlled-Shifts (E10)
+ok                                       Real-Geometry (E11)
+ok                                       Failure-Modes TruthfulQA (E12)
+ok                                       Figure: legend (Fig 1a, Fig 4)
+ok                                       Figure: transport plans
+ok                                       Figures: main, Granularity, Synthetic
+ok                                       Figure: reliability diagrams
+ok                                       PopQA-Elicit: Elicitation-Shift (E9a)
+ok                                       PopQA-Elicit: Label-Free-Transfer (E9c)
+ok                                       Failure-Modes PopQA (E12)
+ok                                       PopQA-Elicit: Granularity (E9b) llama3_8b
+ok                                       PopQA-Elicit: Granularity (E9b) mistral_7b
+ok                                       PopQA-Elicit: Granularity (E9b) qwen2_5_7b
+source 32d32a34ede1; 0 job(s) not current

@@ -1,0 +1,24 @@
+{
+  "cache_hashes": {
+    "rows.jsonl": "311c0680c9b41187db0b661402142c02fca30aa2e18cb0e62db536226ff60812",
+    "states.npz": "eea1bbb00889170437f3ae2f7aac029b1efcc4335c561ef24f514cd30296c771",
+    "manifest.json": "144ec0cdabf25d93942bff29123f8ca5b4f1de8d0549859117212b11db94c5c9"
+  },
+  "config": {
+    "bins": 4,
+    "graph_k": 20,
+    "graph_seed": 0,
+    "memory_neighbors": 10,
+    "prior_strength": 5.0,
+    "budget": 200,
+    "cal_size": null,
+    "alpha": 0.1
+  },
+  "calibration_sha256": "3c49996449c4d3dd236bc5f941502c7faff2524d0c505eefa69624b41b142f04",
+  "seeds": [
+    0
+  ],
+  "provenance": "Offline import of local OVA_ARR token_mode_mean PopQA states; raw TSV candidate reconstruction uses first-N unique questions and cyclic shift-by-one distractors; source SHA-256 recorded. Existing seed-specific test identities preserved from popqa_folds.json.",
+  "bootstrap_draws": 1000,
+  "interpretation": "No winner selected. Bootstrap intervals condition on fitted snapshots; repeated seeds share test questions and are not independent datasets. Audit-group coverage is descriptive unless those groups are the method's calibration cells. Singleton errors are diagnostics, not selective-risk guarantees."
+}

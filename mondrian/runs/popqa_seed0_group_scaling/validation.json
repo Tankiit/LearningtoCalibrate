@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "trial_conditions_replayed": 10000,
+  "prediction_sets_replayed": 29500000,
+  "bootstrap_draws_replayed": 2000,
+  "calibration_thresholds_replayed": true,
+  "objectives_replayed": true,
+  "original_test_ids_preserved": true,
+  "cal_test_disjoint": true,
+  "draws_without_replacement": true,
+  "source_and_artifact_hashes_verified": true,
+  "torchcp_numpy_agreement": "exact on all thresholds and sets"
+}

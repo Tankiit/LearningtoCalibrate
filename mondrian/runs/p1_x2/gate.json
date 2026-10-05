@@ -1,0 +1,8 @@
+{
+  "stage": "x2",
+  "status": "PASS",
+  "paper_status": "HOLD",
+  "source_sha256": "32d32a34ede1525dbe4b241700afb2ec68dc4179cabbc5da909c41d9fa35edb6",
+  "scope": "implementation diagnostic completed",
+  "shape": "interior minimum observed; uncertainty still required"
+}

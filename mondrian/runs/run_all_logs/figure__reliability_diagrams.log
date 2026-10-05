@@ -1,0 +1,4 @@
+Mistral, reversed legend (TruthfulQA) {'A->A': 0.0196, 'naive': 0.2855, 'ot_quantile': 0.0511, 'paired_iso': 0.0353, 'base_rate': 0.0}
+Mistral, reworded prompt (TruthfulQA) {'A->A': 0.0196, 'naive': 0.2775, 'ot_quantile': 0.0699, 'paired_iso': 0.0398, 'base_rate': 0.0}
+trained $q$ reporter, reversed (TriviaQA) {'A->A': 0.0163, 'naive': 0.7289, 'ot_quantile': 0.2626, 'paired_iso': 0.0156, 'base_rate': 0.0}
+Mistral, reversed legend (PopQA-Elicit) {'A->A': 0.0068, 'naive': 0.1353, 'ot_quantile': 0.0137, 'paired_iso': 0.011, 'base_rate': 0.0}

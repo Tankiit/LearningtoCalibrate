@@ -1,0 +1,100 @@
+{
+  "status": "DIAGNOSTIC",
+  "criterion": "reports/estimand_note_2026-10-02.md",
+  "n_cal_grid": [
+    300,
+    500,
+    800,
+    1300,
+    2000,
+    3200,
+    5000,
+    8000
+  ],
+  "M_grid": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    11,
+    14,
+    18,
+    23,
+    30,
+    39,
+    51,
+    67,
+    87,
+    112,
+    146,
+    190
+  ],
+  "n_seeds": 20,
+  "bootstrap_replicates": 1000,
+  "pointwise": {
+    "Mstar_smoothed": [
+      10.274334930204494,
+      13.67221724142603,
+      20.731164397739445,
+      28.441260635853066,
+      37.02617268643453,
+      51.78733507054236,
+      67.34255133314554,
+      87.19775106892337
+    ],
+    "boundary_flags": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "slope": 0.6642045281286745,
+    "slope_ci95": [
+      0.6334957658584548,
+      0.7051045744787336
+    ],
+    "a_hat": 0.7433984531711421,
+    "a_hat_ci95": [
+      0.727856590183815,
+      0.8123393900226599
+    ],
+    "predicted_slope": 0.5735923409711975,
+    "slope_minus_prediction": 0.09061218715747699,
+    "slope_minus_prediction_ci95": [
+      0.0708956771984625,
+      0.13322412551461857
+    ],
+    "interior_bootstrap_rate": 1.0
+  },
+  "cell_msce_argmin": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "concentrated_finite_argmin_eligible": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "descriptive": {
+    "asymptotic_slope": 0.5,
+    "asymptotic_a": 1.0
+  }
+}

@@ -1,0 +1,38 @@
+done llama3_8b
+done mistral_7b
+done qwen2_5_7b
+done tinker
+PASS {
+ "llama3_8b": {
+  "paired_exact_sigma0": true,
+  "quantile_exact_increasing": true,
+  "quantile_fails_decreasing": true,
+  "crossing_small_sigma0": true,
+  "crossing_grows": true,
+  "bound_always": true
+ },
+ "mistral_7b": {
+  "paired_exact_sigma0": true,
+  "quantile_exact_increasing": true,
+  "quantile_fails_decreasing": true,
+  "crossing_small_sigma0": true,
+  "crossing_grows": true,
+  "bound_always": true
+ },
+ "qwen2_5_7b": {
+  "paired_exact_sigma0": true,
+  "quantile_exact_increasing": true,
+  "quantile_fails_decreasing": true,
+  "crossing_small_sigma0": true,
+  "crossing_grows": true,
+  "bound_always": true
+ },
+ "tinker_qa": {
+  "paired_exact_sigma0": true,
+  "quantile_exact_increasing": true,
+  "quantile_fails_decreasing": true,
+  "crossing_small_sigma0": true,
+  "crossing_grows": true,
+  "bound_always": true
+ }
+}

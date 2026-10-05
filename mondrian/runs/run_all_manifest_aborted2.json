@@ -1,0 +1,320 @@
+{
+ "Known-Law (X1) d=1": {
+  "command": "python -m experiments.x1_synthetic --protocol v2 --out runs/p1_x1_v2_d1 --d 1 --seeds 20 --n-fit 4000 --n-test 12000 --M-grid 1 2 3 4 5 6 8 11 14 18 23 30 39 51 67 87 112 146 190 --n-cal-grid 300 500 800 1300 2000 3200 5000 8000",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 81.4,
+  "log": "runs/run_all_logs/known_law__x1__d_1.log",
+  "finished": "2026-10-03 10:09:47",
+  "outputs": {
+   "runs/p1_x1_v2_d1/gate.json": "061d18ce9e69abfbac997b4a032dc9b0068d86397107ab9e2fe54a61801e5af6",
+   "runs/p1_x1_v2_d1/summary.json": "3f0115f48df05a458ed2c4aaee7873dad46281203a19f1471cdd32d526fc6eb5"
+  },
+  "outputs_present": true
+ },
+ "Known-Law (X1) d=2": {
+  "command": "python -m experiments.x1_synthetic --protocol v2 --out runs/p1_x1_v2_d2 --d 2 --seeds 20 --n-fit 4000 --n-test 12000 --M-grid 1 2 3 4 5 6 8 11 14 18 23 30 39 51 67 87 112 146 190 --n-cal-grid 300 500 800 1300 2000 3200 5000 8000",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 135.5,
+  "log": "runs/run_all_logs/known_law__x1__d_2.log",
+  "finished": "2026-10-03 10:10:41",
+  "outputs": {
+   "runs/p1_x1_v2_d2/gate.json": "d738c62323f4f0e6b56b4cd16cd11a5ab45bc4d838327c8ce639203ed795fb98",
+   "runs/p1_x1_v2_d2/summary.json": "21abfb307c40ee28c1dd4cb629fc980d09468b2d06a5b760a2d16d86eee4b3cb"
+  },
+  "outputs_present": true
+ },
+ "Known-Law (X1) ff d=1": {
+  "command": "python -m experiments.x1_synthetic --protocol v2 --method voronoi --out runs/p1_x1_v2_ff_d1 --d 1 --seeds 20 --n-fit 4000 --n-test 12000 --M-grid 1 2 3 4 5 6 8 11 14 18 23 30 39 51 67 87 112 146 190 --n-cal-grid 300 500 800 1300 2000 3200 5000 8000",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 19.4,
+  "log": "runs/run_all_logs/known_law__x1__ff_d_1.log",
+  "finished": "2026-10-03 10:08:45",
+  "outputs": {
+   "runs/p1_x1_v2_ff_d1/gate.json": "87fd9cb6b6b83f7e414f36ec33c0e2ef4e1b03977b75206a42073b008541f7be",
+   "runs/p1_x1_v2_ff_d1/summary.json": "8433f5abfb6660474898847db778b63c8834bf44df998e69dfb860655cb784e9"
+  },
+  "outputs_present": true
+ },
+ "Known-Law (X1) ff d=2": {
+  "command": "python -m experiments.x1_synthetic --protocol v2 --method voronoi --out runs/p1_x1_v2_ff_d2 --d 2 --seeds 20 --n-fit 4000 --n-test 12000 --M-grid 1 2 3 4 5 6 8 11 14 18 23 30 39 51 67 87 112 146 190 --n-cal-grid 300 500 800 1300 2000 3200 5000 8000",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 21.1,
+  "log": "runs/run_all_logs/known_law__x1__ff_d_2.log",
+  "finished": "2026-10-03 10:09:06",
+  "outputs": {
+   "runs/p1_x1_v2_ff_d2/gate.json": "91615b0ff4eb861decb0fb864838140c0c49291f811aa096422d5157a08dd823",
+   "runs/p1_x1_v2_ff_d2/summary.json": "40047ab0890681951eecd98e0e5053a679bbc1f9271facd073165185fe00e2d1"
+  },
+  "outputs_present": true
+ },
+ "Answerability (X4)": {
+  "command": "python -m experiments.x4_selection --out runs/p1_x4 --seeds 50",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 13.2,
+  "log": "runs/run_all_logs/answerability__x4.log",
+  "finished": "2026-10-03 10:09:19",
+  "outputs": {
+   "runs/p1_x4/gate.json": "f41e24cb1344a2baf5275b67411da39a9ddabc3b814bfa220e59bd771d56c0f9"
+  },
+  "outputs_present": true
+ },
+ "Trained-Reporters/Legend-Swap (E1/E2)": {
+  "command": "python -m experiments.e_llm --which e12 --out runs/p1_e12 --seeds 20",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 434.4,
+  "log": "runs/run_all_logs/trained_reporters_legend_swap__e1_e2.log",
+  "finished": "2026-10-03 10:16:33",
+  "outputs": {
+   "runs/p1_e12/e12_result.json": "a44864e43e1d2c1c755edee6070e46bded223056d5c8fbea8be21254a735c4ea"
+  },
+  "outputs_present": true
+ },
+ "PopQA-Probe (E3)": {
+  "command": "python -m experiments.e_llm --which e3 --out runs/p1_e3 --seeds 20",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 141.0,
+  "log": "runs/run_all_logs/popqa_probe__e3.log",
+  "finished": "2026-10-03 10:12:08",
+  "outputs": {
+   "runs/p1_e3/e3_result.json": "92f6267630cf08782f38400b85a71caeffe1005f330dfce3eb803d2a838ad58f"
+  },
+  "outputs_present": true
+ },
+ "Reporters re-split (E1/E2 x)": {
+  "command": "python -m experiments.e_llm --which e12x --out runs/p1_e12x",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 452.9,
+  "log": "runs/run_all_logs/reporters_re_split__e1_e2_x.log",
+  "finished": "2026-10-03 10:18:14",
+  "outputs": {
+   "runs/p1_e12x/e12x_result.json": "600a0267b00706df32d74c0c4b1c2d4e04de05ef3a2b023f34148c6fbc680985",
+   "runs/p1_e12x/e1x_forecast_rows_q.json": "99b636eedbd956499d27462414b9ee5dfcc029020726e8d57d9223fd14ee9ac0"
+  },
+  "outputs_present": true
+ },
+ "PopQA-Probe re-split (E3 x)": {
+  "command": "python -m experiments.e_llm --which e3x --out runs/p1_e3x",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 346.1,
+  "log": "runs/run_all_logs/popqa_probe_re_split__e3_x.log",
+  "finished": "2026-10-03 10:17:54",
+  "outputs": {
+   "runs/p1_e3x/e3x_result.json": "ee8a88f855e34ce605e06e52857709df9f8f91a73543852ebbbac5e6b65e1ade"
+  },
+  "outputs_present": true
+ },
+ "Elicitation-Shift (E2-frozen)": {
+  "command": "python -m experiments.e2_frozen --out runs/p1_e2_frozen",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 394.5,
+  "log": "runs/run_all_logs/elicitation_shift__e2_frozen.log",
+  "finished": "2026-10-03 10:23:08",
+  "outputs": {
+   "runs/p1_e2_frozen/e2_frozen_result.json": "99e3e3a747c76d2b85c55d922f66c19b57a1f35c916c93980622df0ba54ec7c8"
+  },
+  "outputs_present": true
+ },
+ "Rank nulls": {
+  "command": "python -m experiments.e_nulls",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 329.9,
+  "log": "runs/run_all_logs/rank_nulls.log",
+  "finished": "2026-10-03 10:23:24",
+  "outputs": {
+   "runs/p1_nulls/nulls.json": "75bba3ff36d51a70b68ab508b566d12899464d937a653b6c1cb479ef4feef626"
+  },
+  "outputs_present": true
+ },
+ "Granularity pre-set (E5 v1)": {
+  "command": "python -m experiments.e5_partition --out runs/p1_e5",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 119.1,
+  "log": "runs/run_all_logs/granularity_pre_set__e5_v1.log",
+  "finished": "2026-10-03 10:20:13",
+  "outputs": {
+   "runs/p1_e5/e5_result.json": "4a19cc58c2c80dc3f5ba53bbd3ac7f8a609dc19da5b2d7594565f7f324cd47b6"
+  },
+  "outputs_present": true
+ },
+ "Diameter lemma check": {
+  "command": "python -m experiments.check_diameter",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 124.7,
+  "log": "runs/run_all_logs/diameter_lemma_check.log",
+  "finished": "2026-10-03 10:22:18",
+  "outputs": {
+   "runs/p1_diameter/summary.json": "bb707e84954ea1e6b0000d26c3afc54c97b57b39bda7f307f7be236024590349"
+  },
+  "outputs_present": true
+ },
+ "Communities (X2)": {
+  "command": "python -m experiments.x2_tabular --dataset communities --out runs/p1_x2",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 9.0,
+  "log": "runs/run_all_logs/communities__x2.log",
+  "finished": "2026-10-03 10:23:33",
+  "outputs": {
+   "runs/p1_x2/gate.json": "950f2ea1d778f537aa3fdd25a00d04c939aa41db5613cbb77249b40662a93e8b"
+  },
+  "outputs_present": true
+ },
+ "Extras (top-k, balanced, argmin)": {
+  "command": "python -m experiments.e_extras --out runs/p1_extras",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 16.9,
+  "log": "runs/run_all_logs/extras__top_k__balanced__argmin.log",
+  "finished": "2026-10-03 10:23:41",
+  "outputs": {
+   "runs/p1_extras/extras_result.json": "fd0aaddea3b4448e375a41afb73ed9f0468a299907ed5b86242fce25889837d0"
+  },
+  "outputs_present": true
+ },
+ "Granularity (E5)": {
+  "command": "python -m experiments.e5v2 --out runs/p1_e5v2",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 3044.6,
+  "log": "runs/run_all_logs/granularity__e5.log",
+  "finished": "2026-10-03 11:14:08",
+  "outputs": {
+   "runs/p1_e5v2/e5v2_result.json": "83397a241ba73d36e114a68c3be8a0467ed99238ef0fd95677eb5b074275ac12"
+  },
+  "outputs_present": true
+ },
+ "Granularity extra (E5 TOST, one-cell)": {
+  "command": "python -m experiments.e5v2_extra",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 609.9,
+  "log": "runs/run_all_logs/granularity_extra__e5_tost__one_cell.log",
+  "finished": "2026-10-03 10:33:43",
+  "outputs": {
+   "runs/p1_e5v2_extra/e5v2_extra.json": "799caf9b22a6b632b9f288a02981814d50a6902673e292e50538e9b4c9e0b08d"
+  },
+  "outputs_present": true
+ },
+ "Synthetic-Reliability (E7)": {
+  "command": "python -m experiments.e_synth --out runs/p1_synth_v2 --dims 4 --clusters 32",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 246.3,
+  "log": "runs/run_all_logs/synthetic_reliability__e7.log",
+  "finished": "2026-10-03 10:27:47",
+  "outputs": {
+   "runs/p1_synth_v2/synth_summary.json": "01ed9d52d9f15965e97a8575409c817348300620f1378847e0a4d4b6afe21a19"
+  },
+  "outputs_present": true
+ },
+ "Label-Free-Transfer (E8)": {
+  "command": "python -m experiments.e8_transport",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 165.4,
+  "log": "runs/run_all_logs/label_free_transfer__e8.log",
+  "finished": "2026-10-03 10:30:32",
+  "outputs": {
+   "runs/p1_e8/e8_result.json": "75015c14526906363501b680cb46eb6f935d1eb1ee5eaa3f7c7799fa8dc319bb"
+  },
+  "outputs_present": true
+ },
+ "Controlled-Shifts (E10)": {
+  "command": "python -m experiments.e10_controlled",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 74.2,
+  "log": "runs/run_all_logs/controlled_shifts__e10.log",
+  "finished": "2026-10-03 10:31:47",
+  "outputs": {
+   "runs/p1_e10/e10_result.json": "7292b4b236cb2b819d8b28b079666e184cdfd41aac5ddfb6ee7f1fdf53f36bba"
+  },
+  "outputs_present": true
+ },
+ "Real-Geometry (E11)": {
+  "command": "python -m experiments.e11_semisynth",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 397.1,
+  "log": "runs/run_all_logs/real_geometry__e11.log",
+  "finished": "2026-10-03 10:38:24",
+  "outputs": {
+   "runs/p1_e11/e11_result.json": "46012bbdb39e37fb217cca9939c92ebf1397a0d88fe828fc095fb497bae95e74"
+  },
+  "outputs_present": true
+ },
+ "Failure-Modes TruthfulQA (E12)": {
+  "command": "python -m experiments.e12_failure --data tqa --seeds 100",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 122.3,
+  "log": "runs/run_all_logs/failure_modes_truthfulqa__e12.log",
+  "finished": "2026-10-03 10:35:45",
+  "outputs": {
+   "runs/p1_e12/e12_tqa.json": "784c0594d5eeab3d3ed0ae94f6afffc0cfbac2971c47bd154bf257e4bb64dfda"
+  },
+  "outputs_present": true
+ },
+ "Figure: legend (Fig 1a, Fig 4)": {
+  "command": "python -m experiments.fig_legend",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 4.4,
+  "log": "runs/run_all_logs/figure__legend__fig_1a__fig_4.log",
+  "finished": "2026-10-03 11:14:13",
+  "outputs": {
+   "paper/figs/fig1a.pdf": "12db96524add9dd6c48e35cf55201773d5b270cb51bbb6f336f693cbcb5924b3"
+  },
+  "outputs_present": true
+ },
+ "Figure: transport plans": {
+  "command": "python -m experiments.fig_transport",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 4.5,
+  "log": "runs/run_all_logs/figure__transport_plans.log",
+  "finished": "2026-10-03 11:14:13",
+  "outputs": {
+   "paper/figs/fig_transport.pdf": "282676f8977e6cee2ccdba20d7ff59bdea0fb8c7faf0a7f4293eced11f44902c"
+  },
+  "outputs_present": true
+ },
+ "Figures: main, Granularity, Synthetic": {
+  "command": "python -m experiments.fig_e5",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 2.3,
+  "log": "runs/run_all_logs/figures__main__granularity__synthetic.log",
+  "finished": "2026-10-03 11:14:11",
+  "outputs": {
+   "paper/figs/fig_main.pdf": "33abe617d905c4cb4c2c76a507b5ed1c146c37d440a8f53b33658c640e0dc39f",
+   "paper/figs/fig_e5.pdf": "bbaca76d9c8096f7744c196fd0837ecacfc5293f00d902b935f395767652224a"
+  },
+  "outputs_present": true
+ },
+ "Figure: reliability diagrams": {
+  "command": "python -m experiments.fig_reliability",
+  "source_sha256": "6b3e6b1ace82ad191454c986ef973bfff1ad95e5a131bd961b0652b484074165",
+  "returncode": 0,
+  "wall_seconds": 4.0,
+  "log": "runs/run_all_logs/figure__reliability_diagrams.log",
+  "finished": "2026-10-03 11:14:15",
+  "outputs": {
+   "paper/figs/fig_reliability.pdf": "bea30b6d3b36ead7dc4edb3276ee18483cca6259bf93f8f78cd858f26d081cca"
+  },
+  "outputs_present": true
+ }
+}

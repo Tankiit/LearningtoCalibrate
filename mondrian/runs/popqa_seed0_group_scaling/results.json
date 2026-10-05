@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "n_cal_grid": [
+    50,
+    100,
+    200,
+    400,
+    800
+  ],
+  "M_grid": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32
+  ],
+  "repetitions": 200,
+  "bootstrap_draws": 2000,
+  "goals": [
+    {
+      "goal": "average",
+      "slope": 1.1754887502163474,
+      "slope_ci95": [
+        0.9754887502163474,
+        1.1754887502163474
+      ],
+      "intercept": -4.8182614912019535,
+      "loglog_r_squared": 0.909758253952525,
+      "M_star": [
+        1,
+        2,
+        2,
+        12,
+        24
+      ],
+      "interior_sizes": 4,
+      "all_full_degeneracy": false,
+      "interpretable": true
+    },
+    {
+      "goal": "spread",
+      "slope": -0.08300749985576783,
+      "slope_ci95": [
+        -0.2830074998557678,
+        -0.08300749985576783
+      ],
+      "intercept": 3.2934818219009623,
+      "loglog_r_squared": 0.005613808244698815,
+      "M_star": [
+        32,
+        32,
+        2,
+        32,
+        24
+      ],
+      "interior_sizes": 2,
+      "all_full_degeneracy": false,
+      "interpretable": false
+    },
+    {
+      "goal": "worst_group",
+      "slope": 0.7169925001442318,
+      "slope_ci95": [
+        0.7169925001442318,
+        0.9169925001442318
+      ],
+      "intercept": -2.6087253046813332,
+      "loglog_r_squared": 0.5000000000000002,
+      "M_star": [
+        2,
+        2,
+        2,
+        2,
+        24
+      ],
+      "interior_sizes": 5,
+      "all_full_degeneracy": false,
+      "interpretable": true
+    }
+  ],
+  "contrasts": [
+    {
+      "left": "average",
+      "right": "spread",
+      "difference": 1.258496250072115,
+      "paired_ci95": [
+        1.0584962500721153,
+        1.4584962500721153
+      ],
+      "paired_ci_excludes_zero": true
+    },
+    {
+      "left": "average",
+      "right": "worst_group",
+      "difference": 0.4584962500721156,
+      "paired_ci95": [
+        0.19999999999999996,
+        0.4584962500721156
+      ],
+      "paired_ci_excludes_zero": true
+    },
+    {
+      "left": "spread",
+      "right": "worst_group",
+      "difference": -0.7999999999999996,
+      "paired_ci95": [
+        -1.1999999999999997,
+        -0.7999999999999996
+      ],
+      "paired_ci_excludes_zero": true
+    }
+  ],
+  "headline_pair": [
+    "average",
+    "worst_group"
+  ],
+  "slope_CIs_nonoverlapping": true,
+  "interpretability_guard_passed": true,
+  "headline_supported": true,
+  "inference_scope": "Conditional finite-cache, calibration-draw pilot; not population scaling evidence.",
+  "plan_sha256": "0a662243d97b293ebf1ec2d5118858f8de6fabf46dde9044498d2d74f85f1f91",
+  "trial_conditions": 10000
+}

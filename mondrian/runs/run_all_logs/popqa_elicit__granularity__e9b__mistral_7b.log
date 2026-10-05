@@ -1,0 +1,6 @@
+  popqa_mistral_7b: seed 0
+  popqa_mistral_7b: seed 20
+  popqa_mistral_7b: seed 40
+  popqa_mistral_7b: seed 60
+  popqa_mistral_7b: seed 80
+done mistral_7b

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "snapshots": 5,
+  "conditions": 20,
+  "bootstrap_draws": 1000,
+  "test_questions": 2950,
+  "calibration_thresholds_replayed": true,
+  "prediction_sets_replayed": 59000,
+  "summary_metrics_replayed": true,
+  "memory_calibration_test_disjoint_per_snapshot": true,
+  "cache_and_fitted_hashes_verified": true,
+  "output_sha256": {
+    "audit_cells.jsonl": "d78ae685c5bbded3c32c159229aa9c378e24bb2d8ebd2bf12613d92e4c918674",
+    "manifest.json": "b1d6ae276a56eb332b324c5420bfbb83cabf9014c0936ef1a28555c1ee076e16",
+    "memory_diagnostics.jsonl": "b5184c7561d6cafb06517f5f41b6e42421efc3869574a5be6537df44aa8419df",
+    "native_cells.jsonl": "705f87e680e2e08fe46d5b38c9c247b758a65da9461fea75c2535ed19f655f67",
+    "paired_differences.jsonl": "2be44ee6cc8d121bc75936a947f7ff5bfad70dd6742b1a54b8e54d85249f4f10",
+    "sets.jsonl": "db8e8181641bfc743053fdb64bd82b5eee9045d3504964a4eed5bc49f0a91dd0",
+    "summary.csv": "90d56fb98df111783ebd75e211241ab28de1b3fdf04c30e97eaac78973548d2c",
+    "summary.json": "5765a6184f4104090031ae8c8bdf6f9412963c05a071bd1aec606e1a8455d73e",
+    "test_scores.jsonl": "7f4cb65ed39cf2dea52a89483604d733a83d5a7dd18e89acb6dd2e6ac5245e7c"
+  }
+}

@@ -1,0 +1,6 @@
+llama3_8b   reversed  lift-mirror  5 lift-ident  5 raw-mirror  1 antidiag 0.31 diag 0.19 C_real 30.9 C_self 26.5 C_shuf 31.2 W1 7.0 iota 0.9299812434667544
+llama3_8b   reworded  lift-mirror  1 lift-ident 11 raw-mirror  1 antidiag 0.23 diag 0.29 C_real 32.9 C_self 26.5 C_shuf 33.4 W1 9.0 iota 0.9215024178065864
+mistral_7b  reversed  lift-mirror  2 lift-ident  4 raw-mirror  1 antidiag 0.25 diag 0.24 C_real 41.6 C_self 41.2 C_shuf 41.7 W1 26.3 iota None
+mistral_7b  reworded  lift-mirror  0 lift-ident  8 raw-mirror  0 antidiag 0.23 diag 0.28 C_real 45.7 C_self 41.2 C_shuf 46.4 W1 26.7 iota 0.8589891647780136
+qwen2_5_7b  reversed  lift-mirror  2 lift-ident  6 raw-mirror  1 antidiag 0.40 diag 0.31 C_real 43.2 C_self 9.5 C_shuf 47.8 W1 36.9 iota 0.8797111221639704
+qwen2_5_7b  reworded  lift-mirror  1 lift-ident 11 raw-mirror  2 antidiag 0.11 diag 0.66 C_real 19.3 C_self 9.5 C_shuf 22.5 W1 6.4 iota 0.7573315303004704

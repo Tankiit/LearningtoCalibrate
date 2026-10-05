@@ -1,0 +1,43 @@
+{
+  "out": "runs/x1_power_pilot_20260930_v2",
+  "M": [
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "n_cal": [
+    256,
+    512,
+    1024
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "n_fit": 4096,
+  "n_test": 12000,
+  "d": 2,
+  "alpha": 0.1,
+  "floor": 10,
+  "bootstrap": 1000,
+  "source_sha256": "a61c2b97d1f3bb9473b13ac950af00bad2455a3c8cd4ce575d1e7d2ed14a4da5",
+  "target": 0.9,
+  "primary": "mean_x (P(S<=q_cell | X=x) - target)^2",
+  "sparse_policy": "threshold +infinity, retained in every metric",
+  "reading": [
+    "Near-zero gaps: no detected balance effect.",
+    "Positive gaps with unchanged M*: level effect only.",
+    "Changed interior M* or exponent: candidate balance dependence, requires replication.",
+    "More sparse power cells or failed OT balance: diagnose before interpreting."
+  ]
+}

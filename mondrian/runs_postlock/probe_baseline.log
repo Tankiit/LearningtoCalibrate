@@ -1,0 +1,7 @@
+done truthfulqa llama3_8b
+done truthfulqa mistral_7b
+done truthfulqa qwen2_5_7b
+done popqa_elicit llama3_8b
+done popqa_elicit mistral_7b
+done popqa_elicit qwen2_5_7b
+FINISHED

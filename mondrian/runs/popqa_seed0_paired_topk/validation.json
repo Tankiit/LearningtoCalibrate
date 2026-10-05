@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "conditions_replayed": 120,
+  "prediction_sets_replayed": 354000,
+  "paired_comparisons_checked": 224,
+  "identical_test_ids": true,
+  "identical_allocations": true,
+  "memory_calibration_test_disjoint": true,
+  "anchor_reference_unchanged": true,
+  "calibration_thresholds_replayed": true,
+  "summary_metrics_replayed": true,
+  "artifact_hashes_verified": true,
+  "score_power_changed_sets": 0
+}

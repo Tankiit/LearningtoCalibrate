@@ -1,0 +1,47 @@
+  e3_rep_cells: seed 0 done
+  e3_rep_cells: seed 1 done
+  e3_rep_cells: seed 2 done
+  e3_rep_cells: seed 3 done
+  e3_rep_cells: seed 4 done
+  e3_rep_cells: seed 5 done
+  e3_rep_cells: seed 6 done
+  e3_rep_cells: seed 7 done
+  e3_rep_cells: seed 8 done
+  e3_rep_cells: seed 9 done
+  e3_rep_cells: seed 10 done
+  e3_rep_cells: seed 11 done
+  e3_rep_cells: seed 12 done
+  e3_rep_cells: seed 13 done
+  e3_rep_cells: seed 14 done
+  e3_rep_cells: seed 15 done
+  e3_rep_cells: seed 16 done
+  e3_rep_cells: seed 17 done
+  e3_rep_cells: seed 18 done
+  e3_rep_cells: seed 19 done
+  e3_probe_cells: seed 0 done
+  e3_probe_cells: seed 1 done
+  e3_probe_cells: seed 2 done
+  e3_probe_cells: seed 3 done
+  e3_probe_cells: seed 4 done
+  e3_probe_cells: seed 5 done
+  e3_probe_cells: seed 6 done
+  e3_probe_cells: seed 7 done
+  e3_probe_cells: seed 8 done
+  e3_probe_cells: seed 9 done
+  e3_probe_cells: seed 10 done
+  e3_probe_cells: seed 11 done
+  e3_probe_cells: seed 12 done
+  e3_probe_cells: seed 13 done
+  e3_probe_cells: seed 14 done
+  e3_probe_cells: seed 15 done
+  e3_probe_cells: seed 16 done
+  e3_probe_cells: seed 17 done
+  e3_probe_cells: seed 18 done
+  e3_probe_cells: seed 19 done
+{
+ "n": null,
+ "forecast": null,
+ "conformal": "FAIL"
+}
+rep_cells INCONCLUSIVE {'interior': False, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [1.0, 1.4, 1.5, 1.6, 67.0, 67.0] slope 3.591 [2.480098947023436, 3.7135584011304017]
+probe_cells PASS {'interior': True, 'slope_positive': True, 'cell_level_argmin_M1': True} M* [4.1, 5.4, 6.4, 6.9, 7.5, 7.6] slope 0.147 [0.10484403045975461, 0.1843164836953041]

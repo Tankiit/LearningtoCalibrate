@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+data/raw/
+.mplconfig/
+
+# legacy regenerable partition caches (not in the run manifest)
+runs/popqa_seed0_*/**/partitions.npz
+runs/popqa_seed0_*/partitions.npz

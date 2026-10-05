@@ -1,0 +1,23 @@
+X1 completed seed 0
+X1 completed seed 1
+X1 completed seed 2
+X1 completed seed 3
+X1 completed seed 4
+X1 completed seed 5
+X1 completed seed 6
+X1 completed seed 7
+X1 completed seed 8
+X1 completed seed 9
+X1 completed seed 10
+X1 completed seed 11
+X1 completed seed 12
+X1 completed seed 13
+X1 completed seed 14
+X1 completed seed 15
+X1 completed seed 16
+X1 completed seed 17
+X1 completed seed 18
+X1 completed seed 19
+/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/x1_synthetic.py:205: RuntimeWarning: Mean of empty slice
+  conc_mean, inf_mean = np.nanmean(conc, 0), infmass.mean(0)
+X1 v2 gate: PASS {'interior': True, 'mechanism': True, 'b0_argmin_M1': True, 'b0_beta': True, 'decomposition': True}

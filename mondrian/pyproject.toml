@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exemplar-mondrian"
+version = "0.1.0"
+description = "Gated exemplar-cell conformal prediction research"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "scikit-learn>=1.3", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+acs = ["folktables>=0.0.12"]
+
+[tool.setuptools.packages.find]
+include = ["mondrian*", "experiments*", "models*", "data*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

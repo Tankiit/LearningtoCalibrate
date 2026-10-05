@@ -1,0 +1,18 @@
+frozen done llama3_8b
+frozen done mistral_7b
+frozen done qwen2_5_7b
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e8_transport.py", line 144, in <module>
+    main()
+  File "/Users/tanmoy/research/OOD_detection/OVA_ARR/mondrian/experiments/e8_transport.py", line 140, in main
+    print("tinker", a, {k: (round(v["coverage"], 3), [round(x, 3) for x in v["coverage_ci95"]], round(v["brier"], 4)) for k, v in r.items() if isinstance(v, dict)}, "inc", r["paired_direction_increasing"])
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+llama3_8b rev {'A->A': (0.9, 1.81, 0.2524, 0.0, 1.0), 'naive': (0.911, 1.81, 0.2499, 0.25, 1.0), 'ot_quantile': (0.909, 1.81, 0.2498, 0.248, 1.0), 'paired_iso': (0.99, 1.98, 0.251, 0.19, 1.0), 'paired_iso_group': (0.987, 1.97, 0.2508, 0.192, 1.0), 'recal_B_k30': (0.938, 1.86, 0.2795, 0.154, 0.662), 'recal_B_k120': (0.902, 1.76, 0.2521, 0.261, 0.996)} inc 0.572
+llama3_8b alt {'A->A': (0.9, 1.81, 0.2524, 0.0, 1.0), 'naive': (0.835, 1.68, 0.253, 0.364, 1.0), 'ot_quantile': (0.9, 1.8, 0.252, 0.221, 1.0), 'paired_iso': (0.964, 1.93, 0.2514, 0.187, 1.0), 'paired_iso_group': (0.961, 1.92, 0.2515, 0.187, 1.0), 'recal_B_k30': (0.934, 1.87, 0.2872, 0.14, 0.654), 'recal_B_k120': (0.9, 1.8, 0.2594, 0.252, 0.97)} inc 1.0
+mistral_7b rev {'A->A': (0.907, 1.74, 0.244, 0.0, 1.0), 'naive': (0.523, 1.06, 0.3614, 0.844, 1.0), 'ot_quantile': (0.877, 1.74, 0.2539, 0.394, 1.0), 'paired_iso': (0.995, 1.99, 0.2514, 0.259, 1.0), 'paired_iso_group': (0.991, 1.98, 0.2509, 0.261, 1.0), 'recal_B_k30': (0.938, 1.88, 0.2901, 0.198, 0.714), 'recal_B_k120': (0.901, 1.79, 0.2584, 0.412, 0.998)} inc 0.824
+mistral_7b alt {'A->A': (0.907, 1.74, 0.244, 0.0, 1.0), 'naive': (0.571, 1.15, 0.37, 0.783, 1.0), 'ot_quantile': (0.868, 1.74, 0.2595, 0.316, 1.0), 'paired_iso': (0.98, 1.96, 0.2524, 0.254, 1.0), 'paired_iso_group': (0.972, 1.94, 0.2532, 0.256, 1.0), 'recal_B_k30': (0.937, 1.87, 0.2887, 0.192, 0.754), 'recal_B_k120': (0.902, 1.81, 0.2597, 0.406, 0.994)} inc 1.0
+qwen2_5_7b rev {'A->A': (0.904, 1.76, 0.2508, 0.0, 1.0), 'naive': (0.812, 1.63, 0.2565, 0.443, 1.0), 'ot_quantile': (0.867, 1.74, 0.2559, 0.277, 1.0), 'paired_iso': (0.938, 1.87, 0.2536, 0.251, 1.0), 'paired_iso_group': (0.949, 1.9, 0.255, 0.241, 1.0), 'recal_B_k30': (0.94, 1.88, 0.2857, 0.141, 0.636), 'recal_B_k120': (0.902, 1.8, 0.2577, 0.284, 0.994)} inc 1.0
+qwen2_5_7b alt {'A->A': (0.904, 1.76, 0.2508, 0.0, 1.0), 'naive': (0.951, 1.88, 0.2489, 0.267, 1.0), 'ot_quantile': (0.902, 1.74, 0.2464, 0.246, 1.0), 'paired_iso': (0.946, 1.86, 0.2491, 0.241, 1.0), 'paired_iso_group': (0.964, 1.9, 0.2511, 0.221, 1.0), 'recal_B_k30': (0.935, 1.84, 0.279, 0.169, 0.73), 'recal_B_k120': (0.899, 1.74, 0.2496, 0.289, 1.0)} inc 1.0

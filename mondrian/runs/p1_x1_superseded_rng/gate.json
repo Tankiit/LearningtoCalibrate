@@ -1,0 +1,16 @@
+{
+  "stage": "x1",
+  "status": "HOLD",
+  "paper_status": "HOLD",
+  "reasons": [
+    "Paper definitions of spread/concentrated functional are missing",
+    "No interior M* theory is justified for the provisional cell-MSCE functional",
+    "Pointwise M* is a surrogate scaling argument, not an established asymptotic equivalence"
+  ],
+  "source_sha256": "857dfa469a85661ccbb0a5c4d01633a71fd53520979a14fdd5a68a628e977566",
+  "max_decomposition_residual": 9.329559694237766e-17,
+  "beta_msce_minus_expectation_seed_mean": -0.00010153987477910396,
+  "beta_msce_minus_expectation_seed_se": 2.6040960191317723e-05,
+  "surrogate_pointwise_exponent": 0.3333333333333333,
+  "downstream": "Do not execute top-k, X2, level2, or X5 until this gate clears"
+}

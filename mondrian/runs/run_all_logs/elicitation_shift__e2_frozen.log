@@ -1,0 +1,16 @@
+PASS {'consistent_arms_valid': True, 'legend_change_breaks': True, 'prompt_change_breaks_descriptive': {'llama3_8b': False, 'mistral_7b': True, 'qwen2_5_7b': False}}
+llama3_8b   fwd->fwd  cov 0.906 (se 0.0011) worst 0.909 z    3.85 size 1.805 brier 0.2518 cov|Y1 0.995 cov|Y0 0.811
+llama3_8b   rev->rev  cov 0.908 (se 0.0011) worst 0.908 z    3.98 size 1.792 brier 0.2471 cov|Y1 1.000 cov|Y0 0.809
+llama3_8b   alt->alt  cov 0.911 (se 0.0010) worst 0.909 z    4.25 size 1.805 brier 0.2533 cov|Y1 0.993 cov|Y0 0.824
+llama3_8b   fwd->rev  cov 0.896 (se 0.0012) worst 0.888 z   -3.75 size 1.770 brier 0.2501 cov|Y1 1.000 cov|Y0 0.786
+llama3_8b   fwd->alt  cov 0.966 (se 0.0006) worst 0.965 z   34.53 size 1.928 brier 0.2575 cov|Y1 0.994 cov|Y0 0.937
+mistral_7b  fwd->fwd  cov 0.906 (se 0.0011) worst 0.905 z    1.99 size 1.839 brier 0.2473 cov|Y1 0.927 cov|Y0 0.884
+mistral_7b  rev->rev  cov 0.905 (se 0.0012) worst 0.904 z    1.62 size 1.808 brier 0.2534 cov|Y1 1.000 cov|Y0 0.804
+mistral_7b  alt->alt  cov 0.907 (se 0.0011) worst 0.907 z    2.74 size 1.802 brier 0.2528 cov|Y1 1.000 cov|Y0 0.808
+mistral_7b  fwd->rev  cov 0.565 (se 0.0055) worst 0.646 z  -17.62 size 1.103 brier 0.2775 cov|Y1 1.000 cov|Y0 0.100
+mistral_7b  fwd->alt  cov 0.623 (se 0.0047) worst 0.799 z  -11.98 size 1.241 brier 0.2733 cov|Y1 0.995 cov|Y0 0.226
+qwen2_5_7b  fwd->fwd  cov 0.907 (se 0.0011) worst 0.907 z    2.74 size 1.802 brier 0.2507 cov|Y1 0.976 cov|Y0 0.834
+qwen2_5_7b  rev->rev  cov 0.908 (se 0.0011) worst 0.906 z    2.70 size 1.834 brier 0.2531 cov|Y1 0.911 cov|Y0 0.905
+qwen2_5_7b  alt->alt  cov 0.908 (se 0.0011) worst 0.910 z    3.91 size 1.795 brier 0.2480 cov|Y1 0.998 cov|Y0 0.813
+qwen2_5_7b  fwd->rev  cov 0.952 (se 0.0008) worst 0.966 z   36.41 size 1.913 brier 0.2544 cov|Y1 0.917 cov|Y0 0.989
+qwen2_5_7b  fwd->alt  cov 0.972 (se 0.0008) worst 0.973 z   46.71 size 1.926 brier 0.2595 cov|Y1 0.997 cov|Y0 0.945

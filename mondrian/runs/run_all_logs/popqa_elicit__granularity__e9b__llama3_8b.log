@@ -1,0 +1,6 @@
+  popqa_llama3_8b: seed 0
+  popqa_llama3_8b: seed 20
+  popqa_llama3_8b: seed 40
+  popqa_llama3_8b: seed 60
+  popqa_llama3_8b: seed 80
+done llama3_8b
