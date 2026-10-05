@@ -1,0 +1,63 @@
+% Main schematic (Figure 1). Drawn in TikZ to match the caption in main.tex.
+% Needs \usepackage{tikz} and \usetikzlibrary{positioning,arrows.meta,fit,calc}.
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=3pt, minimum height=9mm, minimum width=30mm, fill=white},
+  inbox/.style={box, fill=gray!8, minimum width=27mm},
+  pbox/.style={box, fill=blue!6},
+  gbox/.style={box, fill=green!8},
+  fbox/.style={box, fill=orange!9, minimum width=40mm},
+  abox/.style={box, minimum width=30mm, minimum height=7.5mm},
+  use/.style={-{Latex[length=2mm]}, thick},
+  fitarrow/.style={-{Latex[length=2mm]}, thick, dashed, orange!70!black},
+  lbl/.style={font=\sffamily\scriptsize, inner sep=1pt, text=black!70}
+]
+% columns: inputs | procedures, groups | fitted objects | deployment arms | output
+\node[inbox] (in) at (0,0) {question $x$\\candidate $a$\\[1pt]{\scriptsize correctness $Y$ fixed}};
+
+\node[pbox] (A) at (4.2, 1.6) {procedure $A$\\report $V_A$};
+\node[pbox] (B) at (4.2, 0)   {procedure $B$\\report $V_B$};
+\node[gbox] (G) at (4.2,-1.7) {frozen state $\phi(x,a)$\\groups $G$};
+\node[lbl, below=0.5mm of G] {computed before elicitation};
+
+\node[fbox] (f) at (8.9, 2.1)  {correctness model $\hat f_A$\\{\scriptsize labels under $A$, fit split}};
+\node[fbox] (q) at (8.9, 0.75) {cell thresholds $q_G$\\{\scriptsize labels under $A$, calibration split}};
+\node[fbox] (T) at (8.9,-0.75) {transport $T$\\{\scriptsize paired $(V_A,V_B)$, no labels}};
+\node[fbox] (R) at (8.9,-2.1)  {recalibration under $B$\\{\scriptsize new labels under $B$}};
+
+\node[abox] (r1) at (13.6, 2.1)  {reference:\ $V_A$};
+\node[abox] (r2) at (13.6, 1.0)  {unchanged:\ $V_B$};
+\node[abox] (r3) at (13.6,-0.1)  {transported:\ $T(V_B)$};
+\node[abox] (r4) at (13.6,-2.1)  {recalibrated under $B$};
+\node[draw, dotted, thick, rounded corners, fit=(r1)(r2)(r3), inner sep=2mm] (ref) {};
+\node[lbl, above=0.5mm of ref] {reference predictor $(\hat f_A, q_G)$};
+\node[lbl, above=0.5mm of r4] {labelled comparator};
+
+\node[box, fill=gray!8, minimum width=24mm] (out) at (17.6, 0) {prediction set\\$C\subseteq\{0,1\}$\\[1pt]{\scriptsize thresholds per frozen group}};
+
+% elicitation
+\draw[use] (in.east) -- ++(0.6,0) |- (A.west);
+\draw[use] (in.east) -- (B.west);
+\draw[use] (in.east) -- ++(0.6,0) |- (G.west);
+
+% fitting (dashed)
+\draw[fitarrow] (A.east) -- ++(0.8,0) |- (f.west);
+\draw[fitarrow] (A.east) -- ++(0.8,0) |- (q.west);
+\draw[fitarrow] (G.east) -- ++(1.6,0) |- ([yshift=-1.5mm]q.west);
+\draw[fitarrow] (A.east) -- ++(0.8,0) |- ([yshift=1.5mm]T.west);
+\draw[fitarrow] (B.east) -- ++(1.2,0) |- ([yshift=-1.5mm]T.west);
+\draw[fitarrow] (B.east) -- ++(1.2,0) |- (R.west);
+
+% deployment
+\draw[use] (f.east) -- (ref.west |- f.east);
+\draw[use] (q.east) -- (ref.west |- q.east);
+\draw[use] (T.east) -- (r3.west);
+\draw[use] (R.east) -- (r4.west);
+\foreach \r in {r1,r2,r3,r4} \draw[use] (\r.east) -- (out.west);
+\draw[use, black!55] (G.south) -- ++(0,-1.0) -| (out.south);
+\node[lbl, fill=white] at (11.0,-3.4) {all arms use the same frozen groups};
+
+% legend
+\draw[use] (0.0,-3.0) -- ++(0.7,0) node[right, lbl] {use};
+\draw[fitarrow] (1.6,-3.0) -- ++(0.7,0) node[right, lbl] {fitting};
+\end{tikzpicture}

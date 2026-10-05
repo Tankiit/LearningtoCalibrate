@@ -213,6 +213,8 @@ def main():
 \renewcommand{\bibsection}{\subsubsection*{\bibname}}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{booktabs,graphicx,xcolor,adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,calc}
 \usepackage[hidelinks]{hyperref}
 """ + pre)
     doc = (preamble + "\n\\begin{document}\n\n\\twocolumn[\n\n\\aistatstitle{" + title + "}\n\n"

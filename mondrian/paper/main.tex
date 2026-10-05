@@ -20,6 +20,8 @@
 \usepackage[round]{natbib}
 \usepackage{booktabs,xcolor,graphicx,hyperref}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,calc}
 
 % Toggles. \drafttrue shows status tags and notes; \draftfalse hides them for submission.
 \newif\ifdraft \drafttrue
@@ -121,7 +123,7 @@ percentages --- and procedures change: prompts are edited, scales are reversed, 
 \paragraph{A motivating observation.} A model reports confidence for a fixed candidate answer by
 choosing a letter from A to L, read through a legend (A $=0\%$ \dots L $=100\%$). Reverse the legend
 and decode through the reversed legend, and a calibration made under one legend should still hold under
-the other. It does not (Figure~\ref{fig:main}a, Table~\ref{tab:coverage}): on 7{,}189 PopQA questions, conformal
+the other. It does not (Figure~\ref{fig:overview}a, Table~\ref{tab:coverage}): on 7{,}189 PopQA questions, conformal
 sets calibrated under the forward legend cover $0.49$ for Mistral-7B under the reversed legend and $0.50$ under a
 reworded prompt, and $0.76$ for Llama-3.1-8B under reversal, against a target of $0.90$; a trained reporter falls
 from $0.90$ to $0.20$; other models become needlessly conservative. The reports themselves reshuffle: on 817
@@ -129,6 +131,24 @@ TruthfulQA questions a typical question moves 190--240 rank positions under reve
 rankings were independent, and only 20--24\% stay in their confidence fifth (20\% by chance).
 
 
+
+\begin{figure*}[t]
+  \centering
+  \resizebox{\textwidth}{!}{%
+    \input{figs/aistats_main_fig.tex}%
+  }
+  \caption{\textbf{Calibrating and transporting confidence reports.}
+  The question, candidate and correctness remain fixed while the
+  elicitation procedure changes. Labels under $A$ fit the correctness
+  model and, on a separate calibration split, the cell thresholds.
+  At deployment, the reference predictor receives $V_A$, unchanged
+  $V_B$, or $T(V_B)$. Transport $T$ is fitted without correctness labels
+  using paired reports for the same inputs. The labelled comparator
+  instead recalibrates under $B$ using new labels. All arms use the same
+  frozen groups and return prediction sets of correctness labels.
+  Dashed arrows denote fitting.}
+  \label{fig:main}
+\end{figure*}
 
 \begin{figure*}[t]
 \centering
@@ -143,28 +163,18 @@ no adjustment, two label-free maps fitted on unlabelled questions elicited both 
 120 labelled questions under the new legend; hollow markers mark near-full sets (at least 1.9 of 2 labels).
 (d) Coverage gap of the worst of the four frozen groups for the same arms, net of the same statistic with no
 procedure change; below zero, a group is left short.}
-\label{fig:main}
+\label{fig:overview}
 \end{figure*}
 
-\paragraph{Three questions.} Two remedies suggest themselves. One recalibrates the report separately
-under each procedure, which costs labels per procedure. The other groups question--answer examples by a
-frozen representation computed \emph{before} elicitation --- such groups cannot move when the procedure
-changes --- and forecasts correctness from group and procedure together. The registered question of
-this paper is when the second provides useful calibration structure beyond the first, and when the
-cost of estimating more groups outweighs the benefit. The groups do not move with the procedure, but a
-forecast built on them still reads the report, so whether they help \emph{across} procedures is a
-separate question; we find that they do not, and that what carries a calibration across procedures is
-a map between the reports. Answering the registered question requires three steps:
-\begin{enumerate}
-  \item \textbf{Which groupings license a decision?} A grouping must be computable when the decision is
-  taken, must not be selected on the outcome, and must be used under the elicitation it was calibrated
-  in (Section~\ref{sec:validity}).
-  \item \textbf{How finely to group under a label budget?} Coarse groups hide reliability differences,
-  fine groups leave too little data to estimate them (Section~\ref{sec:decomp}; \expname{Granularity}, \expname{Synthetic-Reliability}).
-  \item \textbf{Can a calibration be carried across procedures without new labels?} Unlabelled questions
-  can be elicited under both procedures, so the coupling of the two reports is observable and a
-  transport map can carry one to the other (Proposition~\ref{prop:transport}; \expname{Label-Free-Transfer}).
-\end{enumerate}
+\paragraph{Three questions.} One remedy recalibrates the report under each procedure, at a cost in labels per
+procedure; the other groups question--answer examples by a frozen representation computed \emph{before}
+elicitation and forecasts correctness from group and procedure together (Figure~\ref{fig:main}). The registered
+question is when the second adds calibration structure beyond the first and when estimating more groups costs
+more than it gains. It needs three answers: which groupings license a decision (Section~\ref{sec:validity}); how
+finely to group under a label budget (Section~\ref{sec:decomp}; \expname{Granularity}, \expname{Synthetic-Reliability}); and
+whether a calibration can be carried across procedures without new labels, since the groups do not move with
+the procedure but a forecast built on them still reads the report (Proposition~\ref{prop:transport};
+\expname{Label-Free-Transfer}).
 
 \paragraph{Contributions.}
 (i) A stage-indexed criterion for which groupings license a decision, synthesising known validity
@@ -523,7 +533,7 @@ differences against R.
 
 
 
-On TruthfulQA (Figure~\ref{fig:main}b; per-budget results in Appendix Figure~\ref{fig:e5}) the recalibrated reports
+On TruthfulQA (Figure~\ref{fig:overview}b; per-budget results in Appendix Figure~\ref{fig:e5}) the recalibrated reports
 score within $0.003$ Brier of the base rate. Groups improve on them in 85--96\% of splits at 272 labels
 ($-0.005$ to $-0.010$ Brier), but no test in the pre-declared family survives Holm correction (smallest
 Holm-adjusted $p=0.53$; smallest raw one-sided $p=0.044$), random groups and TruthfulQA's categories do not help, multicalibration never beats
@@ -667,15 +677,12 @@ partly otherwise, and with informative reports no label-free map was reliably ex
   a predictor that does not read the report (invariant, at a cost in set size), or map the new reports
   onto the old scale with unlabelled questions elicited both ways and bound the coverage loss by the
   label-loss mass plus its Hoeffding term; the repair holds on average, not per group, so per-group
-  guarantees need per-group recalibration. Without hidden states (an API model), only recalibration and
-  the label-free maps are available, since both use the report alone.
+  guarantees need per-group recalibration. Without hidden states, only recalibration and the map apply.
 \end{itemize}
 
-\paragraph{Limitations.} Groups need white-box hidden states; the models are 7--8B; candidates are fixed
-rather than the model's own answers; procedures are two legends and two wordings; groups are capped at 16;
-the review-driven re-analyses are post hoc, and \expname{PopQA-Elicit} was designed after the TruthfulQA result,
-with its Holm family declared before its run
-(Appendix~\ref{app:limitations}). Learned non-monotone maps and other procedure changes are future work.
+\paragraph{Limitations.} Groups need white-box states; models are 7--8B; candidates are fixed; procedures are
+two legends and two wordings; groups are capped at 16; the re-analyses are post hoc and \expname{PopQA-Elicit}
+followed the TruthfulQA result (Appendix~\ref{app:limitations}). Learned non-monotone maps are future work.
 
 \appendix
 \section{Protocol disclosures}
