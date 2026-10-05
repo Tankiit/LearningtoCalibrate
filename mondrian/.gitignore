@@ -8,3 +8,6 @@ data/raw/
 # legacy regenerable partition caches (not in the run manifest)
 runs/popqa_seed0_*/**/partitions.npz
 runs/popqa_seed0_*/partitions.npz
+
+# local Claude Code project skills and settings (never committed)
+.claude/
