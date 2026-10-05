@@ -69,6 +69,8 @@ def section(s, start, end):
 
 
 def clean(body):
+    # internal justification comments (% WHY: ...) stay in main.tex only
+    body = re.sub(r"(?m)^% WHY:.*\n", "", body)
     for m in ("NOTE", "GATED", "HOLD"):
         body = strip_macro(body, m)
     body = re.sub(r"\\todo\[[^\]]*\]\{", r"\\todo{", body)   # drop options, then strip with braces

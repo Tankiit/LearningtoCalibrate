@@ -95,7 +95,8 @@ rankings were independent, and only 20--24\% stay in their confidence fifth (20\
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig_overview.pdf}
-\caption{Overview. (a) Conformal coverage ($\alpha=0.1$, target dotted) when a calibration made under the
+
+  \caption{Overview. (a) Conformal coverage ($\alpha=0.1$, target dotted) when a calibration made under the
 forward legend is deployed under the same legend, the reversed legend or a reworded prompt (three frozen
 models; mean over 500 random splits; Table~\ref{tab:coverage}). (b) Brier difference against
 procedure-specific recalibration ($\times10^3$; below zero: better) at the largest label budget, for learned
@@ -255,30 +256,24 @@ $T(V_B)$.
 
 \begin{proposition}[Label-free transport]
 \label{prop:transport}
-(a) For any map $T$, $|\P(Y\in C_T)-\P(Y\in C_A)|\le\P(C_T\ne C_A)$, and the same holds within each
-frozen group. The right-hand side, the \emph{crossing mass}, depends only on $(V_A,V_B,G)$, so it can
-be estimated from unlabelled questions elicited under both procedures. One-sidedly, conditionally on
-the calibration data and on $T$, $\P(Y\in C_T)\ge\P(Y\in C_A)-\ell$ with the \emph{label-loss mass}
-$\ell=\P(C_A\not\subseteq C_T)$, which again needs no labels; averaging over the calibration draw and using
-$\P(Y\in C_A)\ge1-\alpha$ gives $\P(Y\in C_T)\ge1-\alpha-\E\ell$. Both statements assume the outcome $Y$ is
-the same under both procedures, which holds when the question and candidate are fixed. If $\hat\ell$ is the
-label-loss rate on $m$ unlabelled questions independent of the calibration data and of the fold that fits
-$T$, then $\ell\le\hat\ell+\sqrt{\log(1/\delta)/(2m)}$ with probability at least $1-\delta$ given those, so the
-coverage under B is at most $\hat\ell+\sqrt{\log(1/\delta)/(2m)}$ below that under A; a union bound covers
-several maps or groups.
-(b) If $V_B=g(V_A)$ almost surely for a strictly monotone $g$, the population isotonic regression of
-$V_A$ on $V_B$ (in the direction that fits) equals $g^{-1}$, so $C_T=C_A$ and the guarantee of
-Theorem~\ref{thm:A}, per frozen group, transfers to B without labels. If $g$ is increasing and the
-laws are continuous, the quantile map $F_A^{-1}\circ F_B$, the monotone optimal-transport map between
-the two marginals, also equals $g^{-1}$.
-(c) For continuous laws with finite second moments, the observed coupling of $(V_A,V_B)$ is comonotone, i.e.\ (b) holds with $g$
-increasing, if and only if its squared-cost transport equals the optimal value $W_2^2$ between the
-two marginals; the gap between the realised and optimal transport costs measures the departure
-from a monotone change.
+Assume the outcome $Y$ is the same under both procedures, and condition on the calibration data and on $T$.
+(a) $|\P(Y\in C_T)-\P(Y\in C_A)|\le\P(C_T\ne C_A)$ and $\P(Y\in C_T)\ge\P(Y\in C_A)-\ell$, where
+$\ell=\P(C_A\not\subseteq C_T)$; both bounds also hold within each frozen group.
+(b) If $V_B=g(V_A)$ almost surely for a strictly monotone $g$, the population isotonic regression of $V_A$ on
+$V_B$ equals $g^{-1}$, so $C_T=C_A$ and Theorem~\ref{thm:A} transfers to B per frozen group. If $g$ is
+increasing and the laws are continuous, so does the quantile map $F_A^{-1}\circ F_B$.
+(c) For continuous laws with finite second moments, the coupling of $(V_A,V_B)$ is comonotone if and only if its
+squared-cost transport equals $W_2^2$ between the two marginals.
 \end{proposition}
-
-Groups computed before elicitation do not move with $\Pi$, which is what lets the per-group
-statements in (a)--(b) be used across procedures.
+We call $\P(C_T\ne C_A)$ the \emph{crossing mass} and $\ell$ the \emph{label-loss mass}. Both depend only on
+$(V_A,V_B,G)$, so they can be estimated from unlabelled questions elicited under both procedures. Averaging (a)
+over calibration draws gives $\P(Y\in C_T)\ge1-\alpha-\E\ell$. If $\hat\ell$ is the label-loss rate on $m$
+unlabelled questions independent of the calibration data and of the fold that fits $T$, then
+$\ell\le\hat\ell+\sqrt{\log(1/\delta)/(2m)}$ with probability at least $1-\delta$, so coverage under B is at most that
+much below coverage under A; a union bound covers several maps or groups. The assumption on $Y$ holds here
+because the question and candidate are fixed, and groups computed before elicitation do not move with the
+procedure, which is what lets the per-group statements be used across procedures. Part (c) measures how far a
+change is from monotone by the gap between the realised and optimal transport costs.
 
 % ---------------------------------------------------------------------
 \section{Estimands: pointwise versus cell level}
@@ -378,36 +373,28 @@ decomposition (Proposition~\ref{prop:G}) are in Appendix~\ref{app:theory}.
 % ---------------------------------------------------------------------
 \section{Experiments}
 \label{sec:experiments}
-\paragraph{Setup and data.} A frozen model (Llama-3.1-8B, Mistral-7B, Qwen2.5-7B) is shown a question and
-one candidate answer (teacher-forced) and reports its confidence that the candidate is correct by choosing
-a letter A--L; the report $V$ is the expected value of its letter distribution decoded through the legend in
-force. The three procedures are the forward legend, the reversed legend and a reworded prompt. Data:
-TruthfulQA \citep{lin2022truthfulqa} (817 questions) and \expname{PopQA-Elicit}, the same elicitations on PopQA
-\citep{mallen2023popqa} with a same-relation distractor (7{,}189 questions after removing 188 alias collisions);
-TriviaQA \citep{joshi2017triviaqa} answers of Llama-3.1-8B with trained question-only and answer-aware
-reporters; and synthetic reliability models. One candidate per question is chosen by a label-blind hash,
-so $Y$ is its correctness and conformal sets are subsets of $\{0,1\}$ (size 2 means abstaining); every
-procedure's forecaster is fitted on the same labelled questions, and an unlabelled third fits the PCA and
-the groups. Overlapping random splits get Nadeau--Bengio-corrected intervals \citep{nadeau2003inference};
-groups versus recalibration is a pre-declared Holm family \citep{holm1979simple}; every logistic forecaster
-tunes its penalty by inner cross-validation, with the report's coefficient penalised a hundred times less.
-Details are in Appendix~\ref{app:expextra}.
+\paragraph{Setup.} A frozen model (Llama-3.1-8B, Mistral-7B or Qwen2.5-7B) sees a question and one candidate
+answer and reports its confidence that the candidate is correct by choosing a letter A--L; the report $V$ is the
+expected value of its letter distribution, decoded through the legend in force. The three procedures are the
+forward legend, the reversed legend and a reworded prompt. We use TruthfulQA \citep{lin2022truthfulqa} (817
+questions), PopQA \citep{mallen2023popqa} elicited the same way (7{,}189 questions), TriviaQA answers of
+Llama-3.1-8B with two trained correctness reporters \citep{joshi2017triviaqa}, and synthetic reliability models.
+The candidate is chosen by a label-blind hash, so the outcome $Y$ is its correctness and a conformal set is a
+subset of $\{0,1\}$. Each split uses one third of the questions, unlabelled, to fit the representation and the
+groups, one third as labelled data and one third for testing; intervals are corrected for overlapping splits
+\citep{nadeau2003inference}, and the tests of groups against recalibration form a pre-declared Holm family
+\citep{holm1979simple}. Appendix~\ref{app:expextra} has the details.
 
-\subsection{Elicitation changes break calibration}
+\subsection{Changing the elicitation breaks calibration}
 \label{sec:exp-break}
-
-\paragraph{Ranks.} Under reversal a typical question moves 190--240 rank positions, against 239 under
-independent rankings and 139--169 under a reworded prompt, and only 20--24\% of questions stay in their
-confidence fifth (28--34\% under rewording). The reports are weak on TruthfulQA (AUROC $0.40$--$0.60$).
-Rank intervals, transport plans between the two legends and the quintile transitions are in
-Appendix~\ref{app:expextra}.
-
-\paragraph{Coverage.} (\expname{Elicitation-Shift}; criteria fixed before the run;
-500 random thirds of the 817 TruthfulQA questions, and of the 7{,}189 \expname{PopQA-Elicit} questions, one
-label-blind candidate per question, $M=4$).
-Calibrating and deploying under the same elicitation is valid for all three models on both
-datasets (coverage $0.900$--$0.911$, every cell within $4$ SE). Changing the elicitation between calibration and
-deployment is not (Table~\ref{tab:coverage}).
+\paragraph{A calibration does not survive a change of procedure.} Calibrated and deployed under the
+same procedure, conformal sets are valid for every model on both datasets (coverage $0.90$--$0.91$). Deployed
+under another procedure, they are not (Table~\ref{tab:coverage}, Figure~\ref{fig:overview}a). On PopQA, Mistral
+falls to $0.49$ under the reversed legend and $0.50$ under a reworded prompt, and Llama to $0.76$; on TruthfulQA,
+Mistral falls to $0.565$. The other models over-cover with near-full sets. The direction follows how the
+\emph{level} of confidence shifts, not how ranks move: rewording reshuffles ranks less than reversal but breaks
+coverage as much. What must match between calibration and deployment is therefore the whole elicitation
+procedure, not only the legend.
 \begin{table*}[t]
 \caption{Coverage on three frozen models when the elicitation changes between calibration and deployment, on TruthfulQA (817 questions) and \expname{PopQA-Elicit} (7{,}189 questions); 500 random splits, $M=4$.}
 \centering\small
@@ -427,41 +414,27 @@ PopQA & Llama-3.1-8B & .900--.901 & \textbf{.757} & .919\\
 \label{tab:coverage}
 \end{adjustbox}
 \end{table*}
-The failure is not specific to the legend, and its direction depends on how the confidence
-\emph{level} shifts rather than on how ranks move: rewording reshuffles ranks less than reversal
-(Figure~\ref{fig:legend-quintile}) yet harms coverage about as much, sometimes by under-covering
-(Mistral) and sometimes by over-covering with near-full sets (Llama, Qwen). These frozen signals are
-weak (binned Brier $\approx0.25$; sets average $1.8$ of $2$ labels), so the valid sets are close to
-trivial; the point is validity, not efficiency. On PopQA, where the reports are more informative
-(AUROC $0.50$--$0.74$ against $0.40$--$0.60$), the breaks are larger: reversal leaves Llama at $0.76$ and
-Mistral at $0.49$, and rewording leaves Mistral at $0.50$, while Qwen again turns conservative. The licensing condition of the stage criterion is therefore
-about the whole elicitation convention, not the legend alone.
 
-\subsection{When do groups pay?}
+\paragraph{Ranks reshuffle.} Under reversal a typical question moves 190--240 of 817 rank positions, close to
+the 239 expected if the two rankings were independent, and only 20--24\% of questions stay in their confidence
+fifth (Appendix~\ref{app:expextra}).
+
+\subsection{When do groups help?}
 \label{sec:e5}
-\paragraph{\expname{Granularity}: groups against recalibration, multicalibration and a direct predictor (post-hoc re-analysis).} \
-Forecasters, all fitted on the same $n_{\mathrm{lab}}$ labelled questions per procedure: the base rate K; R,
-Platt recalibration of the report per procedure; G$_M$, model~\eqref{eq:forecaster} with $M$
-farthest-first groups on 16 PCA dimensions of the candidate's frozen hidden state; G$_{\mathrm{cv}}$, with
-$M\in\{1,2,4,8,16\}$ chosen by inner cross-validation; Rand$_M$, $M$ random groups; Cat, TruthfulQA's 39
-categories; MC, R multicalibrated over groups and report quartiles on a 40\% holdout; D, logistic
-regression on the 16 representation features and the report. Figure~\ref{fig:e5} shows the paired
-differences against R.
+\paragraph{Forecasters.} All are fitted on the same labelled questions: R recalibrates the report
+under each procedure (Platt scaling); G$_M$ adds $M$ groups built from 16 principal components of the frozen
+hidden state, model~\eqref{eq:forecaster}, with $M$ fixed or chosen by cross-validation; Rand$_M$ uses random
+groups; MC multicalibrates R over groups and report quartiles; and D, the direct predictor, is a logistic
+regression on the same 16 components and the report. Penalties are tuned by cross-validation.
 
-On TruthfulQA (Figure~\ref{fig:overview}b; per-budget results in Appendix Figure~\ref{fig:e5}) the recalibrated reports
-score within $0.003$ Brier of the base rate. Groups improve on them in 85--96\% of splits at 272 labels
-($-0.005$ to $-0.010$ Brier), but no test in the pre-declared family survives Holm correction (smallest
-Holm-adjusted $p=0.53$; smallest raw one-sided $p=0.044$), random groups and TruthfulQA's categories do not help, multicalibration never beats
-recalibration, and the direct predictor D beats R by $0.032$--$0.036$ (intervals exclude zero from 180
-labels) and groups by $0.026$--$0.027$; a post-hoc probe on the full hidden state does better still
-(Brier $-0.042$ to $-0.057$ against R), though the same probe is badly miscalibrated on PopQA
-(Appendix~\ref{app:postlock}). Details, the shared-offset equivalence test and the probe-report
-PopQA analysis are in Appendix~\ref{app:expextra}.
-\paragraph{\expname{PopQA-Elicit}: the same question with ten times the labels.} On 7{,}189 PopQA
-questions elicited under the same three procedures (100 random thirds; budgets 100 to 2{,}396; the
-pre-declared Holm family is G$_4-$R over three models and five budgets) the reports are more informative
-(AUROC $0.50$--$0.74$), recalibration beats the base rate by $0.019$--$0.033$ Brier, and the registered
-question gets a sharper answer (Table~\ref{tab:popqa}; Brier differences $\times10^3$, corrected 95\% intervals).
+\paragraph{Groups help only with many labels, and only a little.} On TruthfulQA (272 labels),
+groups improve on recalibration in most splits ($-0.005$ to $-0.010$ Brier), but no pre-declared test survives
+correction (smallest adjusted $p=0.53$). On PopQA, with ten times the labels (Table~\ref{tab:popqa}), one of
+fifteen pre-declared tests survives (Mistral at 2{,}396 labels, adjusted $p=0.047$); from 2{,}000 labels the
+intervals exclude zero for every model, and the best number of groups grows with the budget (16 groups are
+chosen in 58--71\% of splits at 2{,}396 labels, against 14--21\% at 100). The gain stays small: under 1\% of
+the Brier score with four groups and up to 2\% with $M$ chosen by cross-validation. Random groups never help,
+and multicalibration never beats recalibration.
 \begin{table*}[t]
 \caption{\expname{PopQA-Elicit}: Brier differences against procedure-specific recalibration ($\times10^3$; below zero: better), averaged over the three procedures, with Nadeau--Bengio-corrected 95\% intervals over 100 random splits.}
 \centering\small
@@ -481,96 +454,78 @@ labels & model & G$_4-$R & G$_{\mathrm{cv}}-$R & D$-$R\\
 \label{tab:popqa}
 \end{adjustbox}
 \end{table*}
-One of the fifteen tests in the pre-declared family survives Holm correction (Mistral at 2{,}396
-labels, Holm-adjusted $p=0.047$); none at 2{,}000 labels does (smallest adjusted $p=0.108$). Descriptively,
-the per-model corrected intervals exclude zero from 2{,}000 labels for every model, groups then also
-beat random groups of the same number ($-1.7$ to $-2.2$), and random groups cost a little at every
-budget. As a secondary contrast, groups with $M$ chosen by cross-validation beat recalibration at both
-large budgets for every model (one-sided $p\le0.001$ at 2{,}396). The best
-granularity grows with the budget: cross-validation picks 16 groups in 14--21\% of splits at 100 labels
-and in 58--71\% at 2{,}396, and G$_{\mathrm{cv}}$ doubles the fixed-$M$ gain. The gain is nevertheless
-small (under 1\% of the recalibrated Brier score with four groups, 1.5--2.1\% with $M$ chosen by
-cross-validation) and the direct predictor's is 3--15 times larger;
-it is ahead of groups at every budget from 1{,}000 labels, with intervals excluding zero for every model
-from 2{,}000. The direct predictor's gain differs by model ($-25$, $-17$, $-7$ for forward AUROCs $0.59$, $0.50$,
-$0.69$) and is smallest for the most informative report, but three models do not establish a trend;
-the groups' gain is about the same for all three, as \expname{Synthetic-Reliability} would lead one to expect. Multicalibration
-again never beats recalibration, groups again leave conformal sets unchanged, and the direct
-predictor's sets are smaller for Llama and Mistral (by $0.12$ and $0.09$ labels; for Qwen the interval
-includes zero), with more singleton sets ($0.41$--$0.45$ against $0.32$--$0.40$) that are more often
-correct ($0.75$--$0.78$ against $0.66$--$0.76$).
 
-Binned calibration errors and the PopQA-Probe confound are discussed in Appendix~\ref{app:expextra}.
+\paragraph{A direct predictor does better.} Logistic regression on the same representation and the report
+beats recalibration by $0.032$--$0.036$ Brier on TruthfulQA and by $0.007$--$0.025$ on PopQA, three to fifteen
+times the groups' gain (Figure~\ref{fig:overview}b). On TruthfulQA a probe on the full hidden state does better
+still (Appendix~\ref{app:postlock}).
 
-\paragraph{\expname{Synthetic-Reliability} and \expname{Real-Geometry} (post hoc).} With a latent signal, a group effect of
-spread $\tau$ (32 clusters, or linear in the features) and reports of informativeness $\kappa$, on Gaussian
-features and on the real PopQA hidden states with a known $\P(Y=1\mid x)$, groups lose to recalibration
-without a group effect at every budget, win only once labels suffice when there is one, and never beat
-the direct predictor except where there is nothing to find ($\tau=0$, at least 1{,}000 labels);
-$\kappa$ changes neither comparison (Appendix~\ref{app:expextra}).
+\paragraph{Synthetic models agree.} When reliability depends on a latent group effect, on Gaussian features or
+on the real PopQA hidden states, groups lose to recalibration when there is no group effect, win once labels
+suffice when there is one, and beat the direct predictor only when there is nothing to find. How informative
+the report is changes neither comparison (Appendix~\ref{app:expextra}).
 
-\paragraph{Conformal sets (post hoc).} Every forecaster is valid; groups do not shrink sets (every corrected
-interval includes zero), the direct predictor's sets are smaller on PopQA for Llama and Mistral (on
-TruthfulQA its intervals include zero), and one threshold per group costs
-efficiency at these budgets (Appendix~\ref{app:expextra}). In a post-hoc check that holds the score fixed and
-changes only the partition, representation cells change set size by at most $0.006$ on PopQA and enlarge it on
-TruthfulQA, where cells fall below the calibration floor; changing the score from the report to the direct predictor
-shrinks sets by $0.12$--$0.16$ (Appendix~\ref{app:postlock}).
+\paragraph{Groups do not shrink conformal sets.} Every forecaster gives valid sets, and groups leave set size
+unchanged. Holding the score fixed and changing only the partition moves set size by at most $0.006$; changing
+the score matters more, since the direct predictor's sets are $0.09$--$0.12$ labels smaller on PopQA for Llama
+and Mistral (Appendix~\ref{app:postlock}).
 
 \subsection{Carrying a calibration across procedures}
 \label{sec:exp-transport}
-\paragraph{Transport across procedures (\expname{Label-Free-Transfer}, \expname{Failure-Modes}, \expname{Controlled-Shifts}).} A
-forecaster and its conformal thresholds are fitted under procedure A on disjoint halves of the labelled
-third and deployed under B. A label-free map $T$ is fitted on the unlabelled third, elicited under both
-procedures: the quantile map $F_A^{-1}\circ F_B$, or paired isotonic regression of $V_A$ on $V_B$. The
-labelled reference recalibrates under B on 120 questions (60 for Platt scaling, 60 for the threshold). Groups do not protect against the change, because their forecast
-reads the report: under the real rewording, representation groups cover $0.60$ for Mistral on TruthfulQA
-and $0.73$ for Qwen on PopQA (report bins: $0.55$, $0.92$), and only a predictor that ignores the report is
-invariant ($0.90$--$0.91$ under every shift), at a cost in set size once the report is informative. A
-monotone map of B's reports onto A's scale does carry the calibration on average. Paired isotonic
-regression restores coverage for a monotone change (trained question-only reporter on TriviaQA, one split:
-$0.21\to0.910$ against $0.909$ under A, set size unchanged; its label-loss mass of $0.013$ bounds the loss at
-$0.025$ with probability $0.95$); the quantile map recovers most of the loss otherwise without widening
-sets (Mistral on TruthfulQA: $0.60$--$0.63\to0.89$--$0.90$); on PopQA no map is reliably exact
-($0.84$--$0.95$), while 120 labels under the new procedure match the target on average. The repair is
-marginal, not per group: net of the no-shift baseline, the worst frozen group falls up to $0.18$--$0.19$
-short under a map on PopQA, and also $0.08$--$0.15$ short under labelled recalibration on TruthfulQA, which
-uses one threshold for all groups. Synthetic changes of real reports (\expname{Controlled-Shifts}), the same shifts applied to every
-method (\expname{Failure-Modes}), oracle, direction and permutation controls, and the label-loss bound with its
-estimation error are in Appendix~\ref{app:transport}.
+\paragraph{Setup.} A forecaster and its thresholds are fitted under procedure A and used under B
+(Figure~\ref{fig:main}). A label-free map $T$ is fitted on the unlabelled questions, which are elicited under
+both procedures: either the quantile map $F_A^{-1}\circ F_B$ or paired isotonic regression of $V_A$ on $V_B$.
+The labelled comparator recalibrates under B on 120 new labels.
+
+\paragraph{Groups do not protect against the change.} Their forecast still reads the report. Under the real
+rewording, groups cover $0.60$ for Mistral on TruthfulQA and $0.73$ for Qwen on PopQA. Only a predictor that
+ignores the report is unaffected ($0.90$--$0.91$ under every change), at a cost in set size when the report is
+informative.
+
+\paragraph{A map between reports repairs coverage on average.} For a monotone change, paired isotonic regression
+restores it exactly (a reversed TriviaQA reporter: $0.21\to0.91$, with set size unchanged and a label-free bound
+of $0.025$ on the remaining loss). Otherwise the quantile map recovers most of it without widening sets
+(Mistral on TruthfulQA: $0.60\to0.90$; Figure~\ref{fig:overview}c). On PopQA no map is reliably exact
+($0.84$--$0.95$), while 120 labels under the new procedure reach the target on average.
+
+\paragraph{But not within every group.} The worst of the four frozen groups falls up to $0.19$ short under a map
+on PopQA, and labelled recalibration also leaves groups short on TruthfulQA (Figure~\ref{fig:overview}d).
+Per-group guarantees after a change of procedure need per-group recalibration. Controlled synthetic changes,
+the same shifts applied to every method, and further controls are in Appendix~\ref{app:transport}.
 
 \subsection{Checks of the theory}
-\paragraph{\expname{Known-Law} and \expname{Answerability}.} With a known conditional law the decomposition is exact,
-cell-averaged error is minimised by one cell (Corollary~\ref{cor:B0}) and the pointwise optimum is interior in all
-four arms, but the pre-set rate check passed only for $k$-means cells at $d=1$ and failed in the other three,
-including both farthest-first arms (growth is faster; Remark~\ref{rem:drift}, added afterwards). In a synthetic answerability model, calibrating on the answerable set gives
-the coverage Example~\ref{ex:M-fail} predicts (Appendices~\ref{app:x1}, \ref{app:x4}).
+
+With a known conditional law (Appendix~\ref{app:x1}) the decomposition is exact, cell-averaged error is
+minimised by one cell (Corollary~\ref{cor:B0}) and the pointwise optimum is interior; the pre-set check that it
+grows at the predicted rate passed only for $k$-means cells in one dimension and failed in the other three
+arms, where growth is faster (Remark~\ref{rem:drift}, added afterwards). In a synthetic answerability model
+(Appendix~\ref{app:x4}), calibrating on the answerable set gives the coverage Example~\ref{ex:M-fail} predicts.
 
 \section{Related work}
 \label{sec:related}
-Language models can report useful confidence verbally or through a scale
-\citep{kadavath2022language,lin2022teaching,tian2023just,xiong2024can}, and their outputs are sensitive
-to prompt format, option order and label wording \citep{zhao2021calibrate,sclar2024quantifying,zheng2024large};
-we measure what that sensitivity does to a calibration carried from one elicitation to another.
-Binned recalibration trades bias against variance in the number of bins
-\citep{kumar2019verified,gupta2021distribution,sun2023minimum}, and multicalibration asks for calibration
-on every group of a rich family \citep{hebertjohnson2018multicalibration,kim2019multiaccuracy}; closest to
-us, \citet{detommaso2024multicalibration} multicalibrate LLM confidence over groups that include prompt-embedding
-clusters. We ask how finely to group under a label budget, with groups fixed before elicitation. Coverage
-within frozen cells is the Mondrian guarantee \citep{vovk2005algorithmic,vovk2012conditional}, whose
-Corollary~\ref{cor:B0} only aggregates the known per-cell Beta law \citep{ding2023class}; the rate behind
-Theorem~\ref{thm:B} is established for localized conformal prediction \citep{conrad2026beyond,min2026unified}
-(the partition-based method of \citet{lei2014distribution} gives the corresponding efficiency rate), and we claim
-no new rate; group-conditional coverage without a fixed partition is studied by \citet{gibbs2023conformal}. Conformal methods
-for language models \citep{quach2024conformal,mohri2024language,cherian2024large} fix the elicitation.
-Under shift, conformal guarantees are restored by reweighting \citep{tibshirani2019conformal,podkopaev2021distribution};
-selecting on an outcome-defined subset is a calibration/test law mismatch \citep{wang2026trimming}.
-Unlabelled data have carried a calibration to new inputs by quantile matching \citep{yilmaz2022testtime}, optimal
-transport of scores \citep{correia2025nonexchangeable} or a learned map of paired inputs across modalities, with a
-discrepancy bound that needs a slack assumption \citep{doula2026conformal}; here the questions are fixed and only the
-elicitation changes, so a monotone map acts on the one-dimensional report and the label-loss mass bounds the
-coverage change directly.
-Appendix~\ref{app:related} gives the full discussion.
+\paragraph{Elicited confidence.} Language models can report useful confidence verbally or through a scale
+\citep{kadavath2022language,lin2022teaching,tian2023just,xiong2024can}, and their outputs depend on prompt format,
+option order and label wording \citep{zhao2021calibrate,sclar2024quantifying,zheng2024large}. We measure what that
+dependence does to a calibration carried from one procedure to another. Conformal methods for language models
+\citep{quach2024conformal,mohri2024language,cherian2024large} fix the procedure.
+
+\paragraph{Grouping and calibration.} Binned recalibration trades bias against variance in the number of bins
+\citep{kumar2019verified,gupta2021distribution,sun2023minimum}, and multicalibration asks for calibration on every
+group of a rich family \citep{hebertjohnson2018multicalibration,kim2019multiaccuracy}; closest to us,
+\citet{detommaso2024multicalibration} multicalibrate LLM confidence over groups that include prompt-embedding
+clusters. Coverage within frozen cells is the Mondrian guarantee \citep{vovk2005algorithmic,vovk2012conditional};
+our Corollary~\ref{cor:B0} aggregates the known per-cell Beta law \citep{ding2023class}, and the rate behind
+Theorem~\ref{thm:B} is known for localized conformal prediction \citep{conrad2026beyond,min2026unified}, with the
+corresponding efficiency rate for the partition-based method of \citet{lei2014distribution}. Group-conditional
+coverage without a fixed partition is studied by \citet{gibbs2023conformal}.
+
+\paragraph{Shift and transport.} Under covariate or label shift, conformal guarantees are restored by reweighting
+\citep{tibshirani2019conformal,podkopaev2021distribution}, and calibrating on an outcome-defined subset is a
+calibration--test mismatch \citep{wang2026trimming}. Unlabelled data have carried a calibration to new inputs by
+quantile matching \citep{yilmaz2022testtime}, by optimal transport of scores \citep{correia2025nonexchangeable}, or
+by a learned map of paired inputs with a bound that needs a slack assumption \citep{doula2026conformal}. Here the
+questions are fixed and only the procedure changes, so a monotone map acts on the report itself and the label-loss
+mass bounds the coverage change directly. Appendix~\ref{app:related} gives the full discussion.
 
 % ---------------------------------------------------------------------
 \section{Conclusion}
